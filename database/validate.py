@@ -36,7 +36,7 @@ class IntegralProblemValidator:
         self.warnings = []
 
         # 检查必填字段
-        required_fields = ['question', 'answer', 'solution', 'tag']
+        required_fields = ['question', 'answer', 'solution', 'tag', 'reference']
         for field in required_fields:
             if field not in data:
                 self.errors.append(f"缺少必填字段：{field}")
@@ -49,6 +49,7 @@ class IntegralProblemValidator:
         self._validate_answer(data['answer'])
         self._validate_solution(data['solution'])
         self._validate_tag(data['tag'])
+        self._validate_reference(data['reference'])
 
         is_valid = len(self.errors) == 0
         return is_valid, self.errors, self.warnings
@@ -146,6 +147,15 @@ class IntegralProblemValidator:
 
         # 逻辑一致性检查
         self._validate_tag_logic(tag)
+
+    def _validate_reference(self, reference) -> None:
+        """验证 reference 字段"""
+        if not isinstance(reference, list):
+            self.errors.append("reference 必须是列表类型")
+            return
+        for item in reference:
+            if not isinstance(item, str):
+                self.errors.append(f"reference 中的每个元素必须是字符串，发现：{item}")
 
     def _validate_tag_logic(self, tag: Dict[str, Any]) -> None:
         """验证 tag 字段的逻辑一致性"""

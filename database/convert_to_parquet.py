@@ -33,35 +33,51 @@ def json_to_parquet(json_path: str, parquet_path: str, compress: str = 'snappy')
         return {'success': False, 'error': 'JSON 根节点必须是数组'}
 
     # 构建 PyArrow 表
+    ids = []
+    sources = []
     questions = []
     answers = []
     solutions = []
     tags = []
+    references = []
 
     for item in data:
+        ids.append(item.get('id', ''))
+        sources.append(item.get('source', ''))
         questions.append(item.get('question', ''))
         answers.append(item.get('answer', ''))
         solutions.append(item.get('solution', ''))
 
         # 构建 tag struct
         tag = item.get('tag', {})
+        tools_solvable = tag.get('tools_solvable', [])
+        if not isinstance(tools_solvable, list):
+            tools_solvable = []
         tags.append({
-            'tools_solvable': tag.get('tools_solvable', []),
-            'symbolic': tag.get('symbolic', False),
-            'problem_type': tag.get('problem_type', ''),
-            'pure_int': tag.get('pure_int', False),
-            'have_definite': tag.get('have_definite', False),
-            'have_indefinite': tag.get('have_indefinite', False),
-            'is_multi': tag.get('is_multi', False),
-            'is_divergent': tag.get('is_divergent', False)
+            'tools_solvable': tools_solvable,
+            'symbolic': bool(tag.get('symbolic', False)),
+            'problem_type': str(tag.get('problem_type', '')),
+            'pure_int': bool(tag.get('pure_int', False)),
+            'have_definite': bool(tag.get('have_definite', False)),
+            'have_indefinite': bool(tag.get('have_indefinite', False)),
+            'is_multi': bool(tag.get('is_multi', False)),
+            'is_divergent': bool(tag.get('is_divergent', False))
         })
+
+        ref = item.get('reference', [])
+        if not isinstance(ref, list):
+            ref = []
+        references.append(ref)
 
     # 创建 PyArrow 表
     table = pa.table({
+        'id': ids,
+        'source': sources,
         'question': questions,
         'answer': answers,
         'solution': solutions,
-        'tag': tags
+        'tag': tags,
+        'reference': references
     }, schema=INTEGRAL_PROBLEM_SCHEMA)
 
     # 写入 Parquet 文件

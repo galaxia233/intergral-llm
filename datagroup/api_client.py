@@ -20,7 +20,7 @@ from config import (
     DEFAULT_TIMEOUT,
     check_api_key,
 )
-from datagroup.file_converter import (
+from file_converter import (
     convert_pdf_to_images,
     convert_word_to_images,
     IMAGE_MEDIA_MAP,
@@ -220,9 +220,9 @@ def ask_ai(
             last_error = e
             print(f"[attempt {attempt+1}] 未知错误：{e}，重试中...")
 
-        # 指数退避：1s, 2s, 4s
+        # 退避：5s, 10s, 20s
         if attempt < max_retries:
-            wait = 2 ** attempt
+            wait = 5 * 2 ** attempt
             print(f"等待 {wait}s 后重试...")
             time.sleep(wait)
 

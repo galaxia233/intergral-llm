@@ -3,13 +3,13 @@ System Prompt 提示词集
 
 使用方法：
     from system_prompts import SystemPrompts, get_system
-    
+
     # 方法 1：使用枚举
     ans = ask_ai("问题", system=SystemPrompts.ANSWER_COMPARATOR)
-    
+
     # 方法 2：使用字符串键
     ans = ask_ai("问题", system=get_system("answer_comparator"))
-    
+
     # 方法 3：直接访问字典
     ans = ask_ai("问题", system=SYSTEM_PROMPTS["answer_comparator"])
 """
@@ -19,7 +19,7 @@ from enum import Enum
 
 class SystemPrompts(str, Enum):
     """System Prompt 枚举类"""
-    
+
     # 答案比较器
     ANSWER_COMPARATOR = """你是一位物理答案比对专家，负责判断两个答案是否等价。
 
@@ -57,7 +57,7 @@ class SystemPrompts(str, Enum):
 {
     "equivalent": true/false,
     "reason": "详细解释判断依据",
-    "confidence": "0.0到1.0之间的置信度评分，数字越大表示越有信心，1代表完全确定，0.5及以下表示需要人工复核"
+    "confidence": "0.0 到 1.0 之间的置信度评分，数字越大表示越有信心，1 代表完全确定，0.5 及以下表示需要人工复核"
 }
 ```
 
@@ -192,143 +192,161 @@ class SystemPrompts(str, Enum):
 直接输出格式化后的 Markdown 内容，不要有多余的解释文字。
 """
 
-    # 题目答案提取转 JSON
-    QA_EXTRACT_TO_JSON = """你是一位物理题目数据格式化专家，负责从长 md 文件中提取题目和答案，并转换为指定的 JSON 格式。
+    # 题目提取为单独 md 文件
+    QA_EXTRACT_TO_MD = """从 md 文件中找出每一道题目，把与该题相关的所有内容原样复制下来，不做任何修改或标注。
 
-## 输入格式
-用户会提供一个 md 文件，其中包含一道或多道题目和对应的答案。
+核心原则：遗漏题目是最大错误，宁可多提取不可漏提取。
 
-你需要从文件中配对提取题目和答案，**不要改动原文内容**，直接复制。
+## 题号识别
+任何看起来是编号的格式都算题号：`1.17.35`、`【4204】`、`1.`、`(a)`、`§2.3 1.`、`No.123` 等。
+一行以数字或【】开头且后面有题目内容，就是题目。
 
-## 重要：识别并跳过被截断的题目
+## 多小题拆分（重要）
+含多个小题（如 (1)(2)、(a)(b)）的题目必须拆开：每个小题单独输出，保留共同题干。
 
-如果题目或答案不完整，请**直接跳过，不要输出**。以下是被截断的特征：
+## 跳过
+只跳过纯叙述性文字（章节说明、前言）。不要跳过任何看起来是题目的内容。
 
-### 题目被截断的特征（满足任一即跳过）：
-1. **开头不完整**：第一行没有题号（如【数字】），或以"解"、"证"、"答"等字开头
-2. **结尾不完整**：最后一行没有句号、结束符号，或以"故"、"因此"、"所以"、"得"等字结尾但没有完成
-3. **公式不完整**：公式以逗号、等号等符号结尾，明显缺少后续内容
-4. **缺少答案**：只有题目没有对应的答案内容
+## 输出
+每道题用 `---` 分隔。第一行以题号开头（用于文件命名），后面原样复制原文，不加任何标记。
 
-### 完整题目的特征：
-1. 有明确的题号（如【4201】、【4202】等）
-2. 题目描述完整，有句号或问号结束
-3. 答案部分有完整的解题过程和最终结论（"证毕"、"解毕"等）
+示例：
+---
+19.1 Evaluate $\int (g(x))^r g'(x)dx$
+
+By the chain rule, $D_{x}((g(x))^{r + 1}) = (r + 1)(g(x))^{r}g'(x)$. Hence, $\int (g(x))^r g'(x)dx = \frac{1}{r + 1} (g(x))^{r + 1} + C$.
+
+---
+【4204】 计算 $\int x^2 dx$
+
+$\int x^2 dx = \frac{x^3}{3} + C$.
+
+---
+
+没有题目时只输出 NONE，不要输出其他任何内容。"""
+
+    # 题目 md 转 JSON
+    MD_TO_JSON = """你是一位数学题目结构化专家，从 md 文件中提取题目信息并输出 JSON。
+
+## 核心规则
+1. **每个文件一定有一道题目和配套解答**，不可跳过任何文件，不可输出 NONE 或空内容
+2. **每个文件都是独立的题目**：即使文件内容看起来是大题的小问（如 `(2)`、`(a)`），也要当作一道独立题目提取，不要与母题合并
+3. question 字段原样复制原文，不省略任何内容
+4. 忽略图片链接（![](url)、<img> 等）
+
+## 内容结构
+题集 md 通常遵循：
+- 题号（如 `1.17.`、`19.1`、`§2.3`）后面紧跟**题干**
+- 题干之后空一行，或出现"解"、"Solution"、"Proof"、"Hint"之后的全部内容为**解答**
+- 解答最后一行通常为**答案**（最终数值或表达式）
+- 题干后直接是解题过程无明显分隔时，answer 只写最终结果，其余放 solution
+
+## 引用判断
+识别题目中引用的其他题号（如"由题19.1可知"、"参见习题5"）：
+- reference: 引用的题号列表，如 ["19.1", "习题5"]；无引用时写 []
+
+## 字段定义
+- question: 题号+题干，原样复制
+- answer: 最终结果表达式（不含解题过程）
+- solution: 推导过程（与 answer 混合时整体放 solution，answer 只写最终结果）
+- reference: 引用的题号列表，无引用时写 []
+- tag:
+  - symbolic: 有数值近似→true，纯符号→false
+  - problem_type: 积分→"int"，求和→"sum"，混合→"mix"
+  - pure_int: 纯公式无文字→true
+  - have_definite: 含定积分→true
+  - have_indefinite: 含不定积分→true
+  - is_multi: 多个积分变量→true
+  - is_divergent: 发散→true
 
 ## 输出格式
+只输出 JSON，不要多余文字。
 
-输出为 JSONL 格式，每个JSON对象包含以下字段：
-
-### 1. `question` 字段
-**类型**：`string`
-
-**规范**：
-- 一个题目只含有一个积分或求和表达式
-- 如果md文件中的一个题目含有多个积分或求和表达式，把它拆成多个题目，但每个题目都要有完整的题目描述（可以包含中文描述和一个积分/求和表达式）
-- 在满足了上述条件的前提下，不要改动题目中的任何内容，直接复制。
-
-**有效示例**：
-```
-计算：\\int(x^2)dx，其中 x 为积分变量
-求解 \\sum_{n=1}^{100} n，即求 1 到 100 的和
-\\int_{-\\infty}^{\\infty} \\exp(-x^2) dx，其中 \\exp 为指数函数
-```
-
----
-
-### 2. `answer` 字段
-**类型**：`string`
-
-**规范**：
-- 仅提供**最终结果表达式**
-- 不包含解题过程
-- 保持最简形式
-
-**示例**：
-```
-\\frac{x^3}{3} + C
-```
-
----
-
-### 3. `solution` 字段
-**类型**：`string`
-
-**规范**：
-- 直接摘录md文件中对应题目的解题过程，不要修改
-- 包含md文件中的所有解题步骤和最终答案
-
-**示例**：
-```
-本题为不定积分，被积函数为 x 的幂函数。根据幂函数积分公式：\\int{x^ndx} = \\frac{x^{n+1}}{n+1} + C，其中 n≠-1。识别 n=2，代入公式：\\frac{x^{2+1}}{2+1} + C，化简：\\frac{x^3}{3} + C
-```
-
----
-
-### 4. `tag` 字段
-**类型**：`object`
-
-包含 8 个元数据字段，用于题目分类和路由：
-
-| 字段名 | 类型 | 说明 | 取值示例 |
-|-|-|-|-|
-| `tools_solvable` | `list<string>` | 预留字段，留空即可 | `[]` |
-| `symbolic` | `bool` | 解答中是否用到了近似或数值计算截断 | `true` / `false` |
-| `problem_type` | `string` | 题目类型 | `"int"`(积分) / `"sum"`(求和) / `"mix"`(混合) |
-| `pure_int` | `bool` | 题目形式是否为纯积分式，无文字说明 | `true`(纯公式) / `false`(含中文描述) |
-| `have_definite` | `bool` | 是否包含定积分 | `true` / `false` |
-| `have_indefinite` | `bool` | 是否包含不定积分 | `true` / `false` |
-| `is_multi_var` | `bool` | 是否涉及多个积分变量 | `true` / `false` |
-| `is_divergent` | `bool` | 积分/级数是否发散 | `true` / `false` |
-
-**tag 示例**：
 ```json
 {
-  "tools_solvable": [],
-  "symbolic": true,
-  "problem_type": "int",
-  "pure_int": false,
-  "have_definite": true,
-  "have_indefinite": false,
-  "is_multi_var": false,
-  "is_divergent": false
+  "question": "...",
+  "answer": "...",
+  "solution": "...",
+  "reference": [],
+  "tag": {
+    "tools_solvable": [],
+    "symbolic": false,
+    "problem_type": "int",
+    "pure_int": false,
+    "have_definite": false,
+    "have_indefinite": true,
+    "is_multi": false,
+    "is_divergent": false
+  }
 }
+```"""
+
+# 章节分类 + 答案映射
+    CHAPTER_CLASSIFY = """你是一位数学题集书籍结构分析专家。你的任务是分析按一级标题切分后的各章节，识别章节类型并建立答案→章节的映射关系。
+
+## 输入
+你会收到两部分内容：
+1. 章节标题列表：每个章节的标题和简短摘要
+2. 答案区章节的完整内容
+
+## 任务
+
+### 1. 章节分类
+对每个章节判断其类型：
+- `"正文"`：包含题目或理论内容的正文章节
+- `"答案区"`：集中存放答案/提示/解答的章节（如"Answers and Hints"、"Solutions"、"Part 2"等）
+- `"其他"`：前言、目录、封面等非题目内容
+
+### 2. 答案→章节映射
+从答案区章节中，根据题号前缀判断每段答案属于哪个正文章节：
+- 题号格式如 `1.17.35` → 前缀 `1.` → Chapter I
+- 题号格式如 `§2.3 15.` → 前缀 `2.` → Chapter II
+- 逐段扫描答案区内容，按题号前缀归类
+
+### 3. chapter_id 规则
+从章节标题中提取简短标识，如：
+- `# Chapter IV. Indefinite Integrals` → `"ch4"`
+- `# § 1.1. Real Numbers` → `"sec1.1"`
+- `# Answers and Hints` → `"answers"`
+
+## 输出格式
+只输出 JSON 数组，不要多余文字：
+
+```json
+[
+  {"heading": "# Chapter I...", "type": "正文", "chapter_id": "ch1", "line_range": [55, 75]},
+  {"heading": "# Answers and Hints", "type": "答案区", "chapter_id": "answers", "line_range": [157, 177], "chapter_map": {"1.": "ch1", "2.": "ch2", "3.": "ch3"}},
+  {"heading": "# From the Author", "type": "其他", "chapter_id": "preface", "line_range": [159, 177]}
+]
 ```
 
-## 注意事项
-- `solution`、`answer` 都从原本的 md 文件中直接复制，**不要修改**
-- `tag` 字段由你根据题目内容判断并填写
-- 根据题号等确切信息，确保题目和答案正确配对
-- 如果答案中只有最终答案没有详细解题过程，`solution` 字段可以为空字符串
-- 如果文件中有不属于题目的内容，例如”![](images/ade859f8bfa8d21732690984a031bb95b7c55ea778ef0195e4639fff6aa92a25.jpg)”，请忽略，不要在输出中包含这些内容
-- **只输出完整、有效的题目**，被截断的题目直接跳过
+line_range 表示该章节在原书 md 文件中的起止行号（从0开始）。chapter_map 只在 type="答案区" 时出现，键为题号前缀，值为对应的 chapter_id。"""
 
-## 输出要求
-直接输出 JSONL 数组，不要有多余的解释文字。如果遇到被截断的题目，跳过即可，不要输出任何内容。
-"""
-# System Prompt 字典
+    # System Prompt 字典
 SYSTEM_PROMPTS = {
     "answer_comparator": SystemPrompts.ANSWER_COMPARATOR.value,
     "raw_data_generation": SystemPrompts.RAW_DATA_GENERATION.value,
     "question_to_latex": SystemPrompts.QUESTION_TO_LATEX.value,
     "answer_to_latex": SystemPrompts.ANSWER_TO_LATEX.value,
-    "qa_extract_to_json": SystemPrompts.QA_EXTRACT_TO_JSON.value,
+    "qa_extract_to_md": SystemPrompts.QA_EXTRACT_TO_MD.value,
+    "md_to_json": SystemPrompts.MD_TO_JSON.value,
+    "chapter_classify": SystemPrompts.CHAPTER_CLASSIFY.value,
 }
 
 
 def get_system(name: str) -> str:
     """
     根据名称获取对应的 system prompt
-    
+
     Args:
         name: prompt 名称（不区分大小写）
-    
+
     Returns:
         对应的 system prompt 字符串
-    
+
     Raises:
         KeyError: 如果名称不存在
-    
+
     Example:
         >>> get_system("answer_comparator")
         "你是一位物理答案比对专家..."

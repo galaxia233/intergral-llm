@@ -1,18 +1,28 @@
 """
-积分题目数据格式规范 v1.0 - PyArrow Schema 定义
+积分题目数据格式规范 v2.0 - PyArrow Schema 定义
 
 本文档面向 AI Infrastructure 组，定义积分/求和题目的标准数据格式，
 用于数据集构建、存储和加载。
 
 作者：数据组
-版本：1.0
-最后更新：2026-04-15
+版本：2.0
+最后更新：2026-04-18
 """
 
 import pyarrow as pa
 import json
 
 INTEGRAL_PROBLEM_SCHEMA = pa.schema([
+    pa.field('id', pa.string(), nullable=False, metadata={
+        'description': '来源书籍+题号，如 Maron_1.17.35',
+        'constraints': '["格式: 书名_题号","书名不含特殊字符","唯一标识"]'
+    }),
+
+    pa.field('source', pa.string(), nullable=False, metadata={
+        'description': '来源书籍名称',
+        'constraints': '["原始书名","不含路径"]'
+    }),
+
     pa.field('question', pa.string(), nullable=False, metadata={
         'description': '题目内容，运算符号用文本表达',
         'constraints': '["运算符号用文本表达","格式灵活","完整自洽","符号说明完整","唯一积分操作","非证明题格式","支持积分/求和"]'
@@ -37,21 +47,26 @@ INTEGRAL_PROBLEM_SCHEMA = pa.schema([
         pa.field('have_indefinite', pa.bool_(), nullable=False),
         pa.field('is_multi', pa.bool_(), nullable=False),
         pa.field('is_divergent', pa.bool_(), nullable=False)
-    ]), nullable=False)
+    ]), nullable=False),
+
+    pa.field('reference', pa.list_(pa.string()), nullable=False, metadata={
+        'description': '引用的其他题号列表，如 ["19.1", "习题5"]',
+        'constraints': '["无引用时为空数组","每个元素为题号字符串"]'
+    })
 
 ], metadata={
     'name': 'integral_problem',
-    'version': '1.0',
+    'version': '2.0',
     'description': 'Integral/Sum problem data format for Phy-LLM',
     'maintainer': 'Data-Group',
-    'total_fields': '4',
+    'total_fields': '7',
     'tag_subfields': '8'
 })
 
 
 def validate_problem_data(table):
     """验证积分题目数据是否符合规范"""
-    required_fields = ['question', 'answer', 'solution', 'tag']
+    required_fields = ['id', 'source', 'question', 'answer', 'solution', 'tag', 'reference']
 
     for field in required_fields:
         if field not in table.column_names:
@@ -80,8 +95,8 @@ def get_schema():
 def print_schema_info():
     """打印 Schema 信息"""
     print("=" * 60)
-    print("积分题目数据格式规范 v1.0")
+    print("积分题目数据格式规范 v2.0")
     print("=" * 60)
-    print(f"字段总数：4 个核心字段 + 8 个 tag 子字段")
+    print(f"字段总数：7 个核心字段 + 8 个 tag 子字段")
     print(f"字段列表：{[f.name for f in INTEGRAL_PROBLEM_SCHEMA]}")
     print("=" * 60)
