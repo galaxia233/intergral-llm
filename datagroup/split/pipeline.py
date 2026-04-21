@@ -127,6 +127,7 @@ def stage1_split(input_file: str, output_dir: str = None) -> Path:
 
 file_lock = threading.Lock()
 problem_counter = {"count": 0}
+batch_number = {"value": 1}
 
 
 def extract_problem_id(first_line: str) -> str:
@@ -159,12 +160,9 @@ def extract_problem_id(first_line: str) -> str:
 
 
 def process_file(file_path: Path, output_dir: Path) -> int:
-    """处理单个文件：调用 LLM 提取题目，每个题目保存为 书名_题号.md"""
-    # 从文件名解码书名（格式: 001@书名@章节标题.md）
-    parts = file_path.stem.split('@')
-    book_name = parts[1] if len(parts) >= 2 else sanitize_filename(file_path.stem)
+    """处理单个文件：调用 LLM 提取题目，每个题目保存为 {批号}_{题号}.md"""
 
-    print(f"Processing: {file_path.name} (书名: {book_name})")
+    print(f"Processing: {file_path.name}")
     try:
         result = ask_ai(
             prompt="请从文件中提取所有题目，按指定格式输出。",
@@ -200,7 +198,7 @@ def process_file(file_path: Path, output_dir: Path) -> int:
                 # 没题号，用序号代替
                 problem_id = f"unk{problem_counter['count'] + count + 1}"
 
-            output_name = sanitize_filename(f"{book_name}_{problem_id}")
+            output_name = sanitize_filename(f"{batch_number['value']}_{problem_id}")
             output_file = output_dir / f"{output_name}.md"
 
             # 防止文件名冲突：同名文件存在时加序号后缀
@@ -231,17 +229,37 @@ def process_file(file_path: Path, output_dir: Path) -> int:
         return 0
 
 
-def stage2_extract(input_dir: str, output_dir: str = None, max_workers: int = 4) -> Path:
+def auto_batch_start(output_dir: Path) -> int:
+    """从输出目录中扫描已有文件的最大批号，返回 max+1；目录不存在或无文件时返回 1"""
+    if not output_dir.exists():
+        return 1
+    max_batch = 0
+    for f in output_dir.glob("*.md"):
+        parts = f.stem.split('_')
+        if parts and parts[0].isdigit():
+            max_batch = max(max_batch, int(parts[0]))
+    return max_batch + 1 if max_batch > 0 else 1
+
+
+def stage2_extract(input_dir: str, output_dir: str = None, max_workers: int = 4, batch_start: int = None) -> Path:
     """并行提取题目为单独 md 文件"""
-    global problem_counter
+    global problem_counter, batch_number
     problem_counter = {"count": 0}
 
     input_path = Path(input_dir)
 
     if output_dir is None:
-        output_dir = input_path.parent / f"{input_path.name}_problems"
+        # 默认输出到 datagroup/question_splited
+        output_dir = input_path.parent / "question_splited"
     else:
         output_dir = Path(output_dir)
+
+    # 自动识别批号：未指定时从输出目录扫描
+    if batch_start is None:
+        batch_start = auto_batch_start(output_dir)
+
+    batch_number = {"value": batch_start}
+    print(f"[阶段 2] 批号起始：{batch_start}")
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -263,7 +281,8 @@ def stage2_extract(input_dir: str, output_dir: str = None, max_workers: int = 4)
 def run_split_pipeline(input_file: str,
                        stage1_output: str = None,
                        stage2_output: str = None,
-                       max_workers: int = 4) -> Path:
+                       max_workers: int = 4,
+                       batch_start: int = None) -> Path:
     """
     运行拆分流水线：切分 → LLM提取题目
 
@@ -272,6 +291,7 @@ def run_split_pipeline(input_file: str,
         stage1_output: 阶段 1 输出目录（可选）
         stage2_output: 阶段 2 输出目录（可选）
         max_workers: LLM 提取并发数
+        batch_start: 批号起始值。None 时自动从输出目录扫描已有最大批号+1
 
     Returns:
         最终输出目录路径
@@ -283,6 +303,10 @@ def run_split_pipeline(input_file: str,
     print("=" * 60)
     print(f"输入：{input_file} ({'目录' if input_path.is_dir() else '文件'})")
     print(f"并发数：{max_workers}")
+    if batch_start is not None:
+        print(f"批号起始：{batch_start}（手动指定）")
+    else:
+        print(f"批号起始：自动检测")
     print("=" * 60 + "\n")
 
     # 阶段 1：按标题切分
@@ -291,7 +315,7 @@ def run_split_pipeline(input_file: str,
         raise RuntimeError("阶段 1 失败")
 
     # 阶段 2：LLM 提取题目
-    final_dir = stage2_extract(stage1_dir, stage2_output, max_workers)
+    final_dir = stage2_extract(stage1_dir, stage2_output, max_workers, batch_start)
 
     print("=" * 60)
     print("拆分 Pipeline 完成！")
@@ -311,6 +335,8 @@ if __name__ == "__main__":
     parser.add_argument("-2", "--stage2-output", type=str, help="阶段 2 输出目录")
     parser.add_argument("-w", "--workers", type=int, default=4,
                         help="LLM 提取并发数")
+    parser.add_argument("-b", "--batch-start", type=int, default=None,
+                        help="批号起始值，不指定时自动从输出目录检测")
 
     args = parser.parse_args()
 
@@ -319,4 +345,5 @@ if __name__ == "__main__":
         stage1_output=args.stage1_output,
         stage2_output=args.stage2_output,
         max_workers=args.workers,
+        batch_start=args.batch_start,
     )

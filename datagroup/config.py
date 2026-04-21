@@ -21,7 +21,7 @@ load_dotenv()
 # API 配置
 API_URL = "https://dashscope.aliyuncs.com/apps/anthropic/v1/messages"
 API_KEY: str = os.environ.get("DASHSCOPE_API_KEY") or ""
-DEFAULT_MODEL = "qwen3.5-flash"
+DEFAULT_MODEL = "qwen3.5-plus"
 
 # 验证配置
 DEFAULT_TOLERANCE = 1e-6

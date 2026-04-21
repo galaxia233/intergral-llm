@@ -175,7 +175,7 @@ def process_md_file(file_path: Path, question_file: Path, question_ref_file: Pat
 
 
 def run_format_pipeline(input_dir: str, output_dir: str = None,
-                        max_workers: int = 32, resume: bool = True) -> Path:
+                        max_workers: int = 8, resume: bool = True) -> Path:
     """
     运行格式化 Pipeline
 
@@ -239,7 +239,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="题目格式化 Pipeline")
     parser.add_argument("input_dir", help="题目 md 文件目录")
     parser.add_argument("-o", "--output-dir", type=str, help="输出目录")
-    parser.add_argument("-w", "--workers", type=int, default=32,
+    parser.add_argument("-w", "--workers", type=int, default=8,
                         help="并发数")
     parser.add_argument("--no-resume", action="store_true",
                         help="不使用断点续跑，从头开始")

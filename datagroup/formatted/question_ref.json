@@ -11294,5 +11294,1700 @@
     },
     "source": "135",
     "id": "4436"
+  },
+  {
+    "question": "26.9 An amount of money $y_0$ earning $r$ percent per year is compounded continuously (that is, assume that it is compounded $n$ times per year, and then let $n$ approach infinity). How much is available after $k$ years?",
+    "answer": "$y_0e^{0.01rk}$",
+    "solution": "By Problem 26.8, $y = y_0(1 + r / 100n)^{kn}$ if the money is compounded $n$ times per year. If we let $n$ approach infinity, we get $\\lim_{n\\to \\infty}y_0(1 + r / 100n)^{kn} = y_0\\lim_{n\\to +\\infty}(1 + r / 100n)^{nk} = y_0[\\lim_{h\\to +\\infty}(1 + r / 100n)^n ]^k = y_0(e^{r / 100})^k = y_0e^{0.01rk}$ . (Here we have used Problem 24.74.) Thus, the money grows exponentially, with growth constant $K = 0.01r$ .",
+    "reference": [
+      "26.8",
+      "24.74"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "004",
+    "id": "26_9"
+  },
+  {
+    "question": "32.3 For what values of $p$ is $\\int_1^\\infty (1 / x)^p dx$ convergent?",
+    "answer": "$p > 1$",
+    "solution": "By Problem 32.1, we know that the integral is divergent when $p = 1$ .\n\n$$\n\\int_ {1} ^ {\\infty} \\frac {1}{x ^ {p}} d x = \\lim  _ {v \\rightarrow + \\infty} \\int_ {1} ^ {v} \\frac {1}{x ^ {p}} d x = \\lim  _ {v \\rightarrow + \\infty} \\left(- \\frac {1}{p - 1} \\cdot \\frac {1}{x ^ {p - 1}}\\right) \\Bigg ] _ {1} ^ {v} = \\lim  _ {v \\rightarrow + \\infty} \\left[ - \\frac {1}{p - 1} \\left(\\frac {1}{v ^ {p - 1}} - 1\\right)\\right]\n$$\n\nThe last limit is $1 / (p - 1)$ if $p > 1$ , and $+\\infty$ if $p < 1$ . Thus, the integral converges if and only if $p > 1$ .",
+    "reference": [
+      "32.1"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "011",
+    "id": "32_3"
+  },
+  {
+    "question": "28.31 Use the solution to Problem 28.30 to establish the following bounds on $e$ : $2.5 \\leq e \\leq 2.823$ .",
+    "answer": "$2.5 \\leq e \\leq 2.823$",
+    "solution": "In Problem 28.30, it was shown that $\\int_{1}^{e}\\left(\\frac{\\ln x}{x}\\right)^{2}dx = 2 - 5 / e$ . By Problem 24.59, $1 / e$ is the maximum value of $\\ln x / x$ . Hence, $\\int_{1}^{e}\\left(\\frac{\\ln x}{x}\\right)^{2}dx\\leq \\frac{e - 1}{e^{2}}$ . {In general, $\\int_{a}^{b}f(x)dx\\leq M(b - a)$ if $M$ is an upper bound of $f(x)$ on $[a,b]$ .} Thus, $0\\leq 2 - 5 / e\\leq (e - 1) / e^2$ . The left-hand inequality gives $e\\geq 2.5$ . The right-hand inequality gives $2e^{2} - 5e\\leq e - 1$ , $2e^{2} - 6e + 1\\leq 0$ . Since the roots of $2x^{2} - 6x + 1 = 0$ are $(3\\pm \\sqrt{7}) / 2$ , $e\\leq (3 + \\sqrt{7}) / 2 < 2.823$ (since $\\sqrt{7} < 2.646$ ).",
+    "reference": [
+      "28.30",
+      "24.59"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "004",
+    "id": "28_31"
+  },
+  {
+    "question": "34.82 Show that the principal unit normal vector $\\mathbf{N}(t)$ (Problem 34.81) points in the direction in which $\\mathbf{T}(t)$ is turning as $t$ increases.",
+    "answer": "$\\mathbf{N}(t)$ points in the direction in which $\\mathbf{T}(t)$ is turning",
+    "solution": "Since $\\mathbf{N}(t)$ has the same direction as $\\mathbf{T}'$ , we need prove the result only for $\\mathbf{T}'$ . $\\mathbf{T}'(t) = \\lim_{\\Delta t \\to 0} \\frac{\\mathbf{T}(t + \\Delta t) - \\mathbf{T}(t)}{\\Delta t} = \\lim_{\\Delta t \\to 0} \\frac{\\Delta \\mathbf{T}}{\\Delta t}$ . For small $\\Delta t, \\Delta \\mathbf{T} / \\Delta t$ has approximately the same direction as $\\mathbf{T}'(t)$ , and, when $\\Delta t > 0$ , $\\Delta \\mathbf{T}$ and $\\Delta \\mathbf{T} / \\Delta t$ have the same direction. If we place $\\mathbf{T}(t + \\Delta t)$ and $\\mathbf{T}(t)$ with their tails at the origin, $\\Delta \\mathbf{T}$ is the vector from the head of $\\mathbf{T}(t)$ to the head of $\\mathbf{T}(t + \\Delta t)$ . Figure 34-16 shows that $\\Delta \\mathbf{T}$ points in the direction in which $\\mathbf{T}$ is turning (to the right in this case).",
+    "reference": [
+      "34.81"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "mix",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "015",
+    "id": "34_40"
+  },
+  {
+    "question": "35.57 Find the area inside one loop of the lemniscate $r^2 = \\cos 2\\theta$",
+    "answer": "\\frac{1}{2}",
+    "solution": "From Problem 35.32, we see that the area of one loop is double the area in the first quadrant. The latter area is swept out from $\\theta = 0$ to $\\theta = \\pi /4$ . Hence, the required area is $2\\cdot \\frac{1}{2}\\int_{0}^{\\pi /4}\\cos 2\\theta d\\theta = \\frac{1}{2}\\sin 2\\theta \\big]_{0}^{\\pi /4} = \\frac{1}{2} (1 - 0) = \\frac{1}{2}$ .",
+    "reference": [
+      "35.32"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "015",
+    "id": "35_57"
+  },
+  {
+    "question": "35.55 Find the area enclosed by the cardioid $r = 1 + \\cos \\theta$",
+    "answer": "\\frac {3 \\pi}{2}",
+    "solution": "As was shown in Problem 35.30, the curve is traced out for $\\theta = 0$ to $\\theta = 2\\pi$ . The general formula for the area is $\\frac{1}{2}\\int_{\\theta_1}^{\\theta_2}r^2 d\\theta$ . In this case, we have\n\n$$\n\\begin{array}{l} A = \\frac {1}{2} \\int_ {0} ^ {2 \\pi} (1 + \\cos \\theta) ^ {2} d \\theta = \\frac {1}{2} \\int_ {0} ^ {2 \\pi} (1 + 2 \\cos \\theta + \\cos^ {2} \\theta) d \\theta = \\frac {1}{2} \\int_ {0} ^ {2 \\pi} [ 1 + 2 \\cos \\theta + \\frac {1}{2} (1 + \\cos 2 \\theta) ] d \\theta \\\\ = \\frac {1}{2} (\\theta + 2 \\sin \\theta + \\frac {1}{2} (\\theta + \\frac {1}{2} \\sin 2 \\theta)) ] _ {0} ^ {2 \\pi} = \\frac {1}{2} (3 \\pi) = \\frac {3 \\pi}{2} \\\\ \\end{array}\n$$",
+    "reference": [
+      "35.30"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "015",
+    "id": "35_55"
+  },
+  {
+    "question": "35.82 Find the arc length of $r = \\cos^2 (\\theta / 2)$ (Problem 35.45).",
+    "answer": "4",
+    "solution": "\\begin{array}{l} \\text {I} d r / d \\theta = - \\cos (\\theta / 2) \\sin (\\theta / 2). \\quad \\text {T h e n} \\quad L = \\int_ {0} ^ {2 \\pi} \\sqrt {\\cos^ {4} (\\theta / 2) + \\cos^ {2} (\\theta / 2) \\sin^ {2} (\\theta / 2)} d \\theta = \\int_ {0} ^ {2 \\pi} | \\cos (\\theta / 2) | d \\theta = \\\\ \\int_ {0} ^ {\\pi} \\cos (\\theta / 2) d \\theta - \\int_ {\\pi} ^ {2 \\pi} \\cos (\\theta / 2) d u = 2 \\sin (\\theta / 2) ] _ {0} ^ {\\pi} - 2 \\sin (\\theta / 2) ] _ {\\pi} ^ {2 \\pi} = 2 [ (1 - 0) - (0 - 1) ] = 4. \\end{array}",
+    "reference": [
+      "35.45"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "015",
+    "id": "35_82"
+  },
+  {
+    "question": "42.65 If $u = x^{2} - 2y^{2} + z^{3}$ and $x = \\sin t, y = e^{t}, z = 3t,$ find $du / dt$",
+    "answer": "\\sin 2 t - 4 e ^ {2 t} + 81 t ^ {2}",
+    "solution": "By the formula of Problem 42.64,\n\n$$\n\\frac {d u}{d t} = \\frac {\\partial u}{\\partial x} \\frac {d x}{d t} + \\frac {\\partial u}{\\partial y} \\frac {d y}{d t} + \\frac {\\partial u}{\\partial z} \\frac {d z}{d t} = 2 x \\cos t - 4 y e ^ {t} + 3 z ^ {2} (3) = 2 \\sin t \\cos t - 4 e ^ {t} \\left(e ^ {t}\\right) + 9 (3 t) ^ {2} = \\sin 2 t - 4 e ^ {2 t} + 8 1 t ^ {2}.\n$$",
+    "reference": [
+      "42.64"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "mix",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "019",
+    "id": "42_64"
+  },
+  {
+    "question": "46.59 Solve $y^{\\prime \\prime} - 5y^{\\prime} + 4y = \\sin 3x.$",
+    "answer": "\\frac{1}{50}(3\\cos 3x - \\sin 3x) + C_1e^x + C_2e^{4x}",
+    "solution": "A general solution of the homogeneous equation $y'' - 5y' + 4y = 0$ was found in Problem 46.50; it is $C_1e^x + C_2e^{4x}$ . Let us guess that a particular solution of the given equation is $y = A\\sin 3x + B\\cos 3x$ . (An alternative to guessing is provided by Problem 46.65.) Then $y' = 3A\\cos 3x - 3B\\sin 3x$ and $y'' = -9A\\sin 3x - 9B\\cos 3x$ . So $\\sin 3x = (-9A\\sin 3x - 9B\\cos 3x) - 5(3A\\cos 3x - 3B\\sin 3x) + 4(A\\sin 3x + B\\cos 3x)$ . Equating coefficients of $\\sin 3x$ and $\\cos 3x$ , we get $-9A + 15B + 4A = 1$ and $-9B - 15A + 4B = 0$ , or, more simply, $-5A + 15B = 1$ and $-15A - 5B = 0$ . Hence, solving simultaneously, we get $-50A = 1$ , $A = -\\frac{1}{50}$ , and $B = \\frac{3}{50}$ . Therefore, $y = \\frac{1}{50}(3\\cos 3x - \\sin 3x)$ .",
+    "reference": [
+      "46.50",
+      "46.65"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "ode",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "024",
+    "id": "46_59"
+  },
+  {
+    "question": "44.84 Find the center of mass of the first octant of the ball of radius $a$ , $x^2 + y^2 + z^2 \\leq a^2$ , if the density is numerically equal to $z$ .",
+    "answer": "\\bar{x} = \\frac{16a}{15\\pi}, \\bar{y} = \\frac{16a}{15\\pi}",
+    "solution": "The mass is one-eighth of that of the ball in Problem 44.77, or $\\pi a^4 /16$ . The moment about the $xz$ -plane is\n\n$$\n\\begin{array}{l} M _ { x z } = \\int_ {0} ^ {\\pi / 2} \\int_ {0} ^ {\\pi / 2} \\int_ {0} ^ {a} \\underbrace {\\rho \\sin \\phi \\sin \\theta} _ {y} \\cdot \\underbrace {\\rho \\cos \\phi} _ {z} \\cdot \\rho^ {2} \\sin \\phi d \\rho d \\phi d \\theta = \\int_ {0} ^ {\\pi / 2} \\int_ {0} ^ {\\pi / 2} \\rho^ {5} \\sin^ {2} \\phi \\cos \\phi \\sin \\theta ] _ {0} ^ {a} d \\phi d \\theta \\\\ = \\frac {a ^ {5}}{5} \\int_ {0} ^ {\\pi / 2} \\frac {1}{3} \\sin^ {3} \\phi \\sin \\theta \\bigg ] _ {0} ^ {\\pi / 2} d \\theta = \\frac {a ^ {5}}{5} \\int_ {0} ^ {\\pi / 2} \\frac {1}{3} \\sin \\theta d \\theta = \\frac {a ^ {5}}{1 5} (- \\cos \\theta) \\bigg ] _ {0} ^ {\\pi / 2} = \\frac {a ^ {5}}{1 5}. \\\\ \\end{array}\n$$\n\nHence, $\\bar{y} = \\frac{M_{xz}}{M} = \\frac{a^5 / 15}{\\pi a^4 / 16} = \\frac{16a}{15\\pi}$ . By symmetry, $\\bar{x} = \\frac{16a}{15\\pi}$ . The moment about the $xy$ -plane is $M_{xy} = \\int_0^{\\pi /2}\\int_0^{\\pi /2}\\int_0^a\\rho^2\\cos^2\\theta \\cdot \\rho^2\\sin \\phi d\\rho d\\phi d\\theta = \\int_0^{\\pi /2}\\int_0^{\\pi /2}\\frac{1}{5} a^5\\cos^2\\phi \\sin \\theta d\\phi d\\theta = \\frac{a^5}{5}\\int_0^{\\pi /2}\\left(-\\frac{\\cos^3\\phi}{3}\\right",
+    "reference": [
+      "44.77"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "022",
+    "id": "44_85"
+  },
+  {
+    "question": "46.64 Solve $y^{\\prime \\prime} + Ay = B$，where $A > 0$",
+    "answer": "$B / A + C_{1}\\cos \\sqrt{A} x + C_{2}\\sin \\sqrt{A} x$",
+    "solution": "The general solution of the corresponding homogeneous equation is $y_{g} = C_{1}\\cos \\sqrt{A} x + C_{2}\\sin \\sqrt{A} x$ , by Problem 46.55. A particular solution is $y_{p} = B / A$ . Hence, the general solution is $B / A + C_{1}\\cos \\sqrt{A} x + C_{2}\\sin \\sqrt{A} x$ .",
+    "reference": [
+      "46.55"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "ode",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "024",
+    "id": "46_64"
+  },
+  {
+    "question": "【1827】 $\\int \\cos (\\ln x)\\mathrm{d}x.$\n\n提示 利用 1826 题的结果.",
+    "answer": "\\frac {x}{2} [ \\sin (\\ln x) + \\cos (\\ln x) ] + C",
+    "solution": "解 $\\int \\cos (\\ln x)\\mathrm{d}x = x\\cos (\\ln x) + \\int \\sin (\\ln x)\\mathrm{d}x = x\\cos (\\ln x) + \\frac{x}{2}\\left[\\sin (\\ln x) - \\cos (\\ln x)\\right]^{*}) + C$\n\n$$\n= \\frac {x}{2} [ \\sin (\\ln x) + \\cos (\\ln x) ] + C.\n$$\n\n\\*) 利用 1826 题的结果.",
+    "reference": [
+      "1826"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": true,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "042",
+    "id": "1827"
+  },
+  {
+    "question": "【1912】 $\\int \\frac{x^{3n - 1}}{(x^{2n} + 1)^2}\\mathrm{d}x.$\n\n提示 当 $n \\neq 0$ 时，经恒等变形后可利用 1817 题的结果。当 $n = 0$ 时，易获解",
+    "answer": "当 $n \\neq 0$ 时，\\frac {1}{2 n} \\left[ \\arctan \\left(x ^ {n}\\right) - \\frac {x ^ {n}}{x ^ {2 n} + 1} \\right] + C; 当 $n = 0$ 时，\\frac{1}{4}\\ln |x| + C",
+    "solution": "解当 $n\\neq 0$ 时，\n\n$$\n\\begin{array}{l} \\int \\frac {x ^ {3 n - 1}}{(x ^ {2 n} + 1) ^ {2}} d x = \\int \\frac {x ^ {2 n} x ^ {n - 1} d x}{(x ^ {2 n} + 1) ^ {2}} = \\frac {1}{n} \\int \\frac {x ^ {2 n} d (x ^ {n})}{(x ^ {2 n} + 1) ^ {2}} = \\frac {1}{n} \\int \\frac {(x ^ {2 n} + 1) - 1}{(x ^ {2 n} + 1) ^ {2}} d (x ^ {n}) \\\\ = \\frac {1}{n} \\int \\frac {\\mathrm {d} \\left(x ^ {n}\\right)}{x ^ {2 n} + 1} - \\frac {1}{n} \\int \\frac {\\mathrm {d} \\left(x ^ {n}\\right)}{\\left(x ^ {2 n} + 1\\right) ^ {2}} = \\frac {1}{n} \\arctan \\left(x ^ {n}\\right) - \\frac {1}{n} \\left[ \\frac {x ^ {n}}{2 \\left(x ^ {2 n} + 1\\right)} + \\frac {1}{2} \\arctan \\left(x ^ {n}\\right) \\right] ^ {*}) + C \\\\ = \\frac {1}{2 n} \\left[ \\arctan \\left(x ^ {n}\\right) - \\frac {x ^ {n}}{x ^ {2 n} + 1} \\right] + C. \\\\ \\end{array}\n$$\n\n当 $n = 0$ 时， $\\int \\frac{x^{3n - 1}}{(x^{2n} + 1)^2}\\mathrm{d}x = \\frac{1}{4}\\int \\frac{\\mathrm{d}x}{x} = \\frac{1}{4}\\ln |x| + C.$\n\n\\*) 利用 1817 题的结果.",
+    "reference": [
+      "1817"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": true,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "043",
+    "id": "1912"
+  },
+  {
+    "question": "【2008】+ $\\int \\frac{\\mathrm{d}x}{\\cos x\\sqrt[3]{\\sin^2x}}.$",
+    "answer": "\\frac {1}{4} \\ln \\frac {(1 + t) ^ {3} (1 - t ^ {3})}{(1 - t) ^ {3} (1 + t ^ {3})} + \\frac {\\sqrt {3}}{2} \\arctan \\left(\\frac {t \\sqrt {3}}{1 - t ^ {2}}\\right) + C \\quad (\\text{其中 } t = \\sqrt[3]{\\sin x})",
+    "solution": "解设 $t = \\sqrt[3]{\\sin x}$，不妨只考虑 $\\cos x$ 为正的情况，即 $-\\frac{\\pi}{2} < x < \\frac{\\pi}{2}$ 且 $x \\neq 0$，则有\n\n$$\n\\mathrm {d} x = \\frac {3 t ^ {2}}{\\sqrt {1 - t ^ {6}}} \\mathrm {d} t, \\quad \\cos x = \\sqrt {1 - t ^ {6}}.\n$$\n\n代人得 $\\int \\frac{\\mathrm{d}x}{\\cos x\\sqrt[3]{\\sin^2x}} = 3\\int \\frac{\\mathrm{d}t}{1 - t^6} = \\frac{3}{2}\\int \\left(\\frac{1}{1 - t^3} +\\frac{1}{1 + t^3}\\right)\\mathrm{d}t = \\frac{1}{2}\\int \\left(\\frac{1}{1 - t} +\\frac{t + 2}{1 + t + t^2}\\right)\\mathrm{d}t + \\frac{3}{2}\\int \\frac{\\mathrm{d}t}{1 + t^3}$\n\n$$\n\\begin {array}{l} = - \\frac {1}{2} \\ln | 1 - t | + \\frac {1}{4} \\int \\frac {2 t + 1}{t ^ {2} + t + 1} d t + \\frac {3}{4} \\int \\frac {d (t + \\frac {1}{2})}{(t + \\frac {1}{2}) ^ {2} + \\frac {3}{4}} + \\frac {3}{2} \\left[ \\frac {1}{6} \\ln \\frac {(t + 1) ^ {2}}{t ^ {2} - t + 1} + \\frac {1}{\\sqrt {3}} \\arctan \\frac {2 t - 1}{\\sqrt {3}} \\right] ^ {*}) + C \\\\ = \\frac {1}{4} \\ln \\frac {(t + 1) ^ {2} (t ^ {2} + t + 1)}{(1 - t) ^ {2} (t ^ {2} - t + 1)} + \\frac {\\sqrt {3}}{2} \\left[ \\arctan \\left(\\frac {2 t + 1}{\\sqrt {3}}\\right) + \\arctan \\left(\\frac {2 t - 1}{\\sqrt {3}}\\right) \\right] + C \\\\ = \\frac {1}{4} \\ln \\frac {(1 + t) ^ {3} (1 - t ^ {3})}{(1 - t) ^ {3} (1 + t ^ {3})} + \\frac {\\sqrt {3}}{2} \\arctan \\left(\\frac {t \\sqrt {3}}{1 - t ^ {2}}\\right) + C, \\\\ \\end {array},\n$$\n\n其中 $t = \\sqrt[3]{\\sin x}$",
+    "reference": [
+      "1881"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": true,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "046",
+    "id": "2008"
+  },
+  {
+    "question": "【2204】设函数 $f(x)$ 在闭区间 $[A, B]$ 上可积，证明：函数 $f(x)$ 有积分连续性，即\n\n$$\n\\lim  _ {h \\rightarrow 0} \\int_ {a} ^ {b} | f (x + h) - f (x) | d x = 0,\n$$\n\n其中 $[a,b]\\subset [A,B]$",
+    "answer": "$\\lim_{h\\to 0}\\int_{a}^{b}|f(x + h) - f(x)|\\mathrm{d}x = 0$",
+    "solution": "证 证法 1：\n\n不妨设 $A < a, b < B$ . 由于 $f(x)$ 在 $[A, B]$ 可积，故对任给 $\\epsilon > 0$ ，存在 $\\eta > 0$ ，使对 $[A, B]$ 的任何分法，只要 $\\max |\\Delta x_i| < \\eta$ ，就恒有\n\n$$\n\\sum_ {i} \\omega_ {i} \\Delta x _ {i} <   \\varepsilon ;\n$$\n\n显然，对 $[A, B]$ 的任一子区间 $[A', B']$ 的任何分法，只要 $\\max |\\Delta x_i| < \\eta$ ，也有\n\n$$\n\\sum_ {i ^ {\\prime}} \\omega_ {i ^ {\\prime}} (f) \\Delta x _ {i ^ {\\prime}} <   \\varepsilon . \\tag {1}\n$$\n\n今设 $0 < h < \\delta = \\min \\left\\{\\frac{\\eta}{2}, \\frac{B - b}{3}\\right\\}$ , 则对于 $h$ , 存在正整数 $n = n(h)$ , 使有 $a + (2n - 2)h < b \\leqslant a + 2nh < a + (2n + 1)h < B$ . 用 $\\omega_{i}$ 表 $f(x)$ 在 $[a + ih, a + (i + 2)h]$ 上的振幅，则\n\n$$\n\\begin{array}{l} \\int_ {a} ^ {b} | f (x + h) - f (x) | \\mathrm {d} x \\leqslant \\int_ {a} ^ {a + 2 n h} | f (x + h) - f (x) | \\mathrm {d} x = \\sum_ {i = 0} ^ {2 n - 1} \\int_ {a + i h} ^ {a + (i + 1) h} | f (x + h) - f (x) | \\mathrm {d} x \\leqslant \\sum_ {i = 0} ^ {2 n - 1} \\omega_ {i} h \\\\ = \\frac {1}{2} \\sum_ {i = 0} ^ {n - 1} \\omega_ {2 i} 2 h + \\frac {1}{2} \\sum_ {i = 0} ^ {n - 1} \\omega_ {2 i + 1} 2 h. \\\\ \\end{array}\n$$\n\n显然， $\\sum_{i = 0}^{n - 1}\\omega_{2i}2h$ 是对于区间 $[a,a + 2nh]$ 的分法 $a < a + 2h < a + 4h < \\dots < a + 2nh$ 所作的 (1) 式中的和，而 $\\sum_{i = 0}^{n - 1}\\omega_{2i + 1}2h$ 是对于区间 $[a + h,a + (2n + 1)h]$ 的分法 $a + h < a + 3h < a + 5h < \\dots < a + (2n + 1)h$ 所作的 (1) 式中的和。故\n\n$$\n\\sum_ {i = 0} ^ {n - 1} \\omega_ {2 i} 2 h <   \\varepsilon , \\quad \\sum_ {i = 0} ^ {n - 1} \\omega_ {2 i + 1} 2 h <   \\varepsilon .\n$$\n\n从而， $\\int_{a}^{b}|f(x + h) - f(x)|\\mathrm{d}x <   \\frac{\\varepsilon}{2} +\\frac{\\varepsilon}{2} = \\varepsilon .$\n\n由此可知 $\\lim_{h\\to 0 + }\\int_{a}^{b}|f(x + h) - f(x)|\\mathrm{d}x = 0.$\n\n同理可证 $\\lim_{h\\to 0^{-}}\\int_{a}^{b}|f(x + h) - f(x)|\\mathrm{d}x = 0.$\n\n于是， $\\lim_{h\\to 0}|f(x + h) - f(x)|\\mathrm{d}x = 0.$\n\n证法 2：\n\n由 2199 题的结果可知：对于任意给定的 $\\varepsilon > 0$ ，由于 $f(x)$ 在 $[A, B]$ 上可积，故存在 $[A, B]$ 上的连续函数 $\\varphi(x)$ ，使\n\n$$\n\\int_ {A} ^ {B} | f (x) - \\varphi (x) | d x <   \\frac {\\varepsilon}{4}.\n$$\n\n由于 $\\varphi (x)$ 在 $[A,B]$ 上一致连续，故存在 $\\delta >0$ ，使当 $|x^{\\prime} - x^{\\prime \\prime}| <   \\delta$ （ $x^{\\prime}\\in [A,B],x^{\\prime \\prime}\\in [A,B])$ 时，恒有\n\n$$\n\\left| \\varphi \\left(x ^ {\\prime}\\right) - \\varphi \\left(x ^ {\\prime \\prime}\\right) \\right| <   \\frac {\\varepsilon}{2 (b - a)}.\n$$\n\n于是，当 $|h| < \\delta$ 时，\n\n$$\n\\begin{array}{l} \\int_ {a} ^ {b} | f (x + h) - f (x) | \\mathrm {d} x \\leqslant \\int_ {a} ^ {b} | f (x + h) - \\varphi (x + h) | \\mathrm {d} x + \\int_ {a} ^ {b} | \\varphi (x + h) - \\varphi (x) | \\mathrm {d} x + \\int_ {a} ^ {b} | f (x) - \\varphi (x) | \\mathrm {d} x \\\\ \\leqslant 2 \\int_ {A} ^ {B} | f (x) - \\varphi (x) | d x + \\int_ {a} ^ {b} | \\varphi (x + h) - \\varphi (x) | d x <   2 \\frac {\\varepsilon}{4} + \\frac {\\varepsilon}{2 (b - a)} (b - a) = \\varepsilon . \\\\ \\end{array}\n$$\n\n故 $\\lim_{h\\to 0}\\int_{a}^{b}|f(x + h) - f(x)|\\mathrm{d}x = 0.$",
+    "reference": [
+      "2199"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "050",
+    "id": "2204"
+  },
+  {
+    "question": "【2263】求积分 $\\int_0^\\pi \\frac{x\\sin x}{1 + \\cos^2x}\\mathrm{d}x.$",
+    "answer": "\\frac{\\pi^{2}}{4}",
+    "solution": "$\\int_{0}^{\\pi}\\frac{x\\sin x}{1 + \\cos^{2}x}\\mathrm{d}x = \\frac{\\pi}{2}\\int_{0}^{\\pi}\\frac{\\sin x}{1 + \\cos^{2}x}\\mathrm{d}x^{*}) = \\frac{\\pi}{2} [-\\arctan (\\cos x)]\\Bigg|_{0}^{\\pi} = \\frac{\\pi^{2}}{4}.$\n\n\\*) 利用 2257 题 (2) 结果.",
+    "reference": [
+      "2257"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2263"
+  },
+  {
+    "question": "【2264】设 $f(x) = \\frac{(x + 1)^2(x - 1)}{x^3(x - 2)}$ ，求积分 $\\int_{-1}^{3}\\frac{f'(x)}{1 + f^2(x)}\\mathrm{d}x.$\n\n提示 参看 2217 题后面所加的注意.",
+    "answer": "\\arctan \\frac{32}{27} - 2\\pi",
+    "solution": "解 $\\int_{-1}^{3}\\frac{f'(x)}{1 + f^2(x)}\\mathrm{d}x = \\int_{-1}^{0}\\frac{f'(x)}{1 + f^2(x)}\\mathrm{d}x + \\int_{0}^{2}\\frac{f'(x)}{1 + f^2(x)}\\mathrm{d}x + \\int_{2}^{3}\\frac{f'(x)}{1 + f^2(x)}\\mathrm{d}x$\n\n$$\n\\begin{array}{l} = \\arctan f (x) \\left| \\begin{array}{l} 0 \\\\ - 1 \\end{array} + \\arctan f (x) \\right| \\left| \\begin{array}{l} 2 \\\\ 0 \\end{array} + \\arctan f (x) \\right| _ {2} ^ {3} \\\\ = \\left(- \\frac {\\pi}{2} - 0\\right) ^ {*}) + \\left(- \\frac {\\pi}{2} - \\frac {\\pi}{2}\\right) + \\left(\\arctan \\frac {4 ^ {2} \\cdot 2}{3 ^ {3} \\cdot 1} - \\frac {\\pi}{2}\\right) \\\\ = \\arctan \\frac {3 2}{2 7} - 2 \\pi . \\\\ \\end{array}\n$$\n\n\\*) 参看 2217 题后的注意.",
+    "reference": [
+      "2217"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2264"
+  },
+  {
+    "question": "【2276】 $\\int_{0}^{2\\pi}\\frac{\\mathrm{d}x}{\\sin^4x + \\cos^4x}.$",
+    "answer": "$2\\pi \\sqrt{2}$",
+    "solution": "提示 注意 $\\int_{0}^{2\\pi}\\frac{\\mathrm{d}x}{\\sin^4x + \\cos^4x} = 8\\int_{0}^{\\frac{\\pi}{4}}\\frac{\\mathrm{d}x}{\\sin^4x + \\cos^4x}$ 并利用 2035 题的结果.\n\n解 $\\int_{0}^{2\\pi}\\frac{\\mathrm{d}x}{\\sin^4x + \\cos^4x} = 8\\int_{0}^{\\frac{\\pi}{4}}\\frac{\\mathrm{d}x}{\\sin^4x + \\cos^4x} = \\frac{1}{\\sqrt{2}}\\arctan \\left(\\frac{\\tan 2x}{\\sqrt{2}}\\right)^{*})\\Bigg|_{0}^{2\\pi} = 2\\pi \\sqrt{2}.$\n\n\\*) 利用 2035 题的结果.",
+    "reference": [
+      "2035"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2276"
+  },
+  {
+    "question": "【2277】$\\int_0^{\\frac{\\pi}{2}}\\sin x\\sin 2x\\sin 3x\\mathrm{d}x.$",
+    "answer": "\\frac{1}{6}",
+    "solution": "提示 同 1167 题.\n\n解 $\\sin x\\sin 2x\\sin 3x = \\frac{1}{2} (\\cos 2x - \\cos 4x)\\sin 2x = \\frac{1}{4}\\sin 4x - \\frac{1}{4} (\\sin 6x - \\sin 2x).$\n\n于是，$\\int_0^{\\frac{\\pi}{2}}\\sin x\\sin 2x\\sin 3x\\mathrm{d}x = \\left(-\\frac{1}{16}\\cos 4x + \\frac{1}{24}\\cos 6x - \\frac{1}{8}\\cos 2x\\right)\\Bigg|_{0}^{\\frac{\\pi}{2}} = \\frac{1}{6}.$",
+    "reference": [
+      "1167"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": true,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2277"
+  },
+  {
+    "question": "【2280】 $\\int_0^{\\ln 2}\\mathrm{sh}^4 x\\mathrm{d}x.$\n\n提示 利用 1761 题的结果.",
+    "answer": "\\frac{3}{8} \\ln 2 - \\frac{225}{1024}",
+    "solution": "解 $\\int_0^{\\ln 2}\\mathrm{sh}^4 x\\mathrm{d}x = \\int_0^{\\ln 2}\\mathrm{sh}^2 x(\\mathrm{ch}^2 x - 1)\\mathrm{d}x = \\frac{1}{4}\\int_0^{\\ln 2}\\mathrm{sh}^2 2x\\mathrm{d}x - \\int_0^{\\ln 2}\\mathrm{sh}^2 x\\mathrm{d}x$\n\n$$\n= \\frac {1}{4} \\left(- \\frac {x}{2} + \\frac {1}{8} \\operatorname {s h} 4 x\\right) ^ {*}) \\left| _ {0} ^ {\\ln 2} - \\left(- \\frac {x}{2} + \\frac {1}{4} \\operatorname {s h} 2 x\\right) ^ {*}) \\right| _ {0} ^ {\\ln 2} = \\frac {3}{8} \\ln 2 - \\frac {2 2 5}{1 0 4 2}.\n$$\n\n\\*) 利用 1761 题的结果.",
+    "reference": [
+      "1761"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2280"
+  },
+  {
+    "question": "【2279】 $\\int_0^\\pi \\mathrm{e}^x\\cos^2 x\\mathrm{d}x.$\n\n提示 注意 $\\cos^2 x = \\frac{1 + \\cos 2x}{2}$ , 并利用 1828 题的结果.",
+    "answer": "\\frac{3}{5} (\\mathrm{e}^\\pi -1)",
+    "solution": "解 $\\int_0^\\pi \\mathrm{e}^x\\cos^2 x\\mathrm{d}x = \\int_0^\\pi \\frac{\\mathrm{e}^x(1 + \\cos 2x)}{2}\\mathrm{d}x = \\frac{\\mathrm{e}^x}{2} +\\frac{\\mathrm{e}^x}{10} (\\cos 2x + 2\\sin 2x)^*)\\Bigg|_0^\\pi = \\frac{3}{5} (\\mathrm{e}^\\pi -1).$\n\n\\*) 利用 1828 题的结果.",
+    "reference": [
+      "1828"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2279"
+  },
+  {
+    "question": "【2284】 $I_{n} = \\int_{0}^{1}(1 - x^{2})^{n}\\mathrm{d}x.$",
+    "answer": "$2 ^ {2 n} \\frac {(n !) ^ {2}}{(2 n + 1) !}$",
+    "solution": "提示 令 $x = \\sin t$ ，并利用 2282 题的结果，\n\n解设 $x = \\sin t$ ，代人得\n\n$$\nI _ {n} = \\int_ {0} ^ {\\frac {\\pi}{2}} \\cos^ {2 n + 1} t d t = \\frac {(2 n) ! !}{(2 n + 1) ! !} = 2 ^ {2 n} \\frac {(n !) ^ {2}}{(2 n + 1) !}.\n$$",
+    "reference": [
+      "2282"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": true,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2284"
+  },
+  {
+    "question": "【2282】 $I_{n} = \\int_{0}^{\\frac{\\pi}{2}}\\cos^{n}x\\mathrm{d}x.$\n\n提示 令 $\\frac{\\pi}{2} - x = t$ ，并利用 2281 题的结果.",
+    "answer": "与 2281 题的结果相同",
+    "solution": "解设 $\\frac{\\pi}{2} - x = t$ ，则 $\\mathrm{d}x = -\\mathrm{d}t$ ，且 $\\cos x = \\cos \\left(\\frac{\\pi}{2} - t\\right) = \\sin t.$\n\n代入得 $I_{n} = \\int_{0}^{\\frac{\\pi}{2}}\\sin^{n}t\\mathrm{d}t.$\n\n因此，与 2281 题的结果相同",
+    "reference": [
+      "2281"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2282"
+  },
+  {
+    "question": "【2422】 $r = \\frac{p}{1 + \\epsilon \\cos \\varphi} (0 < \\epsilon < 1)$ （椭圆）.",
+    "answer": "\\frac {\\pi p ^ {2}}{(1 - \\varepsilon^ {2}) ^ {\\frac {3}{2}}}",
+    "solution": "解 所求的面积为\n\n$$\nS = 2 \\cdot \\frac {1}{2} \\int_ {0} ^ {\\pi} \\frac {p ^ {2} \\mathrm {d} \\varphi}{(1 + \\varepsilon \\cos \\varphi) ^ {2}} = p ^ {2} \\int_ {0} ^ {\\pi} \\frac {\\mathrm {d} \\varphi}{(1 + \\varepsilon \\cos \\varphi) ^ {2}}.\n$$\n\n设 $\\tan \\frac{\\varphi}{2} = t$，并记 $a^2 = \\frac{1 + \\varepsilon}{1 - \\varepsilon}$，则有\n\n$$\n\\begin{array}{l} \\int \\frac {\\mathrm {d} \\varphi}{(1 + \\varepsilon \\cos \\varphi) ^ {2}} = \\int \\frac {2 (t ^ {2} + 1) \\mathrm {d} t}{(1 - \\varepsilon) ^ {2} (t ^ {2} + a ^ {2}) ^ {2}} = \\frac {2}{(1 - \\varepsilon) ^ {2}} \\int \\frac {\\mathrm {d} t}{t ^ {2} + a ^ {2}} + \\frac {2 (1 - a ^ {2})}{(1 - \\varepsilon) ^ {2}} \\int \\frac {\\mathrm {d} t}{(t ^ {2} + a ^ {2}) ^ {2}} \\\\ = \\frac {2}{a (1 - \\varepsilon) ^ {2}} \\arctan \\frac {t}{a} + \\frac {2 (1 - a ^ {2})}{(1 - \\varepsilon) ^ {2}} \\left\\{\\frac {t}{2 a ^ {2} (t ^ {2} + a ^ {2})} + \\frac {1}{2 a ^ {3}} \\arctan \\frac {t}{a} \\right\\} ^ {*}) + C. \\\\ \\end{array}\n$$\n\n图 4.31\n\n当 $0 \\leqslant \\varphi \\leqslant \\pi$ 时，$0 \\leqslant t < +\\infty$，从而得一广义积分。于是，经计算得\n\n$$\nS = \\left\\{\\frac {\\pi}{a (1 - \\varepsilon) ^ {2}} + \\frac {(1 - a ^ {2}) \\pi}{2 a ^ {3} (1 - \\varepsilon) ^ {2}} \\right\\} p ^ {2} = \\frac {\\pi p ^ {2}}{(1 - \\varepsilon^ {2}) ^ {\\frac {3}{2}}}.\n$$\n\n\\*) 利用 1921 题的递推公式。",
+    "reference": [
+      "1921"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": true,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "054",
+    "id": "2422"
+  },
+  {
+    "question": "【2521】求水对于垂直壁上的压力，这壁的形状为梯形，其下底 $a = 10\\mathrm{m}$ ，上底 $b = 6\\mathrm{m}$ ，高 $h = 5\\mathrm{m}$ ，下底沉没于水面下的距离为 $c = 20\\mathrm{m}$ 。",
+    "answer": "708 \\frac{1}{3} (T)",
+    "solution": "解 取坐标系如图 4.49 所示。$AB$ 所满足的方程为 $$ y = \\frac {4}{5} x - 6. $$ 将区间 [15,20]n 等分，每份长 $\\Delta x = \\frac{5}{n}$ .对应于 $\\Delta x$ 的小条上所受的压力的近似值为 $$ \\left[ \\frac {4}{5} \\left(15 + \\frac {5 i}{n}\\right) - 6 \\right] \\left(15 + \\frac {5 i}{n}\\right) \\frac {5}{n}. $$ 于是，所要求的压力为 $$ P = \\lim _ {n \\rightarrow \\infty} \\sum_ {i = 1 } ^ { n } \\left[ \\frac {4}{5} \\left(15 + \\frac {5 i}{n}\\right) - 6 \\right]\\left(15 + \\frac {5 i}{n}\\right) \\frac {5}{n} = 708 \\frac {1}{3} (T) $$",
+    "reference": [
+      "2185",
+      "2518"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "060",
+    "id": "2521"
+  },
+  {
+    "question": "【2513】求摆线 $x = a(t - \\sin t)$，$y = a(1 - \\cos t)(0\\leqslant t\\leqslant 2\\pi)$ 的第一拱与 $Ox$ 轴所围图形的质心的坐标.",
+    "answer": "(\\pi a, \\frac{5a}{6})",
+    "solution": "解由旋转性知 $\\xi = \\pi a$ 由于面积 $S = 3\\pi a^{2*}$ 及图形 $s$ 绕 $Ox$ 轴旋转而成的曲面包围的体积\n\n$$\nV _ {x} = 5 \\pi^ {2} a ^ {3 * *}),\n$$\n\n利用古尔丹第二定理 $\\star \\star \\star$ ，即得质心 $(\\xi ,\\eta)$ 适合下列关系式\n\n$$\n2 \\pi \\eta S = V _ {x} \\quad \\text {或} \\quad \\eta = \\frac {V _ {x}}{2 \\pi S} = \\frac {5 \\pi^ {2} a ^ {3}}{2 \\pi \\cdot 3 \\pi a ^ {2}} = \\frac {5 a}{6}.\n$$\n\n于是，所求的质心为 $(\\pi a, \\frac{5a}{6})$\n\n\\*) 利用 2413 题的结果.\n\n$\\star \\star$）利用 2480 题 (1) 的结果.\n\n\\*\\*\\*）参看 2506 题.",
+    "reference": [
+      "2413",
+      "2480",
+      "2506"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "059",
+    "id": "2513"
+  },
+  {
+    "question": "【2540】利用公式 $\\frac{\\pi}{4} = \\int_{0}^{1} \\frac{dx}{1 + x^2}$ 计算数 $\\pi$ ，精确到 $10^{-5}$ .",
+    "answer": "3.14159",
+    "solution": "解 利用辛普森公式计算其误差\n\n$$\nR _ {n} (x) = - \\frac {(b - a) ^ {5}}{1 8 0 n ^ {4}} f ^ {(4)} (\\xi) \\quad (a \\leqslant \\xi \\leqslant b).\n$$\n\n现在 $f(x) = \\frac{1}{1 + x^2}$ ，事实上，它是 $y = \\arctan x$ 的导数，因而，\n\n$$\nf ^ {(4)} (x) = (\\arctan x) ^ {(5)}.\n$$\n\n利用第二章 1218 题的结果得知\n\n$$\nf ^ {(4)} (x) = \\frac {2 4}{(1 + x ^ {2}) ^ {\\frac {5}{2}}} \\sin \\left(5 \\arctan \\frac {1}{x}\\right).\n$$\n\n在区间 [0,1] 上， $|f^{(4)}(x)|\\leqslant 24$ ，所以，\n\n$$\n\\left| R _ {n} (x) \\right| \\leqslant \\frac {2 4}{1 8 0 n ^ {4}}.\n$$\n\n要误差小于 0.00001，只要\n\n$$\n\\frac {2 4}{1 8 0 n ^ {4}} <   \\frac {1}{1 0 0 0 0 0},\n$$\n\n即只要取 $n = 12$ ，就有 $\\left|R_{n}\\right| \\leqslant 6.5 \\times 10^{-6}$\n\n其次，我们还取加进近似于函数值的误差，设法使这个新的误差小于 $3.5 \\times 10^{-6}$ ，这样，就能保证总误差小于 $10^{-5}$ 。为了这个目的，只要计算 $\\frac{1}{1 + x^2}$ 的值到六位小数精确到 $0.5 \\times 10^{-6}$ 就够了。\n\n现取 $n = 12$ ，则有\n\n$$\n\\begin{array}{l} x _ {0} = 0, \\quad y _ {0} = 1; \\quad x _ {1} = \\frac {1}{1 2}, \\quad y _ {1} = 0. 9 9 3 1 0 3; \\\\ x _ {2} = \\frac {1}{6}, \\quad y _ {2} = 0. 9 7 2 9 7 3; \\quad x _ {3} = \\frac {1}{4}, \\quad y _ {3} = 0. 9 4 1 1 7 6; \\\\ x _ {4} = \\frac {1}{3}, \\quad y _ {4} = 0. 9 0 0 0 0 0; \\quad x _ {5} = \\frac {5}{1 2}, \\quad y _ {5} = 0. 8 5 2 0 7 1; \\\\ x _ {6} = \\frac {1}{2}, \\quad y _ {6} = 0. 8 0 0 0 0 0; \\quad x _ {7} = \\frac {7}{1 2}, \\quad y _ {7} = 0. 7 4 6 1 1 4; \\\\ x _ {8} = \\frac {2}{3}, \\quad y _ {8} = 0. 6 9 2 3 0 8; \\quad x _ {9} = \\frac {3}{4}, \\quad y _ {9} = 0. 6 4 0 0 0 0; \\\\ x _ {1 0} = \\frac {5}{6}, \\quad y _ {1 0} = 0. 5 9 0 1 6 4; \\quad x _ {1 1} = \\frac {1 1}{1 2}, \\quad y _ {1 1} = 0. 5 4 3 3 9 6; \\\\ x _ {1 2} = 1, \\quad y _ {1 2} = 0. 5 0 0 0 0. \\\\ \\end{array}\n$$\n\n最后得到\n\n$$\n\\begin{array}{l} \\frac {\\pi}{4} = \\int_ {0} ^ {1} \\frac {\\mathrm {d} x}{1 + x ^ {2}} \\approx \\frac {1}{3 6} \\left[ \\left(y _ {0} + y _ {1 2}\\right) + 4 \\left(y _ {1} + y _ {3} + y _ {5} + y _ {7} + y _ {9} + y _ {1 1}\\right) + 2 \\left(y _ {2} + y _ {4} + y _ {6} + y _ {8} + y _ {1 0}\\right) \\right] \\\\ = 0. 7 8 5 3 9 8, \\\\ \\end{array}\n$$\n\n所以， $\\pi \\approx 0.785398\\times 4 = 3.14159,$\n\n精确到 0.00001.",
+    "reference": [
+      "1218"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "062",
+    "id": "2540"
+  },
+  {
+    "question": "【2586】$\\sum_{n = 1}^{\\infty}\\frac{n^{2}}{\\left(2 + \\frac{1}{n}\\right)^{n}}.$\n\n提示 利用柯西判别法及 65 题的结果.",
+    "answer": "收敛",
+    "solution": "解由于\n\n$$\n\\lim  _ {n \\rightarrow \\infty} \\sqrt [ n ]{a _ {n}} = \\lim  _ {n \\rightarrow \\infty} \\sqrt [ n ]{\\frac {n ^ {2}}{\\left(2 + \\frac {1}{n}\\right) ^ {n}}} = \\lim  _ {n \\rightarrow \\infty} \\frac {\\sqrt [ n ]{n} \\sqrt [ n ]{n}}{2 + \\frac {1}{n}} = \\frac {1}{2} <   1,\n$$\n\n故级数$\\sum_{n=1}^{\\infty} \\frac{n^{2}}{\\left(2 + \\frac {1}{n}\\right)^{n}}$收敛.",
+    "reference": [
+      "65"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "sum",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "079",
+    "id": "2586"
+  },
+  {
+    "question": "【2591】证明：若 $\\lim_{n\\to \\infty}\\frac{a_{n + 1}}{a_n} = q(a_n > 0)$ ，则 $a_{n} = o(q_{1}^{n})$ ，其中 $q_{1} > q$",
+    "answer": "$a_{n} = o(q_{1}^{n})$",
+    "solution": "证 由于 $\\lim_{n\\to \\infty}\\frac{a_{n + 1}}{a_n} = q$ ，故利用 141 题的结果，即得 $\\lim_{n\\to \\infty}\\sqrt[n]{a_n} = q.$\n\n令 $\\epsilon = \\frac{1}{2} (q_1 - q) > 0$ ，则由上式知存在 $n_0$ ，使当 $n\\geqslant n_0$ 时，有 $\\left|\\sqrt[n]{a_n} -q\\right| <   \\epsilon$ ，从而有\n\n$$\n\\sqrt [ n ]{a _ {n}} <   q + \\varepsilon = \\lambda q _ {1} \\quad (n \\geqslant n _ {0}),\n$$\n\n其中 $\\lambda = \\frac{q_1 + q}{2q_1} < 1$ 利用 $\\lambda^n = o(1)$ ，即证得 $a_{n} = \\lambda^{n}q_{1}^{n} = o(q_{1}^{n})$",
+    "reference": [
+      "141"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "limit",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "079",
+    "id": "2591"
+  },
+  {
+    "question": "【2661】 $1 - \\frac{1}{2} + \\frac{1}{3} - \\frac{1}{4} + \\frac{1}{5} - \\frac{1}{6} + \\dots$",
+    "answer": "$\\ln 2$",
+    "solution": "证明思路 首先，利用 146 题的结果，有\n\n$$\n\\begin{array}{l} S _ {2 n} = \\left(1 + \\frac {1}{2} + \\frac {1}{3} + \\dots + \\frac {1}{2 n}\\right) - 2 \\left(\\frac {1}{2} + \\frac {1}{4} + \\dots + \\frac {1}{2 n}\\right) = C + \\ln 2 n + \\epsilon_ {2 n} - 2 \\cdot \\frac {1}{2} (C + \\ln n + \\epsilon_ {n}) \\\\ = \\ln 2 + \\varepsilon_ {2 n} - \\varepsilon_ {n}, \\\\ \\end{array}\n$$\n\n故 $\\lim_{n\\to \\infty}S_{2n} = \\ln 2.$\n\n其次，再注意 $S_{2n + 1} = S_{2n} + \\frac{1}{2n + 1}$ 即知 $\\lim_{n\\to \\infty}S_{2n} = \\lim_{n\\to \\infty}S_{2n + 1}$\n\n解考虑部分和 $S_{m}$ .当 $m = 2n$ 时，有\n\n$$\n\\begin{array}{l} S _ {2 n} = 1 - \\frac {1}{2} + \\frac {1}{3} - \\frac {1}{4} + \\dots + \\frac {1}{2 n - 1} - \\frac {1}{2 n} = \\left(1 + \\frac {1}{3} + \\dots + \\frac {1}{2 n - 1}\\right) - \\left(\\frac {1}{2} + \\frac {1}{4} + \\dots + \\frac {1}{2 n}\\right) \\\\ = \\left(1 + \\frac {1}{2} + \\frac {1}{3} + \\dots + \\frac {1}{2 n}\\right) - 2 \\left(\\frac {1}{2} + \\frac {1}{4} + \\dots + \\frac {1}{2 n}\\right) \\\\ = C + \\ln 2 n + \\varepsilon_ {2 n} - 2 \\cdot \\frac {1}{2} (C + \\ln n + \\varepsilon_ {n}) ^ {\\cdot}) = \\ln 2 + \\varepsilon_ {2 n} - \\varepsilon_ {n} = \\ln 2 + O \\left(\\frac {1}{n}\\right), \\\\ \\end{array}\n$$\n\n于是，得 $\\lim_{n\\to \\infty}S_{2n} = \\ln 2$，同样，当 $m = 2n + 1$ 时，也有\n\n$$\n\\lim  _ {n \\rightarrow \\infty} S _ {2 n + 1} = \\lim  _ {n \\rightarrow \\infty} \\left(S _ {2 n} + \\frac {1}{2 n + 1}\\right) = \\ln 2.\n$$\n\n故有 $\\lim_{m\\to \\infty}S_m = \\ln 2$，即原级数收敛，且其和为 $\\ln 2$\n\n\\*) 利用 146 题的结果.",
+    "reference": [
+      "146"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "sum",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "080",
+    "id": "2661"
+  },
+  {
+    "question": "【2606】证明：若 $a_{n} > 0 (n = 1, 2, \\dots)$ ，且 $\\lim_{n \\to \\infty} n\\left(\\frac{a_{n}}{a_{n+1}} - 1\\right) = p$ ，则 $a_{n} = o\\left(\\frac{1}{n^{p-\\epsilon}}\\right) (\\epsilon > 0)$ .",
+    "answer": "$a_{n} = o\\left(\\frac{1}{n^{p-\\epsilon}}\\right)$",
+    "solution": "证下面记 $\\alpha_{n},\\alpha_{n}^{\\prime},\\beta_{n},\\beta_{n}^{\\prime},\\beta_{n}^{\\prime \\prime},\\varepsilon_{n}$ 为无穷小量，即\n\n$$\n\\alpha_ {n} = o (1), \\alpha_ {n} ^ {\\prime} = o (1), \\beta_ {n} = o (1), \\beta_ {n} ^ {\\prime} = o (1), \\beta_ {n} ^ {\\prime \\prime} = o (1), \\epsilon_ {n} = o (1) (n \\rightarrow \\infty).\n$$\n\n由题设知，当 $n \\to \\infty$ 时有 $\\frac{a_n}{a_{n+1}} = 1 + \\frac{p}{n} + \\frac{a_n}{n}$ 。取对数，即得\n\n$$\n\\ln a _ {n} - \\ln a _ {n + 1} = \\ln \\left(1 + \\frac {p}{n} + \\frac {a _ {n}}{n}\\right) = \\frac {p}{n} + \\frac {a _ {n}}{n} + O \\left(\\frac {1}{n ^ {2}}\\right) = \\frac {1}{n} \\left(p + a _ {n} ^ {\\prime}\\right).\n$$\n\n令 $n = 1,2,\\dots ,N - 1$ 并求和，则得\n\n$$\n\\ln a _ {1} - \\ln a _ {N} = \\sum_ {n = 1} ^ {N - 1} \\frac {1}{n} \\left(p + a _ {n} ^ {\\prime}\\right).\n$$\n\n由 143 题（在其中令 $x_{N} = \\sum_{n = 1}^{N - 1}\\frac{\\alpha_{n}^{\\prime}}{n},y_{N} = \\sum_{n = 1}^{N - 1}\\frac{1}{n})$ 知\n\n$$\n\\lim  _ {N \\rightarrow \\infty} \\frac {\\left(\\sum_ {n = 1} ^ {N - 1} \\frac {\\alpha_ {n} ^ {\\prime}}{n}\\right)}{\\left(\\sum_ {n = 1} ^ {N - 1} \\frac {1}{n}\\right)} = \\lim  _ {N \\rightarrow \\infty} \\alpha_ {N} ^ {\\prime} = 0.\n$$\n\n又由 146 题知 $\\sum_{n = 1}^{N - 1}\\frac{1}{n} = C + \\ln (N - 1) + \\varepsilon_n$ ，其中 $C$ 是欧拉常数， $\\varepsilon_N\\to 0$ .于是，令\n\n$$\n\\beta_ {N} = \\frac {\\left(\\sum_ {n = 1} ^ {N - 1} \\frac {\\alpha_ {n} ^ {\\prime}}{n}\\right)}{\\left(\\sum_ {n = 1} ^ {N - 1} \\frac {1}{n}\\right)},\n$$\n\n有\n\n$$\n\\ln a _ {1} - \\ln a _ {N} = (p + \\beta_ {N}) \\sum_ {n - 1} ^ {N - 1} \\frac {1}{n} = (p + \\beta_ {N}) [ C + \\ln (N - 1) + \\varepsilon_ {N} ] = (p + \\beta_ {N}) \\ln (N - 1) + k + \\beta_ {N} ^ {\\prime},\n$$\n\n其中 $k = Cp$ 为常数。于是，\n\n$$\n\\ln a _ {N} = - (p + \\beta_ {N}) \\ln (N - 1) + k ^ {\\prime} - \\beta_ {N} ^ {\\prime},\n$$\n\n其中 $k^{\\prime} = \\ln a_{1} - k$ 为常数，从而，\n\n$$\na _ {N} = \\mathrm {e} ^ {k ^ {\\prime} - \\beta_ {N}} (N - 1) ^ {- (p + \\beta_ {N})} = \\mathrm {e} ^ {k ^ {\\prime} - \\beta_ {N}} \\left(\\frac {N - 1}{N}\\right) ^ {- (p + \\beta_ {N})} N ^ {\\beta_ {N}} N ^ {- p}.\n$$\n\n其中 $\\beta_N'' = -\\beta_N$ 由于 $\\beta_N'' = o(1)$ ，故对于任给的 $\\varepsilon >0$ ，当 $N$ 充分大时，有 $|\\beta_N^{\\prime}| < \\frac{\\varepsilon}{2}$ ，从而， $N^{\\beta_N} < N^{\\frac{\\varepsilon}{2}}$ .再注意到\n\n$$\n\\lim  _ {N \\rightarrow \\infty} \\left(\\frac {N - 1}{N}\\right) ^ {- (p + \\beta_ {N})} = 1,\n$$\n\n即知：当 $N$ 充分大时，有\n\n$$\n0 <   a _ {N} \\leqslant k ^ {\\prime \\prime} N ^ {\\frac {\\varepsilon}{2}} N ^ {- p} = O \\left(\\frac {1}{N ^ {p - \\frac {\\varepsilon}{2}}}\\right),\n$$\n\n其中 $k''$ 是常数。于是，得 $a_{N} = o\\left(\\frac{1}{N^{p - \\varepsilon}}\\right)$ 本题获证",
+    "reference": [
+      "143",
+      "146"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "mix",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "079",
+    "id": "2606"
+  },
+  {
+    "question": "【2723】 $\\sum_{n = 1}^{\\infty}\\frac{n^{p}\\sin nx}{1 + n^{q}}\\quad (q > 0;0 <   x <   \\pi).$",
+    "answer": "当 $q > p + 1$ 时，级数绝对收敛；而当 $p < q \\leqslant p + 1$ 时，级数条件收敛。",
+    "solution": "解由于\n\n$$\n\\frac {\\left| \\sin n x \\right|}{2 n ^ {q - p}} \\leqslant \\left| \\frac {n ^ {p} \\sin n x}{1 + n ^ {q}} \\right| \\leqslant \\frac {1}{n ^ {q - p}},\n$$\n\n故当 $q - p > 1$ 即 $q > p + 1$ 时，级数绝对收敛；而当 $q \\leqslant p + 1$ 时，由绝对值组成的级数发散（理由可参看 2698 题的题解）。\n\n当 $p < q \\leqslant p + 1$ 时，由于对 $0 < x < \\pi$ 内任一固定的 $x$ ， $\\sum_{k=1}^{\\infty} \\sin kx$ 有界，且 $\\frac{n^p}{1 + n^q} \\sim \\frac{1}{n^{q - p}} \\rightarrow 0$ （当 $n \\rightarrow \\infty$ 时），故级数收敛。\n\n当 $q \\leqslant p$ 时，级数显然发散。",
+    "reference": [
+      "2698"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "sum",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "082",
+    "id": "2723"
+  },
+  {
+    "question": "【2979】设 $f(x + \\pi) = f(x)$，则函数 $f(x)$ 在区间 $(-\\pi, \\pi)$ 内的傅里叶级数具有怎样的特性？",
+    "answer": "a_{2n - 1} = b_{2n - 1} = 0 (n = 1,2,\\dots)",
+    "solution": "提示 与 2978 题解法类似，$a_{2n - 1} = b_{2n - 1} = 0 (n = 1,2,\\dots)$\n\n解 与 2978 题解法类似，我们可求得\n\n$$\na _ {n} = \\frac {1}{\\pi} \\int_ {0} ^ {\\pi} [ (- 1) ^ {n} + 1 ] f (x) \\cos n x d x \\quad (n = 0, 1, 2, \\dots).\n$$\n\n因此，有\n\n$$\na _ {2 n - 1} = 0 \\quad (n = 1, 2, 3, \\dots).\n$$\n\n同理",
+    "reference": [
+      "2978"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "084",
+    "id": "2979"
+  },
+  {
+    "question": "【2997】$\\sum_{n = 1}^{\\infty}\\frac{1}{n^2(n + 1)^2}.$\n\n提示 注意 $\\frac{1}{n^2(n + 1)^2} = \\frac{1}{n^2} + \\frac{1}{(n + 1)^2} - \\frac{2}{n(n + 1)}$，并利用 2549 题及 2961 题的结果.",
+    "answer": "$\\frac {\\pi^ {2}}{3} - 3$",
+    "solution": "由 $\\frac{1}{n^2(n + 1)^2} = \\frac{1}{n^2} +\\frac{1}{(n + 1)^2} -\\frac{2}{n(n + 1)}$，得\n\n$$\n\\sum_ {n = 1} ^ {\\infty} \\frac {1}{n ^ {2} (n + 1) ^ {2}} = \\sum_ {n = 1} ^ {\\infty} \\frac {1}{n ^ {2}} + \\sum_ {n = 1} ^ {\\infty} \\frac {1}{(n + 1) ^ {2}} - 2 \\sum_ {n = 1} ^ {\\infty} \\frac {1}{n (n + 1)} = \\frac {\\pi^ {2}}{6} + \\left(\\frac {\\pi^ {2}}{6} - 1\\right) - 2 ^ {*}) = \\frac {\\pi^ {2}}{3} - 3.\n$$\n\n\\*) 所写级数均为绝对收敛级数，并利用 2549 题及 2961 题的结果.",
+    "reference": [
+      "2549",
+      "2961"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "sum",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "085",
+    "id": "2997"
+  },
+  {
+    "question": "【3034】 $\\int_0^1\\ln \\frac{1}{1 - x}\\mathrm{d}x.$",
+    "answer": "1",
+    "solution": "解题思路 利用 2549 题的结果，但必须注意，由于幂级数（收敛半径为 1）\n\n$$\n\\ln (1 - x) = - x - \\frac {x ^ {2}}{2} - \\frac {x ^ {3}}{3} - \\dots\n$$\n\n当 $x = 1$ 时发散，故它在 $0 \\leqslant x \\leqslant 1$ 上逐项积分的合理性要给出证明，详见本题的证明.\n\n解 $\\int_0^1\\ln \\frac{1}{1 - x}\\mathrm{d}x = -\\int_0^1\\ln (1 - x)\\mathrm{d}x = -\\int_0^1\\left(-x - \\frac{x^2}{2} -\\frac{x^3}{3} -\\dots\\right)\\mathrm{d}x$\n\n$$\n\\begin{array}{l} = \\int_ {0} ^ {1} x d x + \\int_ {0} ^ {1} \\frac {x ^ {2}}{2} d x + \\int_ {0} ^ {1} \\frac {x ^ {3}}{3} d x + \\dots^ {*}) \\\\ = \\frac {1}{1 \\cdot 2} + \\frac {1}{2 \\cdot 3} + \\frac {1}{3 \\cdot 4} + \\dots = 1. \\\\ \\end{array}\n$$\n\n\\*) 由于幂级数（收敛半径为 $1)\\ln (1 - x) = -x - \\frac{x^2}{2} -\\frac{x^3}{3} -\\dots$ 当 $x = 1$ 时发散，故它在 $0\\leqslant x\\leqslant 1$ 上逐项积分的合理性要单独证明，今证如下：\n\n对任何 $0 < \\tau < 1$ ，有\n\n$$\n\\int_ {0} ^ {\\tau} \\ln (1 - x) d x = \\int_ {0} ^ {\\tau} \\left(- x - \\frac {x ^ {2}}{2} - \\dots - \\frac {x ^ {n}}{n}\\right) d x + R _ {n}, \\tag {1}\n$$\n\n其中\n\n$$\nR _ {n} = \\int_ {0} ^ {\\tau} \\left(- \\frac {x ^ {n + 1}}{n + 1} - \\frac {x ^ {n + 2}}{n + 2} - \\dots\\right) d x.\n$$\n\n由于 $0 < \\tau < 1$ ，故可在 $0 \\leqslant x \\leqslant \\tau$ 上逐项积分，得\n\n$$\n\\begin{array}{l} 0 > R _ {n} = - \\left[ \\frac {\\tau^ {n + 2}}{(n + 1) (n + 2)} + \\frac {\\tau^ {n + 3}}{(n + 2) (n + 3)} + \\dots \\right] > - \\left[ \\frac {1}{(n + 1) (n + 2)} + \\frac {1}{(n + 2) (n + 3)} + \\dots \\right] \\\\ = - \\left[ \\left(\\frac {1}{n + 1} - \\frac {1}{n + 2}\\right) + \\left(\\frac {1}{n + 2} - \\frac {1}{n + 3}\\right) + \\dots \\right] = - \\frac {1}{n + 1}. \\\\ \\end{array}\n$$\n\n于是，由（1）式知\n\n$$\n\\left| \\int_ {0} ^ {\\tau} \\ln (1 - x) d x - \\left(- \\frac {\\tau^ {2}}{1 \\cdot 2} - \\frac {\\tau^ {3}}{2 \\cdot 3} - \\dots \\frac {\\tau_ {n + 1}}{n (n + 1)}\\right) \\right| <   \\frac {1}{n + 1}. \\tag {2}\n$$\n\n在 (2) 式中让 $n$ 固定而令 $\\tau \\to 1 - 0$ 取极限（注意，瑕积分 $\\int_0^1\\ln (1 - x)\\mathrm{d}x$ 显然收敛），得\n\n$$\n\\left| \\int_ {0} ^ {1} \\ln (1 - x) d x - \\left(- \\frac {1}{1 \\cdot 2} - \\frac {1}{2 \\cdot 3} - \\dots \\frac {1}{n (n + 1)}\\right) \\right| <   \\frac {1}{n + 1} \\quad (n = 1, 2, 3, \\dots).\n$$\n\n由此式即知\n\n$$\n\\int_ {0} ^ {1} \\ln (1 - x) d x = \\lim  _ {n \\rightarrow \\infty} \\left(- \\frac {1}{1 \\cdot 2} - \\frac {1}{2 \\cdot 3} - \\dots \\frac {1}{n (n + 1)}\\right) = - \\frac {1}{1 \\cdot 2} - \\frac {1}{2 \\cdot 3} - \\frac {1}{3 \\cdot 4} - \\dots ,\n$$\n\n也即\n\n$$\n\\int_ {0} ^ {1} \\left(- x - \\frac {x ^ {2}}{2} - \\frac {x ^ {3}}{3} - \\dots\\right) d x = \\int_ {0} ^ {1} (- x) d x + \\int_ {0} ^ {1} \\left(- \\frac {x ^ {2}}{2}\\right) d x + \\int_ {0} ^ {1} \\left(- \\frac {x ^ {3}}{3}\\right) d x + \\dots ,\n$$\n\n换句话说，逐项积分公式成立\n\n$\\star \\star$ ）利用 2549 题的结果.",
+    "reference": [
+      "2549 题"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": true,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "087",
+    "id": "3034"
+  },
+  {
+    "question": "【3027】画出曲线 $\\sum_{n=1}^{\\infty} \\frac{\\sin nx \\cdot \\sin ny}{n^2} = 0$ .",
+    "answer": "x = l\\pi , l = 0, \\pm 1, \\pm 2, \\dots , y = m\\pi , m = 0, \\pm 1, \\pm 2, \\dots",
+    "solution": "解记\n\n$$\nf (x, y) = \\sum_ {n = 1} ^ {\\infty} \\frac {\\sin n x \\sin n y}{n ^ {2}},\n$$\n\n注意到 $f(x,y)$ 对 $x,y$ 分别均为以 $2\\pi$ 为周期的周期函数，故可考虑下列定义域：\n\n$$\nR = \\{0 \\leqslant x <   2 \\pi , 0 \\leqslant y <   2 \\pi \\},\n$$\n\n为研究 $f(x,y) = 0$ 的图像，要用到下列函数：\n\n$$\ng (t) = \\sum_ {n = 1} ^ {\\infty} \\frac {\\cos n t}{n ^ {2}} \\quad (| t | <   + \\infty).\n$$\n\n为求 $g(t)$ ，考虑 $g^{\\prime}(t)$ ，仿 3024 题的办法可知可逐项求导数，再注意到 3022 题求解过程中的关系，有\n\n$$\ng ^ {\\prime} (t) = - \\sum_ {n = 1} ^ {\\infty} \\frac {\\sin n t}{n} = - (\\operatorname {s g n} t) \\frac {\\pi - | t |}{2} \\quad (0 <   | t | <   2 \\pi).\n$$\n\n注意常数 $g(0) = \\sum_{n=1}^{\\infty} \\frac{1}{n^2} = \\frac{\\pi^2}{6}$ ，于是，得\n\n$$\ng (t) = g (0) + \\int_ {0} ^ {t} g ^ {\\prime} (t) d t = g (0) - \\frac {\\pi}{2} | t | + \\frac {1}{4} t ^ {2}.\n$$\n\n由于 $\\sin nx\\sin ny = \\frac{1}{2} [\\cos n(x - y) - \\cos (x + y)]$ ，故得\n\n$$\n\\begin{array}{l} f (x, y) = \\frac {1}{2} \\sum_ {n = 1} ^ {\\infty} \\frac {\\cos n (x - y) - \\cos n (x + y)}{n ^ {2}} = \\frac {1}{2} [ g (x - y) - g (x + y) ] \\\\ = \\frac {1}{2} \\left\\{\\left[ g (0) - \\frac {\\pi}{2} | x - y | + \\frac {1}{4} (x - y) ^ {2} \\right] - \\left[ g (0) - \\frac {\\pi}{2} | x + y | + \\frac {1}{4} (x + y) ^ {2} \\right] \\right\\} \\\\ = \\frac {\\pi}{4} (| x + y | - | x - y |) + \\frac {1}{8} [ (x - y) ^ {2} - (x + y) ^ {2} ] \\\\ = \\frac {\\pi}{4} \\cdot 2 \\min  \\{x, y \\} + \\frac {1}{8} (- 4 x y) \\\\ = \\frac {1}{2} [ \\pi - \\max  \\{x, y \\} ] \\min  \\{x, y \\}. \\\\ \\end{array}\n$$\n\n若 $x \\leqslant y$ ，则令 $f(x, y) = 0$ ， $(x, y) \\in R$ ，有 $x(\\pi - y) = 0$ ，得 $x = 0$ 或 $y = \\pi$ 。若 $x \\geqslant y$ ，则令 $f(x, y) = 0$ ， $(x, y) \\in R$ ，有 $y(\\pi - x) = 0$ ，得 $y = 0$ 或 $x = \\pi$ 。因此，在 $R$ 内， $x = 0$ ， $x = \\pi$ ； $y = 0$ ， $y = \\pi$ 诸直线是满足 $f(x, y) = 0$ 的图像。\n\n又根据 $f(x,y)$ 的表达式知，图像必然是按 $x$ 及按 $y$ 以 $2\\pi$ 为周期的周期曲线，故得\n\n$$\nx = l \\pi , l = 0, \\pm 1, \\pm 2, \\dots , y = m \\pi , m = 0, \\pm 1, \\pm 2, \\dots ,\n$$\n\n诸直线均为 $f(x, y) = 0$ 的图像，且除此而外，均有 $f(x, y) \\neq 0$ ，即不是 $f(x, y) = 0$ 的图像。因此， $f(x, y) = 0$ 的图像即为上述所指的两族直线组。由于这是两族分别与坐标轴平行且相距为 $\\pi$ 的直线族，它们的图像已为大家所熟知，故省略。",
+    "reference": [
+      "3024",
+      "3022"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "mix",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "085",
+    "id": "3027"
+  },
+  {
+    "question": "【3132】在闭区间 $-\\frac{\\pi}{2} \\leqslant x \\leqslant \\frac{\\pi}{2}$ 上，对于函数 $f(x) = \\cos x$ 计算多项式 $B_{n}(x)$ .",
+    "answer": "B _ {n} (x) = \\frac {1}{2} \\left[ \\left(\\cos \\frac {\\pi}{2 n} + \\mathrm {i} \\frac {2 x}{\\pi} \\sin \\frac {\\pi}{2 n}\\right) ^ {n} + \\left(\\cos \\frac {\\pi}{2 n} - \\mathrm {i} \\frac {2 x}{\\pi} \\sin \\frac {\\pi}{2 n}\\right) ^ {n} \\right]",
+    "solution": "解 我们有\n$$\n\\cos x = \\frac {1}{2} \\left(e ^ {i x} + e ^ {- i x}\\right). \\tag {1}\n$$\n利用 3131 题的结果（在其中令 $a = -\\frac{\\pi}{2}, b = \\frac{\\pi}{2}$ 并分别令 $k = i$ 和 $k = -i$ ），得 $\\mathrm{e}^{\\mathrm{i}x}$ 在 $[- \\frac{\\pi}{2}, \\frac{\\pi}{2}]$ 的伯恩斯坦多项式 $B_{n}^{(1)}(x)$ 与 $\\mathrm{e}^{\\mathrm{i}x}$ 在 $[- \\frac{\\pi}{2}, \\frac{\\pi}{2}]$ 的伯恩斯坦多项式 $B_{n}^{(2)}(x)$ 分别为：\n$$\nB _ {n} ^ {(1)} (x) = \\mathrm {e} ^ {- \\frac {\\pi}{2} i} \\left[ 1 + \\left(\\mathrm {e} ^ {\\frac {\\mathrm {i} \\pi}{n}} - 1\\right) \\left(\\frac {x + \\frac {\\pi}{2}}{\\pi}\\right) \\right] ^ {n}, \\quad B _ {n} ^ {(2)} (x) = \\mathrm {e} ^ {\\frac {\\pi}{2} i} \\left[ 1 + \\left(\\mathrm {e} ^ {- \\frac {\\mathrm {i} \\pi}{n}} - 1\\right) \\left(\\frac {x + \\frac {\\pi}{2}}{\\pi}\\right) \\right] ^ {n}.\n$$\n于是，\n$$\n\\begin{array}{l} B _ {n} ^ {(1)} (x) = \\mathrm {e} ^ {- \\frac {\\pi i}{2}} \\left\\{\\mathrm {e} ^ {\\frac {\\pi i}{2 n}} \\left[ \\mathrm {e} ^ {\\frac {\\pi i}{2 n}} + \\left(\\mathrm {e} ^ {\\frac {\\pi i}{2 n}} - \\mathrm {e} ^ {\\frac {- \\pi i}{2 n}}\\right) \\left(\\frac {x}{\\pi} + \\frac {1}{2}\\right) \\right] \\right\\} ^ {n} \\\\ = \\mathrm {e} ^ {- \\frac {\\pi i}{2}} \\mathrm {e} ^ {\\frac {\\pi i}{2}} \\left[ \\cos \\frac {\\pi}{2 n} - \\mathrm {i} \\sin \\frac {\\pi}{2 n} + 2 \\mathrm {i} \\sin \\frac {\\pi}{2 n} \\left(\\frac {x}{\\pi} + \\frac {1}{2}\\right) \\right] ^ {n} = \\left(\\cos \\frac {\\pi}{2 n} + \\mathrm {i} \\frac {2 x}{\\pi} \\sin \\frac {\\pi}{2 n}\\right) ^ {n}. \\\\ \\end{array}\n$$\n同理可得 $B_{n}^{(2)}(x) = \\left(\\cos \\frac{\\pi}{2n} -\\mathrm{i}\\frac{2x}{\\pi}\\sin \\frac{\\pi}{2n}\\right)^{n}$\n于是，根据 (1) 式，即知 $\\cos x\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$ 上的伯恩斯坦多项式 $B_{n}(x)$ 为：\n$$\nB _ {n} (x) = \\frac {1}{2} \\left[ B _ {n} ^ {(1)} (x) + B ^ {(2) n} (x) \\right] = \\frac {1}{2} \\left[ \\left(\\cos \\frac {\\pi}{2 n} + \\mathrm {i} \\frac {2 x}{\\pi} \\sin \\frac {\\pi}{2 n}\\right) ^ {n} + \\left(\\cos \\frac {\\pi}{2 n} - \\mathrm {i} \\frac {2 x}{\\pi} \\sin \\frac {\\pi}{2 n}\\right) ^ {n} \\right].\n$$\n应当指出，我们也可不利用 (1) 式以及 3131 题的结果，而利用 3128 题的结果直接写出 $\\cos x$ 在 $\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$ 上的伯恩斯坦多项式 $B_{n}(x)$ ：\n$$\nB _ {n} (x) = \\sum_ {k = 0} ^ {n} \\cos \\left(- \\frac {\\pi}{2} + \\frac {k \\pi}{n}\\right) C _ {n} ^ {k} \\frac {\\left(x + \\frac {\\pi}{2}\\right) ^ {k} \\left(\\frac {\\pi}{2} - x\\right) ^ {n - k}}{\\pi^ {n}} = \\sum_ {k = 0} ^ {n} \\sin \\frac {k \\pi}{n} C _ {n} ^ {k} \\frac {(\\pi + 2 x) ^ {k} (\\pi - 2 x) ^ {n - k}}{(2 \\pi) ^ {n}},\n$$\n这是 $B_{n}(x)$ 的另一表示式",
+    "reference": [
+      "3131",
+      "3128"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "sum",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "090",
+    "id": "3132"
+  },
+  {
+    "question": "【3903】用一组顶点 $A_{ij}$ 位于整数点的正方形作为积分域的近似域，并取被积函数在每个正方形距原点最远的顶点之值，近似地计算积分 $\\iint_{r^2 + y^2 \\leqslant 25} \\frac{\\mathrm{d}x \\, \\mathrm{d}y}{\\sqrt{24 + x^2 + y^2}}$ 并与精确值加以比较.",
+    "answer": "2\\pi (7 - \\sqrt{24}) \\approx 13.19",
+    "solution": "解 由题意知，应取的正方形顶点为 $(1,1),(1,2),(1,3),(1,4),(2,1),(2,2),(2,3),(2,4),(3,1),(3,2),(3,3),(3,4),(4,1),(4,2),(4,3)$，故利用对称性知\n$$\n\\begin{array}{l} \\frac {1}{4} \\iint_ {x^2 + y^2 \\leqslant 25} \\frac {\\mathrm {d} x \\mathrm {d} y}{\\sqrt {24 + x ^ {2} + y ^ {2}}} \\approx \\frac {1}{\\sqrt {26}} + \\frac {2}{\\sqrt {29}} + \\frac {2}{\\sqrt {34}} + \\frac {2}{\\sqrt {41}} + \\frac {1}{\\sqrt {32}} + \\frac {2}{\\sqrt {37}} + \\frac {2}{\\sqrt {44}} + \\frac {1}{\\sqrt {42}} + \\frac {2}{\\sqrt {49}} \\\\ \\approx 0.196 + 0.371 + 0.343 + 0.312 + 0.177 + 0.329 + 0.302 + 0.154 + 0.285 \\approx 2.470, \\end{array}\n$$\n即 $\\iint_{x^2 + y^2 \\leqslant 25} \\frac{\\mathrm{d}x \\mathrm{d}y}{\\sqrt{24 + x^2 + y^2}} \\approx 9.880.$\n\n下面计算积分的精确值：\n$$\n\\iint_ {x^2 + y^2 \\leqslant 25} \\frac {\\mathrm {d} x \\mathrm {d} y}{\\sqrt {24 + x ^ {2} + y ^ {2}}} = 4 \\int_ {0} ^ {5} \\ln (y + \\sqrt {24 + x ^ {2} + y ^ {2}}) \\left| _ {0} ^ {\\sqrt {25 - x ^ {2}}} \\mathrm {d} x = 4 \\int_ {0} ^ {5} \\ln (\\sqrt {25 - x ^ {2}} + 7) \\mathrm {d} x - 2 \\int_ {0} ^ {5} \\ln (24 + x ^ {2}) \\mathrm {d} x.\n$$\n由于 $\\int \\ln (24 + x^2)\\mathrm{d}x = x\\ln (24 + x^2) - \\int \\frac{2x^2}{24 + x^2}\\mathrm{d}x = x\\ln (24 + x^2) - 2x + \\frac{24}{\\sqrt{24}}\\arctan \\frac{x}{\\sqrt{24}} +C.$\n从而，$2\\int_{0}^{5}\\ln (24 + x^{2})\\mathrm{d}x = \\left[2x\\ln (24 + x^{2}) - 4x + \\frac{48}{\\sqrt{24}}\\arctan \\frac{x}{\\sqrt{24}}\\right]\\Bigg|_{0}^{5} = 20\\ln 7 - 20 + 8\\sqrt{6}\\arctan \\frac{5}{\\sqrt{24}};$\n又 $4\\int_{0}^{5}\\ln (\\sqrt{25 - x^2} +7)\\mathrm{d}x = 4[x\\ln (\\sqrt{25 - x^2} +7)]\\Big|_{0}^{5} + 4\\int_{0}^{5}\\frac{x^2\\mathrm{d}x}{(\\sqrt{25 - x^2} + 7)\\sqrt{25 - x^2}}$\n$$\n= 20 \\ln 7 + 4 \\int_ {0} ^ {5} \\frac {x ^ {2} \\mathrm {d} x}{(\\sqrt {25 - x ^ {2}} + 7) \\sqrt {25 - x ^ {2}}},\n$$\n再令 $x = 5\\sin t$，有\n$$\n\\begin{array}{l} \\int_ {0} ^ {5} \\frac {x ^ {2} \\mathrm {d} x}{(\\sqrt {25 - x ^ {2}} + 7) \\sqrt {25 - x ^ {2}}} = \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {25 \\cos^ {2} t}{5 \\cos t + 7} \\mathrm {d} t = - \\int_ {0} ^ {\\frac {\\pi}{2}} (5 \\cos t - 7) \\mathrm {d} t - \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {24}{5 \\cos t + 7} \\mathrm {d} t \\\\ = (7 t - 5 \\sin t) \\left| _ {0} ^ {\\frac {\\pi}{2}} - 24 \\left[ \\frac {1}{\\sqrt {6}} \\arctan \\left(\\frac {1}{\\sqrt {6}} \\tan \\frac {t}{2}\\right) \\right] \\right| _ {0} ^ {\\frac {\\pi}{2}} = \\frac {7 \\pi}{2} - 5 - 4 \\sqrt {6} \\arctan \\frac {2}{\\sqrt {24}}, \\end{array}\n$$\n从而，$4\\int_{0}^{5}\\ln (\\sqrt{25 - x^2} +7)\\mathrm{d}x = 20\\ln 7 + 14\\pi -20 - 16\\sqrt{6}\\arctan \\frac{2}{\\sqrt{24}}.$\n注意到 $2\\arctan \\frac{2}{\\sqrt{24}} + \\arctan \\frac{5}{\\sqrt{24}} = \\frac{\\pi}{2}$,\n最后便得到 $\\iint_{x^2 + y^2 \\leqslant 25} \\frac{\\mathrm{d}x \\, \\mathrm{d}y}{\\sqrt{24 + x^2 + y^2}} = 14\\pi - 4\\sqrt{24}\\left(2\\arctan \\frac{2}{\\sqrt{24}} + \\arctan \\frac{5}{\\sqrt{24}}\\right) = 2\\pi (7 - \\sqrt{24}) \\approx 13.19.$\n\n将精确值与近似值作比较，显见误差较大，其原因在于有不少不是正方形的区域都被忽略，因而产生较大的绝对误差 4.31 及较大的相对误差 $\\frac{4.31}{13.19} \\approx 32.7\\%$\n\n注意求 $\\iint_{x^2 + y^2 \\leqslant 25} \\frac{\\mathrm{d}x \\mathrm{d}y}{\\sqrt{24 + x^2 + y^2}}$ 的精确值若采用极坐标则较为简单：\n$$\n\\iint_ {x^2 + y^2 \\leqslant 25} \\frac {\\mathrm {d} x \\mathrm {d} y}{\\sqrt {24 + x ^ {2} + y ^ {2}}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\theta \\int_ {0} ^ {5} \\frac {r \\mathrm {d} r}{\\sqrt {24 + r ^ {2}}} = 2 \\pi (7 - \\sqrt {24}).\n$$\n但按原习题集的安排，似应在 3937 题以后才开始使用极坐标，故本题仍用直角坐标进行计算.",
+    "reference": [
+      "3937"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "107",
+    "id": "3903"
+  },
+  {
+    "question": "【3988】 $(x^{3} + y^{3})^{2} = x^{2} + y^{2};x\\geqslant 0,y\\geqslant 0.$",
+    "answer": "\\frac{\\sqrt{2}}{3}\\ln (1 + \\sqrt {2}) + \\frac{\\pi}{6}",
+    "solution": "解 将方程化为极坐标方程，得 $(r^3\\cos^3\\theta + r^3\\sin^3\\theta)^2 = r^2$\n\n即 $r^2 = \\frac{1}{\\cos^3\\theta + \\sin^3\\theta} (0\\leqslant \\theta \\leqslant \\frac{\\pi}{2}).$\n\n曲线所围的面积为 $S = \\iint_{S} r \\, \\mathrm{d}r \\, \\mathrm{d}\\theta = \\frac{1}{2} \\int_{0}^{\\frac{\\pi}{2}} r^{2} \\, \\mathrm{d}\\theta = \\frac{1}{2} \\int_{0}^{\\frac{\\pi}{2}} \\frac{\\mathrm{d}\\theta}{\\cos^{3}\\theta + \\sin^{3}\\theta},$\n\n由于 $\\frac{1}{\\cos^3\\theta + \\sin^3\\theta} = \\frac{1}{3}\\left(\\frac{2}{\\sin\\theta + \\cos\\theta} +\\frac{\\sin\\theta + \\cos\\theta}{1 - \\sin\\theta\\cos\\theta}\\right),$\n\n又\n\n$$\n\\begin{array}{l} \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\mathrm {d} \\theta}{\\sin \\theta + \\cos \\theta} = \\frac {1}{\\sqrt {2}} \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\mathrm {d} \\theta}{\\sin \\left(\\theta + \\frac {\\pi}{4}\\right)} = \\frac {1}{\\sqrt {2}} \\ln \\tan \\frac {\\theta + \\frac {\\pi}{4}}{2} \\Bigg | _ {0} ^ {\\frac {\\pi}{2}} = \\frac {1}{\\sqrt {2}} \\left(\\ln \\tan \\frac {3 \\pi}{8} - \\ln \\tan \\frac {\\pi}{8}\\right) \\\\ = \\frac {1}{\\sqrt {2}} \\left(\\ln \\sqrt {\\frac {\\sqrt {2} + 1}{\\sqrt {2} - 1}} - \\ln \\sqrt {\\frac {\\sqrt {2} - 1}{\\sqrt {2} + 1}}\\right) = \\sqrt {2} \\ln (1 + \\sqrt {2}), \\\\ \\end{array}\n$$\n\n$$\n\\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\sin \\theta + \\cos \\theta}{1 - \\sin \\theta \\cos \\theta} d \\theta = 2 \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {d \\left(\\frac {1}{2} \\sin \\theta - \\frac {1}{2} \\cos \\theta\\right) ^ {*}}{2 \\left(\\frac {1}{2} \\sin \\theta - \\frac {1}{2} \\cos \\theta\\right) ^ {2} + \\frac {1}{2}} = 2 \\arctan (\\sin \\theta - \\cos \\theta) \\Big | _ {0} ^ {\\frac {\\pi}{2}} = \\pi .\n$$\n\n于是，所求的面积为 $S = \\frac{1}{3}\\int_{0}^{\\frac{\\pi}{2}}\\frac{\\mathrm{d}\\theta}{\\sin\\theta + \\cos\\theta} +\\frac{1}{6}\\int_{0}^{\\frac{\\pi}{2}}\\frac{\\sin\\theta + \\cos\\theta}{1 - \\sin\\theta\\cos\\theta}\\mathrm{d}\\theta = \\frac{\\sqrt{2}}{3}\\ln (1 + \\sqrt {2}) + \\frac{\\pi}{6}.$\n\n\\*）利用 2053 题的结果，其中 $\\lambda_1 = \\frac{1}{2},\\lambda_2 = \\frac{3}{2},A = 2,B = 0.$",
+    "reference": [
+      "2053"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "108",
+    "id": "3988"
+  },
+  {
+    "question": "【4050】求矩形 $x = a > 0, 0 \\leqslant y \\leqslant b, 0 \\leqslant z \\leqslant c$ 对坐标原点的立体角 $\\omega$ . 若 $a$ 很大，推出 $\\omega$ 的近似公式.",
+    "answer": "\\arcsin \\frac {b c}{\\sqrt {\\left(a ^ {2} + c ^ {2}\\right) \\left(a ^ {2} + b ^ {2}\\right)}}; \\omega \\approx \\frac{bc}{a^2}",
+    "solution": "解 以原点为球心作单位球，则 $\\omega$ 即为该球面含于四面体 $O - ABCD$ 内的面积，其中 $ABCD$ 是以 $b, c$ 为边长的矩形（图 8.49）.\n\n取球坐标系，由 4047 题知： $\\sqrt{EG - F^2} = \\cos \\psi$\n\n又 $\\varphi$ 和 $\\psi$ 的变化域为\n\n$$\n0 \\leqslant \\varphi \\leqslant \\arcsin \\frac {b}{\\sqrt {a ^ {2} + b ^ {2}}}, \\quad 0 \\leqslant \\psi \\leqslant \\arcsin \\frac {c \\cos \\varphi}{\\sqrt {a ^ {2} + c ^ {2} \\cos^ {2} \\varphi}}.\n$$\n\n图 8.49\n\n于是，立体角\n\n$$\n\\begin{array}{l} \\omega = \\int_ {0} ^ {\\arcsin \\frac {b}{\\sqrt {a ^ {2} + b ^ {2}}}} d \\varphi \\int_ {0} ^ {\\arcsin \\frac {c \\cos \\varphi}{\\sqrt {a ^ {2} + c ^ {2} \\cos^ {2} \\varphi}}} \\cos \\psi d \\psi = \\int_ {0} ^ {\\arcsin \\frac {b}{\\sqrt {a ^ {2} + b ^ {2}}}} \\frac {c \\cos \\varphi}{\\sqrt {a ^ {2} + c ^ {2} \\cos^ {2} \\varphi}} d \\varphi \\\\ = \\int_ {0} ^ {\\arcsin \\frac {b}{\\sqrt {a ^ {2} + b ^ {2}}}} \\frac {\\mathrm {d} \\left(\\frac {c}{\\sqrt {a ^ {2} + c ^ {2}}} \\sin \\varphi\\right)}{\\sqrt {1 - \\left(\\frac {c}{\\sqrt {a ^ {2} + c ^ {2}}} \\sin \\varphi\\right) ^ {2}}} \\\\ = \\arcsin \\left(\\frac {c}{\\sqrt {a ^ {2} + c ^ {2}}} \\sin \\arcsin \\frac {b}{\\sqrt {a ^ {2} + b ^ {2}}}\\right) = \\arcsin \\frac {b c}{\\sqrt {\\left(a ^ {2} + c ^ {2}\\right) \\left(a ^ {2} + b ^ {2}\\right)}}. \\\\ \\end{array}\n$$\n\n当 $a$ 很大时，有 $\\frac{bc}{\\sqrt{(a^2 + c^2)(a^2 + b^2)}} = \\frac{bc}{a^2\\sqrt{\\left(1 + \\frac{c^2}{a^2}\\right)\\left(1 + \\frac{b^2}{a^2}\\right)}} \\approx \\frac{bc}{a^2},$\n\n于是，得 $\\omega$ 的近似公式 $\\omega \\approx \\frac{bc}{a^2}$",
+    "reference": [
+      "4047"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "110",
+    "id": "4050"
+  },
+  {
+    "question": "$\\left(\\frac {x ^ {2}}{a ^ {2}} + \\frac {y ^ {2}}{b ^ {2}}\\right) ^ {2} + \\frac {z ^ {4}}{c ^ {4}} = 1. \\tag {4115}$",
+    "answer": "$\\frac {1}{3} a b c \\sqrt {\\frac {\\pi}{2}} \\Gamma^ {2} \\left(\\frac {1}{4}\\right)$",
+    "solution": "解题思路 作变量代换 $x = \\arccos \\varphi \\cos^{\\frac{1}{2}}\\psi, y = b r \\sin \\varphi \\cos^{\\frac{1}{2}}\\psi, z = c r \\sin^{\\frac{1}{2}}\\psi,$\n\n则有 $|I| = \\frac{1}{2} abcr^2\\sin^{-\\frac{1}{2}}\\psi$ 且 $V$ 的 $\\frac{1}{8}$ 部分（第一卦限内）为 $0 \\leqslant \\varphi \\leqslant \\frac{\\pi}{2}, 0 \\leqslant \\psi \\leqslant \\frac{\\pi}{2}, 0 \\leqslant r \\leqslant 1$ ，并利用 3856 题的结果及延拓公式.\n\n解 令 $x = \\arccos \\varphi \\cos^{\\frac{1}{2}}\\psi, y = brsin\\varphi \\cos^{\\frac{1}{2}}\\psi, z = cr\\sin^{\\frac{1}{2}}\\psi$ ，则有 $|I| = \\frac{1}{2} abcr^{2}\\sin^{-\\frac{1}{2}}\\psi$ 且 $\\frac{1}{8}$ 区域 $V$ （第一卦限内）为\n\n$$\n0 \\leqslant \\varphi \\leqslant \\frac {\\pi}{2}, \\quad 0 \\leqslant \\psi \\leqslant \\frac {\\pi}{2}, \\quad 0 \\leqslant r \\leqslant 1.\n$$\n\n于是，体积为\n\n$$\n\\begin{array}{l} V = 8 \\int_ {0} ^ {\\frac {\\pi}{2}} d \\varphi \\int_ {0} ^ {\\frac {\\pi}{2}} d \\psi \\int_ {0} ^ {1} \\frac {1}{2} a b c r ^ {2} \\sin^ {- \\frac {1}{2}} \\psi d r = \\frac {2}{3} \\pi a b c \\int_ {0} ^ {\\frac {\\pi}{2}} \\sin^ {- \\frac {1}{2}} \\psi d \\psi = \\frac {2}{3} \\pi a b c \\cdot \\frac {1}{2} B \\left(\\frac {1}{2}, \\frac {1}{4}\\right) ^ {*}) \\\\ = \\frac {2}{3} \\pi a b c \\frac {1}{2} \\frac {\\Gamma (\\frac {1}{2}) \\Gamma (\\frac {1}{4})}{\\Gamma (\\frac {3}{4})} = \\frac {1}{3} \\pi a b c \\frac {\\sqrt {\\pi} \\Gamma^ {2} (\\frac {1}{4})}{\\Gamma (\\frac {1}{4}) \\Gamma (\\frac {3}{4})} = \\frac {1}{3} \\pi a b c \\frac {\\sqrt {\\pi} \\Gamma^ {2} (\\frac {1}{4})}{\\sqrt {2} \\pi} ^ {\\dots} \\\\ = \\frac {1}{3} a b c \\sqrt {\\frac {\\pi}{2}} \\Gamma^ {2} \\left(\\frac {1}{4}\\right). \\\\ \\end{array}\n$$\n\n$\\star$ ）利用 3856 题的结果.  \n$\\star \\star)$ 利用延拓公式： $\\Gamma (x)\\Gamma (1 - x) = \\frac{\\pi}{\\sin\\pi x}.$",
+    "reference": [
+      "3856"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "115",
+    "id": "unk3078"
+  },
+  {
+    "question": "【4176】$\\int_{-\\infty}^{+\\infty}\\int_{-\\infty}^{+\\infty}\\mathrm{e}^{-(x^2 +y^2)}\\cos (x^2 +y^2)\\mathrm{d}x\\mathrm{d}y.$",
+    "answer": "\\frac{\\pi}{2}",
+    "solution": "提示 由于 $|\\mathrm{e}^{-(x^2 + y^2)}\\cos (x^2 + y^2)| \\leqslant \\mathrm{e}^{-(x^2 + y^2)}$，利用 4175 题的结果知所给积分收敛，对它采用极坐标即可获解。\n\n解 由于 $|\\mathrm{e}^{-(x^2 + y^2)}\\cos (x^2 + y^2)| \\leqslant \\mathrm{e}^{-(x^2 + y^2)}$，而\n\n$$\n\\int_ {- x} ^ {+ \\infty} \\int_ {- \\infty} ^ {+ \\infty} e ^ {(x ^ {2} - y ^ {2})} d x d y\n$$\n\n收敛（参看 4175 题），故\n\n$$\n\\int_ {- \\infty} ^ {+ \\infty} \\int_ {- \\infty} ^ {+ \\infty} e ^ {- (x ^ {2} + y ^ {2})} \\cos (x ^ {2} + y ^ {2}) d x d y\n$$\n\n收敛。从而，采用极坐标就有\n\n$$\n\\begin{array}{l} \\int_ {- \\infty} ^ {+ \\infty} \\int_ {- \\infty} ^ {+ \\infty} e ^ {- (x ^ {2} + y ^ {2})} \\cos (x ^ {2} + y ^ {2}) d x d y = \\int_ {0} ^ {2 \\pi} d \\theta \\int_ {0} ^ {\\pm r} r e ^ {- r ^ {2}} \\cos r ^ {2} d r = \\pi \\int_ {0} ^ {+ \\infty} e ^ {- t} \\cos t d t \\\\ = \\pi \\left(\\frac {\\sin t - \\cos t}{(- 1) ^ {2} + 1 ^ {2}} e ^ {- t}\\right) \\Bigg | _ {t = 0} ^ {t = + \\infty} = \\frac {\\pi}{2}. \\\\ \\end{array}\n$$",
+    "reference": [
+      "4175"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": true,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "117",
+    "id": "4176"
+  },
+  {
+    "question": "【4177】 $\\int_{-\\infty}^{+\\infty}\\int_{-\\infty}^{+\\infty}\\mathrm{e}^{-(x^2 +y^2)}\\sin (x^2 +y^2)\\mathrm{d}x\\mathrm{d}y.$\n\n提示 仿 4176 题的解法.",
+    "answer": "$\\frac{\\pi}{2}$",
+    "solution": "解 由于 $|\\mathrm{e}^{-(x^2 + y^2)}\\sin (x^2 + y^2)| \\leqslant \\mathrm{e}^{-(x^2 + y^2)}$ ，而积分 $\\int_{-\\infty}^{\\infty}\\int_{-\\infty}^{+\\infty}\\mathrm{e}^{-(x^2 + y^2)}\\mathrm{d}x\\mathrm{d}y$ 收敛（参看 4175 题），故积分 $\\int_{-\\infty}^{+\\infty}\\int_{-\\infty}^{+\\infty}\\mathrm{e}^{-(x^2 + y^2)}\\sin (x^2 + y^2)\\mathrm{d}x\\mathrm{d}y$ 收敛。从而，采用极坐标就有\n\n$$\n\\begin{array}{l} \\int_ {- \\infty} ^ {+ \\infty} \\int_ {- \\infty} ^ {+ \\infty} e ^ {- (x ^ {2} + y ^ {2})} \\sin (x ^ {2} + y ^ {2}) d x d y = \\int_ {0} ^ {2 \\pi} d \\theta \\int_ {0} ^ {+ \\infty} r e ^ {- r ^ {2}} \\sin r ^ {2} d r = \\pi \\int_ {0} ^ {+ \\infty} e ^ {\\prime} \\sin t d t \\\\ = \\pi \\left(\\frac {- \\sin t - \\cos t}{(- 1) ^ {2} + 1 ^ {2}} e ^ {- t}\\right) \\Bigg | _ {t = 0} ^ {t = + \\infty} = \\frac {\\pi}{2}. \\\\ \\end{array}\n$$",
+    "reference": [
+      "4176",
+      "4175"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "117",
+    "id": "4177"
+  },
+  {
+    "question": "【4180】$\\int_{-\\infty}^{+\\infty}\\int_{-\\infty}^{+\\infty}xy\\mathrm{e}^{-\\left(\\frac{x^2}{a^2} +2\\varepsilon \\frac{x}{a}\\cdot \\frac{y}{b} +\\frac{y^2}{b^2}\\right)}\\mathrm{d}x\\mathrm{d}y(0 <   |\\varepsilon | <   1).$",
+    "answer": "$-\\frac{\\pi\\varepsilon a^{2}b^{2}}{2(1 - \\varepsilon^{2})^{\\frac{3}{2}}}$",
+    "solution": "解 作广义极坐标变换 $x = \\arccos \\theta, y = b\\sin \\theta$ ，则有\n\n$$\nI = \\int_ {- \\infty} ^ {+ \\infty} \\int_ {- \\infty} ^ {+ \\infty} x y e ^ {- \\left(\\frac {x ^ {2}}{a ^ {2}} + 2 \\epsilon \\frac {x}{a} \\cdot \\frac {y}{b} + \\frac {y ^ {2}}{b ^ {2}}\\right)} d x d y = \\int_ {0} ^ {2 \\pi} \\int_ {0} ^ {+ \\infty} \\frac {1}{2} a ^ {2} b ^ {2} r ^ {3} \\sin 2 \\theta e ^ {- r ^ {2} (1 + \\epsilon \\sin 2 \\theta)} d r d \\theta . \\tag {1}\n$$\n\n由于 $\\left|r^{3} \\sin 2 \\theta e^{-r^{2}(1 + \\epsilon \\sin 2 \\theta)}\\right| \\leqslant r^{3} e^{-r^{2}(1 - |\\epsilon|)}$ ，而积分\n\n$$\n\\int_ {0} ^ {2 \\pi} \\int_ {0} ^ {+ \\infty} r ^ {3} e ^ {- r ^ {2} (1 - | \\epsilon |)} d r d \\theta = \\int_ {0} ^ {2 \\pi} d \\theta \\int_ {0} ^ {+ \\infty} r ^ {3} e ^ {- r ^ {2} (1 - | \\epsilon |)} d r = 2 \\pi \\int_ {0} ^ {+ \\infty} r ^ {3} e ^ {- r ^ {2} (1 - | \\epsilon |)} d r <   + \\infty ,\n$$\n\n故 (1) 式中的二重广义积分收敛。于是，\n\n$$\nI = \\frac {1}{2} a ^ {2} b ^ {2} \\int_ {0} ^ {2 \\pi} \\sin 2 \\theta d \\theta \\int_ {0} ^ {+ \\infty} r ^ {3} e ^ {- r ^ {2} (1 + \\varepsilon \\sin 2 \\theta)} d r. \\tag {2}\n$$\n\n但是，\n\n$$\n\\begin{array}{l} \\int_ {0} ^ {+ \\infty} r ^ {3} e ^ {- r ^ {2} (1 + \\epsilon \\sin 2 \\theta)} d r = \\frac {1}{2} \\int_ {0} ^ {+ \\infty} t e ^ {- t (1 + \\epsilon \\sin 2 \\theta)} d t = - \\frac {1}{2 (1 + \\epsilon \\sin 2 \\theta)} \\left[ t e ^ {- t (1 + \\epsilon \\sin 2 \\theta)} \\left| _ {r = 0} ^ {t = + \\infty} - \\int_ {0} ^ {+ \\infty} e ^ {- t (1 - \\epsilon \\sin 2 \\theta)} d t \\right. \\right] \\\\ = \\frac {1}{2 (1 + \\varepsilon \\sin 2 \\theta)} \\int_ {0} ^ {+ \\infty} e ^ {- t (1 + \\varepsilon \\sin 2 \\theta)} d t = \\frac {1}{2 (1 + \\varepsilon \\sin 2 \\theta) ^ {2}}, \\\\ \\end{array}\n$$\n\n故\n\n$$\n\\begin{array}{l} I = \\frac {1}{4} a ^ {2} b ^ {2} \\int_ {0} ^ {2 \\pi} \\frac {\\sin 2 \\theta}{(1 + \\varepsilon \\sin 2 \\theta) ^ {2}} d \\theta = \\frac {1}{2} a ^ {2} b ^ {2} \\int_ {0} ^ {\\pi} \\frac {\\sin 2 \\theta}{(1 + \\varepsilon \\sin 2 \\theta) ^ {2}} d \\theta = \\frac {1}{4} a ^ {2} b ^ {2} \\int_ {0} ^ {2 \\pi} \\frac {\\sin u}{(1 + \\varepsilon \\sin u) ^ {2}} d u \\\\ = \\frac {1}{4} a ^ {2} b ^ {2} \\left[ \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\sin u}{(1 + \\varepsilon \\sin u) ^ {2}} d u + \\int_ {\\frac {\\pi}{2}} ^ {\\pi} \\frac {\\sin u}{(1 + \\varepsilon \\sin u) ^ {2}} d u + \\int_ {\\pi} ^ {\\frac {3 \\pi}{2}} \\frac {\\sin u}{(1 + \\varepsilon \\sin u) ^ {2}} d u + \\int_ {\\frac {3 \\pi}{2}} ^ {2 \\pi} \\frac {\\sin u}{(1 + \\varepsilon \\sin u) ^ {2}} d u \\right] \\\\ = \\frac {1}{2} a ^ {2} b ^ {2} \\left[ \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\sin u \\mathrm {d} u}{(1 + \\varepsilon \\sin u) ^ {2}} - \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\sin u \\mathrm {d} u}{(1 - \\varepsilon \\sin u) ^ {2}} \\right]. \\tag {3} \\\\ \\end{array}\n$$\n\n但是（作代换 $u = \\frac{\\pi}{2} - v$ ），\n\n$$\n\\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\sin u \\mathrm {d} u}{(1 + \\varepsilon \\sin u) ^ {2}} = \\frac {1}{\\varepsilon} \\int_ {0} ^ {\\frac {\\pi}{2}} \\left[ \\frac {1}{1 + \\varepsilon \\sin u} - \\frac {1}{(1 + \\varepsilon \\sin u) ^ {2}} \\right] \\mathrm {d} u = \\frac {1}{\\varepsilon} \\int_ {0} ^ {\\frac {\\pi}{2}} \\left[ \\frac {1}{1 + \\varepsilon \\cos v} - \\frac {1}{(1 + \\varepsilon \\cos v) ^ {2}} \\right] \\mathrm {d} v,\n$$\n\n同理，有 $\\int_{0}^{\\frac{\\pi}{2}}\\frac{\\sin u\\mathrm{d}u}{(1 - \\varepsilon\\sin u)^{2}} = -\\frac{1}{\\varepsilon}\\int_{0}^{\\frac{\\pi}{2}}\\left[\\frac{1}{1 - \\varepsilon\\cos v} -\\frac{1}{(1 - \\varepsilon\\cos v)^{2}}\\right]\\mathrm{d}v.$\n\n根据 2028 题 (1) 和 2063 题的结果，可知（当 $0 < |\\varepsilon| < 1$ 时）\n\n$$\n\\int \\frac {\\mathrm {d} x}{1 + \\varepsilon \\cos x} = \\frac {2}{\\sqrt {1 - \\varepsilon^ {2}}} \\arctan \\left(\\sqrt {\\frac {1 - \\varepsilon}{1 + \\varepsilon}} \\tan \\frac {x}{2}\\right) + C, \\tag {4}\n$$\n\n$$\n\\int \\frac {\\mathrm {d} x}{(1 + \\varepsilon \\cos x) ^ {2}} = - \\frac {\\varepsilon \\sin x}{(1 - \\varepsilon^ {2}) (1 + \\varepsilon \\cos x)} + \\frac {2}{(1 - \\varepsilon^ {2}) ^ {\\frac {3}{2}}} \\arctan \\left(\\sqrt {\\frac {1 - \\varepsilon}{1 + \\varepsilon}} \\tan \\frac {x}{2}\\right) + C. \\tag {5}\n$$\n\n（注意，2028 题 (1) 和 2063 题中假定 $0 < \\varepsilon < 1$ ，但从其推导过程可以看出公式 (4)、(5) 当 $-1 < \\varepsilon < 0$ 时也成立）于是，\n\n$$\n\\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\sin u \\mathrm {d} u}{(1 + \\varepsilon \\sin u) ^ {2}} = \\frac {1}{\\varepsilon} \\left[ \\frac {2}{\\sqrt {1 - \\varepsilon^ {2}}} \\arctan \\sqrt {\\frac {1 - \\varepsilon}{1 + \\varepsilon}} + \\frac {\\varepsilon}{1 - \\varepsilon^ {2}} - \\frac {2}{(1 - \\varepsilon^ {2}) ^ {\\frac {3}{2}}} \\arctan \\sqrt {\\frac {1 - \\varepsilon}{1 + \\varepsilon}} \\right],\n$$\n\n$$\n\\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {\\sin u \\mathrm {d} u}{(1 - \\varepsilon \\sin u) ^ {2}} = - \\frac {1}{\\varepsilon} \\left[ \\frac {2}{\\sqrt {1 - \\varepsilon^ {2}}} \\arctan \\sqrt {\\frac {1 + \\varepsilon}{1 - \\varepsilon}} - \\frac {\\varepsilon}{1 - \\varepsilon^ {2}} - \\frac {2}{(1 - \\varepsilon^ {2}) ^ {\\frac {3}{2}}} \\arctan \\sqrt {\\frac {1 + \\varepsilon}{1 - \\varepsilon}} \\right].\n$$\n\n从而，由 (3) 式得 $I = \\frac{1}{\\varepsilon} a^{2}b^{2}\\left[\\frac{1}{\\sqrt{1 - \\varepsilon^{2}}} -\\frac{1}{(1 - \\varepsilon^{2})^{\\frac{3}{2}}}\\right]\\left[\\arctan \\sqrt{\\frac{1 - \\varepsilon}{1 + \\varepsilon}} +\\arctan \\sqrt{\\frac{1 + \\varepsilon}{1 - \\varepsilon}}\\right].$\n\n但对任何的 $x > 0$ ，有 $\\arctan x + \\arctan \\frac{1}{x} = \\frac{\\pi}{2}$\n\n故最后得 $I = \\frac{1}{\\varepsilon} a^{2}b^{2}\\left(\\frac{1}{\\sqrt{1 - \\varepsilon^{2}}} -\\frac{1}{(1 - \\varepsilon^{2})^{\\frac{3}{2}}}\\right)\\frac{\\pi}{2} = -\\frac{\\pi\\varepsilon a^{2}b^{2}}{2(1 - \\varepsilon^{2})^{\\frac{3}{2}}}$",
+    "reference": [
+      "2028 题 (1)",
+      "2063 题"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": true,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "117",
+    "id": "4180"
+  },
+  {
+    "question": "【4183】 $\\iint_{D} \\frac{\\mathrm{d}x \\, \\mathrm{d}y}{|x|^p + |y|^q} (p > 0, q > 0).$",
+    "answer": "当 $\\frac{1}{p} + \\frac{1}{q} > 1$ 时收敛，当 $\\frac{1}{p} + \\frac{1}{q} \\leqslant 1$ 时发散",
+    "solution": "解 由对称性及被积函数的非负性，有\n\n$$\n\\iint_ {| x | + y | <   1} \\frac {\\mathrm {d} x \\mathrm {d} y}{| x | ^ {p} + | y | ^ {q}} = 4 \\iint_ {\\substack {x ^ {p} + y ^ {q} > 0 \\\\ x + y \\leqslant 1}} \\frac {\\mathrm {d} x \\mathrm {d} y}{x ^ {p} + y ^ {q}} = 4 \\iint_ {\\bar {n} _ {1}} \\frac {\\mathrm {d} x \\mathrm {d} y}{x ^ {p} + y ^ {q}} + 4 \\iint_ {\\bar {n} _ {2}} \\frac {\\mathrm {d} x \\mathrm {d} y}{x ^ {p} + y ^ {q}}, \\tag{1}\n$$\n\n其中 $\\Omega_{1} = \\left\\{(x,y) | x \\geqslant 0, y \\geqslant 0, x + y \\leqslant 1, x^{p} + y^{q} \\geqslant 2^{p - q}\\right\\}, \\Omega_{2} = \\left\\{(x,y) | x \\geqslant 0, y \\geqslant 0, x + y \\leqslant 1, x^{p} + y^{q} \\leqslant 2^{p - q}\\right\\}$ . 令 $\\Omega_{3} = \\left\\{(x,y) | x \\geqslant 0, y \\geqslant 0, x^{p} + y^{q} \\leqslant 2^{p - q}\\right\\}$ , 易知，当 $x \\geqslant 0, y \\geqslant 0, x^{p} + y^{q} \\leqslant 2^{-p - q}$ 时，必有 $x + y \\leqslant 1$ (因为 $x \\geqslant 0, y \\geqslant 0, x^{p} + y^{q} \\leqslant \\frac{1}{2^{p + q}}$ , 故 $x^{p} \\leqslant \\frac{1}{2^{p + q}} \\leqslant \\frac{1}{2^{p}}$ , $y^{q} \\leqslant \\frac{1}{2^{p + q}} \\leqslant \\frac{1}{2^{q}}$ ), 从而， $x \\leqslant \\frac{1}{2}$ , $y \\leqslant \\frac{1}{2}$ , 由此知 $x + y \\leqslant 1$ ). 故 $\\Omega_{3} = \\Omega_{2}$ . 由于函数 $\\frac{1}{x^{p} + y^{q}}$ 在有界闭区域 $\\Omega_{1}$ 上连续，故 (1) 式右端第一个积分为常义积分。因此，广义积分 $\\iint_{|x|^{p} + |y|^{q}} \\frac{\\mathrm{d}x\\mathrm{d}y}{|x|^{p} + |y|^{q}}$ 的敛散性取决于广义积分 $\\iint_{\\Omega_{3}} \\frac{\\mathrm{d}x\\mathrm{d}y}{x^{p} + y^{q}}$ 的敛散性。在此积分中作变量代换\n\n$x = r^{\\frac{2}{p}}\\cos \\frac{2}{p}\\theta ,y = r^{\\frac{2}{q}}\\sin \\frac{2}{q}\\theta ,$ 则易知 $\\frac{D(x,y)}{D(r,\\theta)} = \\frac{4}{pq} r^{\\frac{2}{p} +\\frac{2}{q} -1}\\sin^{\\frac{2}{q} -1}_{q}\\theta \\cos^{\\frac{2}{p} -1}_{p}\\theta .$\n\n于是，注意到被积函数是非负的，得\n\n$$\n\\iint_ {A _ {3}} \\frac {\\mathrm {d} x \\mathrm {d} y}{x ^ {p} + y ^ {q}} = \\frac {4}{p q} \\int_ {0} ^ {\\frac {\\pi}{2}} \\sin^ {\\frac {2}{q} - 1} \\theta \\cos^ {\\frac {2}{p}} ^ {- 1} \\theta \\mathrm {d} \\theta \\int_ {0} ^ {(\\sqrt {2}) ^ {- p - q}} r ^ {\\frac {2}{p} + \\frac {2}{q} - 3} \\mathrm {d} r.\n$$\n\n由 3856 题的结果知，右端第一个积分\n\n$$\n\\int_ {0} ^ {\\frac {\\pi}{2}} \\sin^ {\\frac {2}{q} - 1} \\theta \\cos^ {\\frac {2}{p} - 1} \\theta d \\theta (p > 0, q > 0)\n$$\n\n恒收敛，且其值为 $\\frac{1}{2}\\mathrm{B}(\\frac{1}{q},\\frac{1}{p})$ ；而第二个积分\n\n$$\n\\int_ {0} ^ {(\\sqrt {2}) ^ {- p - q}} r ^ {\\frac {2}{p} + \\frac {2}{q} - 3} d r\n$$\n\n当 $\\frac{2}{p} + \\frac{2}{q} - 3 > -1$ （即 $\\frac{1}{p} + \\frac{1}{q} > 1$ ）时收敛，当 $\\frac{2}{p} + \\frac{2}{q} - 3 \\leq -1$ （即 $\\frac{2}{p} + \\frac{2}{q} \\leq 1$ ）时发散.\n\n综上所述，可知原积分 $\\iint_{|x| + |y| \\leqslant 1} \\frac{\\mathrm{d}x \\mathrm{d}y}{|x|^p + |y|^q}$ 当 $\\frac{1}{p} + \\frac{1}{q} > 1$ 时收敛，当 $\\frac{1}{p} + \\frac{1}{q} \\leqslant 1$ 时发散.",
+    "reference": [
+      "3856"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": true
+    },
+    "source": "117",
+    "id": "4183"
+  },
+  {
+    "question": "【4189】 $\\iint_{\\Omega} \\ln \\sin (x - y) \\, \\mathrm{d}x \\, \\mathrm{d}y$ ，其中区域 $\\Omega$ 是由直线 $y = 0, y = x, x = \\pi$ 围成的。",
+    "answer": "- \\frac {\\pi^ {2}}{2} \\ln 2",
+    "solution": "解 作变量代换 $x = u + v, y = u - v$ ，则 $Oxy$ 平面上的区域 $\\Omega$ 变为 $uv$ 平面上的区域 $\\Omega'$ . 显然 $\\Omega'$ 由直线 $u = v, v = 0, u + v = \\pi$ 所界。又有 $\\frac{D(x,y)}{D(u,v)} = -2$ . 于是，再注意到被积函数非正，即有\n\n$$\n\\iint_ {\\Omega} \\ln \\sin (x - y) d x d y = 2 \\iint_ {\\Omega} \\ln \\sin 2 v d u d v = 2 \\int_ {0} ^ {\\frac {\\pi}{2}} d v \\int_ {v} ^ {x - v} \\ln \\sin 2 v d u\n$$\n\n$$\n\\begin{array}{l} = 2 \\int_ {0} ^ {\\frac {\\pi}{2}} (\\pi - 2 v) \\ln \\sin 2 v d v = 2 \\ln 2 \\int_ {0} ^ {\\frac {\\pi}{2}} (\\pi - 2 v) d v + 2 \\int_ {0} ^ {\\frac {\\pi}{2}} (\\pi - 2 v) \\ln \\sin v d v + 2 \\int_ {0} ^ {\\frac {\\pi}{2}} (\\pi - 2 v) \\ln \\cos v d v \\\\ = \\pi^ {2} \\ln 2 - \\frac {\\pi^ {2}}{2} \\ln 2 + 2 \\int_ {0} ^ {\\frac {\\pi}{2}} (\\pi - 2 v) \\ln \\sin v d v + 2 \\int_ {0} ^ {\\frac {\\pi}{2}} 2 t \\ln \\sin t d t = \\frac {\\pi^ {2}}{2} \\ln 2 + 2 \\pi \\int_ {0} ^ {\\frac {\\pi}{2}} \\ln \\sin v d v \\\\ = \\frac {\\pi^ {2}}{2} \\ln 2 + 2 \\pi \\left(- \\frac {\\pi}{2} \\ln 2\\right) ^ {*}, = - \\frac {\\pi^ {2}}{2} \\ln 2. \\\\ \\end{array}\n$$\n\n\\*) 利用 2353 题 (1) 的结果.",
+    "reference": [
+      "2353"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "117",
+    "id": "4189"
+  },
+  {
+    "question": "【4192】 $\\iint_{x^2 + y^2 \\mid z^2 \\leqslant 1} \\frac{\\varphi(x, y, z)}{(x^2 + y^2 + z^2)^p} \\mathrm{d}x \\mathrm{d}y \\mathrm{d}z$ 其中 $0 < m \\leqslant |\\varphi(x, y, z)| \\leqslant M$ .",
+    "answer": "当 $p < \\frac{3}{2}$ 时收敛，当 $p\\geqslant \\frac{3}{2}$ 时发散",
+    "solution": "提示 仿 4191 题，并采用球坐标.\n\n解和 4191 题完全类似（请参看 4191 题的解题过程），易得\n\n$$\n\\iint_ {r ^ {2} - y ^ {2} + z ^ {2} \\leq 1} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{(x ^ {2} + y ^ {2} + z ^ {2}) ^ {p}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\varphi \\int_ {\\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} \\cos \\psi \\mathrm {d} \\psi \\int_ {0} ^ {1} \\frac {\\mathrm {d} r}{r ^ {2 p - 2}} = 4 \\pi \\int_ {0} ^ {1} \\frac {\\mathrm {d} r}{r ^ {2 p - 2}}.\n$$\n\n显然， $\\int_{\\pi}^{1}\\frac{\\mathrm{d}r}{r^{2p - 2}}$ 当 $p < \\frac{3}{2}$ 时收敛。当 $p\\geqslant \\frac{3}{2}$ 时发散；故 $\\iiint_{x^2 -y^2 -z^2\\leqslant 1}\\frac{\\varphi(x,y,z)}{(x^2 + y^2 + z^2)^p}\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z$ 当 $p < \\frac{3}{2}$ 时收敛，当 $p\\geqslant \\frac{3}{2}$ 时发散.",
+    "reference": [
+      "4191"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": true
+    },
+    "source": "117",
+    "id": "4192"
+  },
+  {
+    "question": "【4191】 $\\iint_{\\substack{x^2 + y^2 \\mid z^2 > 1}} \\frac{\\varphi(x, y, z)}{(x^2 + y^2 + z^2)^p} \\mathrm{d}x \\mathrm{d}y \\mathrm{d}z$ ，其中 $0 < m \\leqslant |\\varphi(x, y, z)| \\leqslant M.$",
+    "answer": "当 $p > \\frac{3}{2}$ 时收敛，当 $p\\leqslant \\frac{3}{2}$ 时发散",
+    "solution": "解题思路 仿 4161 题，所给积分与积分 $\\iint_{r^2 - y^2 + z^2 = 1} \\frac{\\mathrm{d}x \\, \\mathrm{d}y \\, \\mathrm{d}z}{(x^2 + y^2 + z^2)^p}$ 同时收敛或同时发散。注意到 $\\frac{1}{(x^2 + y^2 + z^2)^p}$ 是正的，采用球坐标 $x = r \\cos \\varphi \\cos \\psi$ ， $y = r \\sin \\varphi \\cos \\psi$ ， $z = r \\sin \\psi$ ，即可知当 $p > \\frac{3}{2}$ 时收敛，当 $p \\leqslant \\frac{3}{2}$ 时发散。\n\n解 由于 $\\frac{m}{(x^2 + y^2 + z^2)^p} \\leqslant \\frac{|\\varphi(x, y, z)|}{(x^2 + y^2 + z^2)^p} \\leqslant \\frac{M}{(x^2 + y^2 + z^2)^p}$ ,\n\n再注意到广义重积分收敛必绝对收敛，可知\n\n积分 $\\iint_{x^2 + y^2 + z^2 > 1} \\frac{\\varphi(x, y, z)}{(x^2 + y^2 + z^2)^p} \\mathrm{d}x \\mathrm{d}y \\mathrm{d}z$ 与 积分 $\\iint_{x^2 + y^2 + z^2 > 1} \\frac{\\mathrm{d}x \\mathrm{d}y \\mathrm{d}z}{(x^2 + y^2 + z^2)^p}$\n\n同时收敛或同时发散。由于被积函数 $\\frac{1}{(x^2 + y^2 + z^2)^p}$ 是正的，采用球坐标 $x = r\\cos \\varphi \\cos \\psi$ ， $y = r\\sin \\varphi \\cos \\psi ,z =$ $r\\sin \\psi$ ，得\n\n$$\n\\iint_ {x ^ {2} + y ^ {2} - z ^ {2} - 1} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{(x ^ {2} + y ^ {2} + z ^ {2}) ^ {p}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\varphi \\int_ {- \\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} \\cos \\psi \\mathrm {d} \\psi \\int_ {1} ^ {- 1} \\frac {\\mathrm {d} r}{r ^ {2 p - 2}} = 4 \\pi \\int_ {1} ^ {- \\pi} \\frac {\\mathrm {d} r}{r ^ {2 p - 2}}.\n$$\n\n显然， $\\int_{1}^{\\infty}\\frac{\\mathrm{d}r}{r^{2p - 2}}$ 当 $p > \\frac{3}{2}$ 时收敛， $p\\leqslant \\frac{3}{2}$ 时发散；由此可知， $\\iint_{r^2 +y^2 -z^2 >1}\\frac{\\varphi(x,y,z)}{(x^2 + y^2 + z^2)^p}\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z$ 当 $p > \\frac{3}{2}$ 时收敛，当 $p\\leqslant \\frac{3}{2}$ 时发散.",
+    "reference": [
+      "4161"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": true,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": true
+    },
+    "source": "117",
+    "id": "4191"
+  },
+  {
+    "question": "【4193】 $\\iiint_{|x| + |y| + |z| > 1} \\frac{\\mathrm{d}x \\mathrm{~d}y \\mathrm{~d}z}{|x|^p + |y|^q + |z|^r} (p > 0, q > 0, r > 0).$",
+    "answer": "当 \\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} < 1 时收敛，当 \\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} \\geq 1 时发散",
+    "solution": "解 由对称性及被积函数的非负性，有\n\n$$\n\\iiint_ {| x |: | y | + | z | > 1} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{| x | ^ {p} + | y | ^ {q} + | z | ^ {r}} = 8 \\iiint_ {\\substack {x \\geqslant 0, y \\geqslant 0, z \\geqslant 0 \\\\ r + y + z > 1}} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{x ^ {p} + y ^ {q} + z ^ {r}} = 8 \\iiint_ {\\Omega_ {1}} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{x ^ {p} + y ^ {q} + z ^ {r}} + 8 \\iiint_ {\\Omega_ {2}} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{x ^ {p} + y ^ {q} + z ^ {r}}.\n$$\n\n其中，令\n\n$$\n\\Omega_ {1} = \\{(x, y, z) | x \\geqslant 0, y \\geqslant 0, z \\geqslant 0, x + y + z > 1, x ^ {p} + y ^ {q} + z ^ {r} \\leqslant 3 \\},\n$$\n\n$$\n\\Omega_ {2} = \\{(x, y, z) | x \\geqslant 0, y \\geqslant 0, z \\geqslant 0, x + y + z > 1, x ^ {p} + y ^ {q} + z ^ {r} > 3 \\}.\n$$\n\n令 $\\Omega_{3} = \\{(x,y,z)|x\\geqslant 0,y\\geqslant 0,z\\geqslant 0,x^{p} + y^{q} + z^{r} > 3\\}$ ，由于当 $x\\geqslant 0,y\\geqslant 0,z\\geqslant 0,x^{p} + y^{q} + z^{r} > 3$ 时必有 $x + y$ $+z > 1$ （否则， $x + y + z\\leqslant 1$ ，就有 $x\\leqslant 1,y\\leqslant 1,z\\leqslant 1$ ，从而， $x^p\\leqslant 1,y^q\\leqslant 1,z^r\\leqslant 1$ ，于是 $x^{p} + y^{q} + z^{r}\\leqslant 3)$ ，故 $\\Omega_{2} =$ $\\Omega_{3}$ .显然， $\\iiint_{\\Omega_1}\\frac{\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z}{x^p + y^q + z^r}$ 为常义积分，故积分 $\\iiint_{|x| + |y| - |z| > 1}\\frac{\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z}{|x|^p + |y|^q + |z|^r}$ 的敛散性取决于 $\\iiint_{\\Omega_3}\\frac{\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z}{x^p + y^q + z^r}$ 的敛散性。对此积分，作变量代换\n\n$$\nx = R ^ {\\frac {2}{p}} \\cos^ {\\frac {2}{p}} \\varphi \\cos^ {\\frac {2}{p}} \\psi , \\quad y = R ^ {\\frac {2}{q}} \\sin^ {\\frac {2}{q}} \\varphi \\cos^ {\\frac {2}{q}} \\psi , \\quad z = R ^ {\\frac {2}{r}} \\sin^ {\\frac {2}{r}} \\psi .\n$$\n\n则易知\n\n$$\n\\frac {D (x , y , z)}{D (R , \\varphi , \\psi)} = \\frac {8}{p q r} R ^ {\\frac {2}{p} + \\frac {2}{q} + \\frac {2}{r} - 1} \\cos^ {\\frac {2}{p} - 1} \\varphi \\sin^ {\\frac {2}{q} - 1} \\varphi \\sin^ {\\frac {2}{r} - 1} \\psi \\cos^ {\\frac {2}{p} + \\frac {2}{q}} \\psi .\n$$\n\n于是，由被积函数的非负性，并利用 3856 题的结果，得\n\n$$\n\\begin{array}{l} \\iiint_ {\\bar {a} _ {3}} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{x ^ {p} + y ^ {q} + z ^ {r}} = \\frac {8}{p q r} \\int_ {0} ^ {\\frac {\\pi}{2}} \\sin^ {\\frac {2}{r} - 1} \\psi \\cos^ {\\frac {2}{p} + \\frac {2}{q} - 1} \\psi \\mathrm {d} \\psi \\cdot \\int_ {0} ^ {\\frac {\\pi}{2}} \\sin^ {\\frac {2}{q} - 1} \\psi \\cos^ {\\frac {2}{p} - 1} \\varphi \\mathrm {d} \\varphi \\cdot \\int_ {\\sqrt {3}} ^ {+ \\infty} R ^ {\\frac {2}{p} + \\frac {2}{q} + \\frac {2}{r} - 3} \\mathrm {d} R \\\\ = \\frac {8}{p q r} \\cdot \\frac {1}{2} B \\left(\\frac {1}{r}, \\frac {1}{p} + \\frac {1}{q}\\right) \\cdot \\frac {1}{2} B \\left(\\frac {1}{q}, \\frac {1}{p}\\right) \\int_ {\\sqrt {3}} ^ {+ \\infty} R ^ {\\frac {2}{p} + \\frac {2}{q} + \\frac {2}{r}} d R \\\\ = \\frac {2}{p q r} B \\left(\\frac {1}{r}, \\frac {1}{p} + \\frac {1}{q}\\right) B \\left(\\frac {1}{q}, \\frac {1}{p}\\right) \\int_ {\\sqrt {3}} ^ {+ \\infty} R ^ {\\frac {2}{p} + \\frac {2}{q} + \\frac {2}{r} - 3} d R. \\\\ \\end{array}\n$$\n\n由于积分 $\\int_{\\sqrt{3}}^{+\\infty} R^{\\frac{2}{p} + \\frac{2}{q} + \\frac{2}{r} - 3} \\mathrm{d}R$ 当 $\\frac{2}{p} + \\frac{2}{q} + \\frac{2}{r} - 3 < -1$ （即 $\\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} < 1$ ）时收敛，当 $\\frac{2}{p} + \\frac{2}{q} + \\frac{2}{r} - 3 \\geq -1$ 时发散，故积分 $\\iiint_{\\Omega_3} \\frac{\\mathrm{d}x \\, \\mathrm{d}y \\, \\mathrm{d}z}{x^p + y^q + z^r}$ （从而，积分 $\\iiint_{|x| + |y| + |z| > 1} \\frac{\\mathrm{d}x \\, \\mathrm{d}y \\, \\mathrm{d}z}{|x|^p + |y|^q + |z|^r}$ ）当 $\\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} < 1$ 时收敛，当 $\\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} \\geq 1$ 时发散.",
+    "reference": [
+      "3856"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": true
+    },
+    "source": "117",
+    "id": "4193"
+  },
+  {
+    "question": "【4163】 $\\iint_{(0)\\leqslant y\\leqslant 1}\\frac{\\varphi(x,y)}{(1 + x^2 + y^2)^p}\\mathrm{d}x\\mathrm{d}y.$",
+    "answer": "当 $p > \\frac{1}{2}$ 时收敛，当 $p \\leqslant \\frac{1}{2}$ 时发散",
+    "solution": "解仿 4161 题，可知积分 $\\iint_{0\\leqslant y\\leqslant 1}\\frac{\\varphi(x,y)}{(1 + x^2 + y^2)^p}\\mathrm{d}x\\mathrm{d}y$ 与积分 $\\iint_{0\\leqslant y\\leqslant 1}\\frac{\\mathrm{d}x\\mathrm{d}y}{(1 + x^2 + y^2)^p}$ 同时收敛或同时发散。由于被积函数是正的，故\n\n$$\n\\iint_ {| | \\leqslant y | | _ {1}} \\frac {\\mathrm {d} x \\mathrm {d} y}{(1 + x ^ {2} + y ^ {2}) ^ {p}} - \\int_ {0} ^ {1} \\mathrm {d} y \\int_ {- \\infty} ^ {- \\infty} \\frac {\\mathrm {d} x}{(1 + x ^ {2} + y ^ {2}) ^ {p}} = 2 \\int_ {0} ^ {1} \\mathrm {d} y \\int_ {0} ^ {- \\infty} \\frac {\\mathrm {d} x}{(1 + x ^ {2} + y ^ {2}) ^ {p}};\n$$\n\n由于，当 $0 \\leqslant y \\leqslant 1$ 时，有\n\n$$\n\\int_ {0} ^ {+ \\infty} \\frac {\\mathrm {d} x}{(2 + x ^ {2}) ^ {p}} \\leqslant \\int_ {0} ^ {+ \\infty} \\frac {\\mathrm {d} x}{(1 + x ^ {2} + y ^ {2}) ^ {p}} \\leqslant \\int_ {0} ^ {+ \\infty} \\frac {\\mathrm {d} x}{(1 + x ^ {2}) ^ {p}} \\quad (\\text {若} p \\geqslant 0),\n$$\n\n$$\n\\int_ {0} ^ {- \\infty} \\frac {\\mathrm {d} x}{(2 + x ^ {2}) ^ {p}} \\geqslant \\int_ {0} ^ {- \\infty} \\frac {\\mathrm {d} x}{(1 + x ^ {2} + y ^ {2}) ^ {p}} \\geqslant \\int_ {0} ^ {- \\infty} \\frac {\\mathrm {d} x}{(1 + x ^ {2}) ^ {p}} \\quad (\\text {若} p <   0),\n$$\n\n故 $2\\int_{0}^{+\\infty}\\frac{\\mathrm{d}x}{(2 + x^2)^p}\\leqslant \\iint_{0\\leqslant y\\leqslant 1}\\frac{\\mathrm{d}x\\mathrm{d}y}{(1 + x^2 + y^2)^p}\\leqslant 2\\int_{0}^{+\\infty}\\frac{\\mathrm{d}x}{(1 + x^2)^p}\\quad (p\\geqslant 0),$\n\n若 $p < 0$ ，则有相反的不等式\n\n对于 $a > 0$ ，由于 $\\lim_{x\\to +\\infty}x^{2p}\\frac{1}{(a^2 + x^2)^p} = 1.$\n\n故积分 $\\int_{0}^{\\infty}\\frac{\\mathrm{d}x}{(a^{2} + x^{2})^{p}}$ 当 $p > \\frac{1}{2}$ 时收敛， $p < \\frac{1}{2}$ 时发散。实际上，此积分当 $p = \\frac{1}{2}$ 时也发散，因为\n\n$$\n\\int_ {0} ^ {+ \\infty} \\frac {\\mathrm {d} x}{\\sqrt {a ^ {2} + x ^ {2}}} = \\ln (x + \\sqrt {a ^ {2} + x ^ {2}}) \\Big | _ {0} ^ {+ \\infty} = + \\infty .\n$$\n\n由此可知：积分 $\\iint_{[0 < y \\leq 1]}\\frac{\\mathrm{d}x\\mathrm{d}y}{(1 + x^2 + y^2)^p}$ ，从而，积分 $\\iint_{[0 < y \\leq 1]}\\frac{\\varphi(x,y)}{(1 + x^2 + y^2)^p}\\mathrm{d}x\\mathrm{d}y$ 当 $p > \\frac{1}{2}$ 时收敛，当 $p \\leqslant \\frac{1}{2}$ 时发散.",
+    "reference": [
+      "4161"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "118",
+    "id": "4163"
+  },
+  {
+    "question": "【4192】 $\\iint_{x^2 + y^2 \\mid z^2 \\leqslant 1} \\frac{\\varphi(x, y, z)}{(x^2 + y^2 + z^2)^p} \\mathrm{d}x \\mathrm{d}y \\mathrm{d}z$ 其中 $0 < m \\leqslant |\\varphi(x, y, z)| \\leqslant M$ .",
+    "answer": "当 $p < \\frac{3}{2}$ 时收敛，当 $p\\geqslant \\frac{3}{2}$ 时发散",
+    "solution": "提示 仿 4191 题，并采用球坐标.\n\n解和 4191 题完全类似（请参看 4191 题的解题过程），易得\n\n$$\n\\iint_ {r ^ {2} - y ^ {2} + z ^ {2} \\leq 1} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{(x ^ {2} + y ^ {2} + z ^ {2}) ^ {p}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\varphi \\int_ {\\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} \\cos \\psi \\mathrm {d} \\psi \\int_ {0} ^ {1} \\frac {\\mathrm {d} r}{r ^ {2 p - 2}} = 4 \\pi \\int_ {0} ^ {1} \\frac {\\mathrm {d} r}{r ^ {2 p - 2}}.\n$$\n\n显然， $\\int_{\\pi}^{1}\\frac{\\mathrm{d}r}{r^{2p - 2}}$ 当 $p < \\frac{3}{2}$ 时收敛。当 $p\\geqslant \\frac{3}{2}$ 时发散；故 $\\iiint_{x^2 -y^2 -z^2\\leqslant 1}\\frac{\\varphi(x,y,z)}{(x^2 + y^2 + z^2)^p}\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z$ 当 $p < \\frac{3}{2}$ 时收敛，当 $p\\geqslant \\frac{3}{2}$ 时发散.",
+    "reference": [
+      "4191"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": true
+    },
+    "source": "118",
+    "id": "4192"
+  },
+  {
+    "question": "【4191】 $\\iint_{\\substack{x^2 + y^2 \\mid z^2 > 1}} \\frac{\\varphi(x, y, z)}{(x^2 + y^2 + z^2)^p} \\mathrm{d}x \\mathrm{d}y \\mathrm{d}z$ ，其中 $0 < m \\leqslant |\\varphi(x, y, z)| \\leqslant M.$",
+    "answer": "当 $p > \\frac{3}{2}$ 时收敛，当 $p\\leqslant \\frac{3}{2}$ 时发散",
+    "solution": "解题思路 仿 4161 题，所给积分与积分 $\\iint_{r^2 - y^2 + z^2 = 1} \\frac{\\mathrm{d}x \\, \\mathrm{d}y \\, \\mathrm{d}z}{(x^2 + y^2 + z^2)^p}$ 同时收敛或同时发散。注意到 $\\frac{1}{(x^2 + y^2 + z^2)^p}$ 是正的，采用球坐标 $x = r \\cos \\varphi \\cos \\psi$ ， $y = r \\sin \\varphi \\cos \\psi$ ， $z = r \\sin \\psi$ ，即可知当 $p > \\frac{3}{2}$ 时收敛，当 $p \\leqslant \\frac{3}{2}$ 时发散。\n\n解 由于 $\\frac{m}{(x^2 + y^2 + z^2)^p} \\leqslant \\frac{|\\varphi(x, y, z)|}{(x^2 + y^2 + z^2)^p} \\leqslant \\frac{M}{(x^2 + y^2 + z^2)^p}$ ,\n\n再注意到广义重积分收敛必绝对收敛，可知\n\n积分 $\\iint_{x^2 + y^2 + z^2 > 1} \\frac{\\varphi(x, y, z)}{(x^2 + y^2 + z^2)^p} \\mathrm{d}x \\mathrm{d}y \\mathrm{d}z$ 与 积分 $\\iint_{x^2 + y^2 + z^2 > 1} \\frac{\\mathrm{d}x \\mathrm{d}y \\mathrm{d}z}{(x^2 + y^2 + z^2)^p}$\n\n同时收敛或同时发散。由于被积函数 $\\frac{1}{(x^2 + y^2 + z^2)^p}$ 是正的，采用球坐标 $x = r\\cos \\varphi \\cos \\psi$ ， $y = r\\sin \\varphi \\cos \\psi ,z =$ $r\\sin \\psi$ ，得\n\n$$\n\\iint_ {x ^ {2} + y ^ {2} - z ^ {2} - 1} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{(x ^ {2} + y ^ {2} + z ^ {2}) ^ {p}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\varphi \\int_ {- \\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} \\cos \\psi \\mathrm {d} \\psi \\int_ {1} ^ {- 1} \\frac {\\mathrm {d} r}{r ^ {2 p - 2}} = 4 \\pi \\int_ {1} ^ {- \\pi} \\frac {\\mathrm {d} r}{r ^ {2 p - 2}}.\n$$\n\n显然， $\\int_{1}^{\\infty}\\frac{\\mathrm{d}r}{r^{2p - 2}}$ 当 $p > \\frac{3}{2}$ 时收敛， $p\\leqslant \\frac{3}{2}$ 时发散；由此可知， $\\iint_{r^2 +y^2 -z^2 >1}\\frac{\\varphi(x,y,z)}{(x^2 + y^2 + z^2)^p}\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z$ 当 $p > \\frac{3}{2}$ 时收敛，当 $p\\leqslant \\frac{3}{2}$ 时发散.",
+    "reference": [
+      "4161"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "118",
+    "id": "4191"
+  },
+  {
+    "question": "【4204】 (2) $\\int_{0}^{1}\\int_{0}^{1}\\dots \\int_{0}^{1}(x_{1} + x_{2} + \\dots +x_{n})^{2}\\mathrm{d}x_{1}\\mathrm{d}x_{2}\\dots \\mathrm{d}x_{n}.$",
+    "answer": "\\frac{n(3n+1)}{12}",
+    "solution": "(2) 将被积函数展开，化成累次积分并利用本题 (1) 的结果.\n\n(2) $\\int_0^1\\int_0^1\\dots \\int_0^1 (x_1 + x_2 + \\dots +x_n)^2\\mathrm{d}x_1\\mathrm{d}x_2\\dots \\mathrm{d}x_n$\n\n$$\n\\begin{array}{l} = \\int_ {0} ^ {1} d x _ {1} \\int_ {0} ^ {1} d x _ {2} \\dots \\int_ {0} ^ {1} \\left[ \\left(x _ {1} ^ {2} + x _ {2} ^ {2} + \\dots + x _ {n} ^ {2}\\right) + 2 \\left(x _ {1} x _ {2} + x _ {1} x _ {3} + \\dots + x _ {1} x _ {n} + x _ {2} x _ {3} + \\dots + x _ {2} x _ {n} + x _ {3} x _ {4} \\right. \\right. \\\\ \\left. + \\dots + x _ {3} x _ {n} + \\dots + x _ {n - 1} x _ {n}\\right) ] d x _ {n} \\\\ = \\frac {n}{3} ^ {*}) + 2 \\int_ {0} ^ {1} d x _ {1} \\int_ {0} ^ {1} d x _ {2} \\dots \\int_ {0} ^ {1} \\left[ \\left(x _ {1} x _ {2} + \\dots x _ {1} x _ {n}\\right) + \\left(x _ {2} x _ {3} + \\dots + x _ {2} x _ {n}\\right) + \\dots + x _ {n - 1} x _ {n} \\right] d x _ {n} \\\\ = \\frac {n}{3} + 2 \\left(\\frac {n - 1}{4} + \\frac {n - 2}{4} + \\dots + \\frac {1}{4}\\right) = \\frac {n (3 n + 1)}{1 2}. \\\\ \\end{array}\n$$\n\n*) 利用本题 (1) 的结果.",
+    "reference": [
+      "4204 (1)"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": true,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "123",
+    "id": "4204_2"
+  },
+  {
+    "question": "【4206】$\\int_0^1\\mathrm{d}x_1\\int_0^{x_1}\\mathrm{d}x_2\\dots \\int_0^{x_{n - 1}}x_1x_2\\dots x_n\\mathrm{d}x_n.$\n\n提示 化成累次积分或利用 4203 题的结果，均可获解。",
+    "answer": "\\frac{1}{2^{n}n!}",
+    "solution": "解 $\\int_{0}^{1}\\mathrm{d}x_{1}\\int_{0}^{x_{1}}\\mathrm{d}x_{2}\\dots \\int_{0}^{x_{n - 1}}x_{1}x_{2}\\dots x_{n}\\mathrm{d}x_{n} = \\int_{0}^{1}\\mathrm{d}x_{1}\\int_{0}^{x_{1}}\\mathrm{d}x_{2}\\dots \\int_{0}^{x_{n - 2}}\\frac{1}{2} x_{1}x_{2}\\dots x_{n - 1}^{3}\\mathrm{d}x_{n - 1}$\n\n$$\n\\begin{array}{l} = \\int_ {0} ^ {1} d x _ {1} \\int_ {0} ^ {x _ {1}} d x _ {2} \\dots \\int_ {0} ^ {r _ {n - 3}} \\frac {1}{2} \\cdot \\frac {1}{4} x _ {1} x _ {2} \\dots x _ {n - 2} ^ {5} d x _ {n - 2} \\\\ = \\dots = \\frac {1}{2} \\cdot \\frac {1}{4} \\dots \\frac {1}{2 (n - 1)} \\int_ {0} ^ {1} x _ {1} ^ {2 n - 1} d x _ {1} = \\frac {1}{2 \\cdot 4 \\cdots 2 n} = \\frac {1}{2 ^ {n} n !}. \\\\ \\end{array}\n$$\n\n*）也可利用 4203 题的结果直接得\n\n$$\n\\int_ {0} ^ {1} \\mathrm {d} x _ {1} \\int_ {0} ^ {x _ {1}} \\mathrm {d} x _ {2} \\dots \\int_ {0} ^ {x _ {n - 1}} x _ {1} x _ {2} \\dots x _ {n} \\mathrm {d} x _ {n} = \\frac {1}{n !} \\left(\\int_ {0} ^ {1} \\tau \\mathrm {d} \\tau\\right) ^ {n} = \\frac {1}{2 ^ {n} n !}.\n$$",
+    "reference": [
+      "4203"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "123",
+    "id": "4206"
+  },
+  {
+    "question": "【4209】求 $n$ 维角锥 $\\frac{x_1}{a_1} +\\frac{x_2}{a_2} +\\dots +\\frac{x_n}{a_n}\\leqslant 1,x_i\\geqslant 0(i = 1,2,\\dots ,n)(a_i > 0,i = 1,2,\\dots ,n)$ 的体积.\n\n提示 令 $x_{i} = a_{i}\\xi_{i}(i = 1,2,\\dots ,n)$ ，并利用 4205 题的结果.",
+    "answer": "$\\frac {a _ {1} a _ {2} \\cdots a _ {n}}{n !}$",
+    "solution": "解 令 $x_{i} = a_{i}\\xi_{i}$ $(i = 1,2,\\dots ,n)$ ，即得体积\n\n$$\nV = a _ {1} a _ {2} \\dots a _ {n} \\iint_ {\\substack {\\xi_ {1} \\geqslant 0, \\xi_ {2} \\geqslant 0, \\dots , \\xi_ {n} \\geqslant 0 \\\\ \\xi_ {1} + \\xi_ {2} + \\dots + \\xi_ {n} <   1}} d \\xi_ {1} d \\xi_ {2} \\dots d \\xi_ {n} = \\frac {a _ {1} a _ {2} \\cdots a _ {n}}{n !} ^ {*})\n$$\n\n\\*）利用 4205 题的结果.",
+    "reference": [
+      "4205"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "123",
+    "id": "4209"
+  },
+  {
+    "question": "【4214】证明等式： $\\int_0^x\\mathrm{d}x_1\\int_0^{x_1}\\mathrm{d}x_2\\dots \\int_0^{x_{n - 1}}f(x_n)\\mathrm{d}x_n = \\int_0^x f(u)\\frac{(x - u)^{n - 1}}{(n - 1)!}\\mathrm{d}u.$\n\n提示 利用 4202 题的结果.",
+    "answer": "$\\int_0^x\\mathrm{d}x_1\\int_0^{x_1}\\mathrm{d}x_2\\dots \\int_0^{x_{n - 1}}f(x_n)\\mathrm{d}x_n = \\int_0^x f(u)\\frac{(x - u)^{n - 1}}{(n - 1)!}\\mathrm{d}u.$",
+    "solution": "证 $\\int_0^x\\mathrm{d}x_1\\int_0^{x_1}\\mathrm{d}x_2\\dots \\int_0^{x_{n - 1}}f(x_n)\\mathrm{d}x_n$\n\n$$\n\\begin{array}{l} = \\int_ {0} ^ {x} f (x _ {n}) d x _ {n} \\int_ {x _ {n}} ^ {x} d x _ {n - 1} \\int_ {x _ {n - 1}} ^ {x} d x _ {n - 2} \\dots \\int_ {x _ {2}} ^ {x} d x _ {1} \\cdot) = \\int_ {0} ^ {x} f (x _ {n}) d x _ {n} \\int_ {x _ {n}} ^ {x} d x _ {n - 1} \\int_ {x _ {n - 1}} ^ {x} d x _ {n - 2} \\dots \\int_ {x _ {3}} ^ {x} (x - x _ {2}) d x _ {2} \\\\ = \\int_ {0} ^ {x} f (x _ {n}) d x _ {n} \\int_ {x _ {n}} ^ {x} d x _ {n - 1} \\int_ {x _ {n - 1}} ^ {x} d x _ {n - 2} \\dots \\int_ {x _ {4}} ^ {x} \\frac {1}{2} (x - x _ {3}) ^ {2} d x _ {3} \\\\ = \\int_ {0} ^ {x} f (x _ {n}) \\mathrm {d} x _ {n} \\int_ {x _ {n}} ^ {x} \\mathrm {d} x _ {n - 1} \\int_ {x _ {n - 1}} ^ {x} \\mathrm {d} x _ {n - 2} \\dots \\int_ {x _ {5}} ^ {x} \\frac {1}{2 \\cdot 3} (x - x _ {4}) ^ {3} \\mathrm {d} x _ {4} \\\\ = \\dots \\\\ = \\int_ {0} ^ {x} f \\left(x _ {n}\\right) d x _ {n} \\int_ {x _ {n}} ^ {x} \\frac {1}{(n - 2) !} \\left(x - x _ {n - 1}\\right) ^ {n - 2} d x _ {n - 1} = \\int_ {0} ^ {x} \\frac {\\left(x - x _ {n}\\right) ^ {n - 1}}{(n - 1) !} f \\left(x _ {n}\\right) d x _ {n}. \\\\ \\end{array}\n$$\n\n在上述积分中，将 $x_{n}$ 代之以 $u$ ，不影响积分的值，故得\n\n$$\n\\int_ {0} ^ {x} \\mathrm {d} x _ {1} \\int_ {0} ^ {x _ {1}} \\mathrm {d} x _ {2} \\dots \\int_ {0} ^ {x _ {n - 1}} f (x _ {n}) \\mathrm {d} x = \\int_ {0} ^ {x} f (u) \\frac {(x - u) ^ {n - 1}}{(n - 1) !} \\mathrm {d} u.\n$$\n\n\\*) 利用 4202 题的结果.",
+    "reference": [
+      "4202"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "123",
+    "id": "4214"
+  },
+  {
+    "question": "【4218】将区域 $x_{1}^{2} + x_{2}^{2} + \\dots +x_{n}^{2}\\leqslant R^{2}$ 上的 $_n$ 重积分 $(n\\geqslant 2)$\n\n$$\n\\iint_ {\\Omega} \\dots \\int f (\\sqrt {x _ {1} ^ {2} + x _ {2} ^ {2} + \\cdots + x _ {n} ^ {2}}) d x _ {1} d x _ {2} \\dots d x _ {n}\n$$\n\n化为一重积分，其中 $f(u)$ 为连续函数",
+    "answer": "R ^ {n} \\frac {\\pi^ {\\frac {n}{2}}}{\\Gamma \\left(\\frac {n}{2}\\right)} \\int_ {0} ^ {1} u ^ {\\frac {n}{2}} f (R \\sqrt {u}) d u.",
+    "solution": "解 作代换 $x_{1} = Rr\\cos \\varphi$\n\n$$\nx _ {2} = R r \\sin \\varphi_ {1} \\cos \\varphi_ {2},\n$$\n\n：\n\n$$\n\\begin{array}{l} x _ {n - 1} = R r \\sin \\varphi_ {1} \\sin \\varphi_ {2} \\dots \\sin \\varphi_ {n - 2} \\cos \\varphi_ {n - 1}, \\\\ x _ {n} = R r \\sin \\varphi_ {1} \\sin \\varphi_ {2} \\dots \\sin \\varphi_ {n - 2} \\sin \\varphi_ {n - 1}, \\\\ \\end{array}\n$$\n\n则有 $I = R^{n}r^{n - 1}\\sin^{n - 2}\\varphi_{1}\\sin^{n - 3}\\varphi_{2}\\dots \\sin \\varphi_{n - 2},$\n\n于是，\n\n$$\n\\begin{array}{l} \\iint_ {\\Omega} \\dots \\int f (\\sqrt {x _ {1} ^ {2} + x _ {2} ^ {2} + \\cdots + x _ {n} ^ {2}}) d x _ {1} d x _ {2} \\dots d x _ {n} \\\\ = R ^ {n} \\int_ {0} ^ {1} r ^ {n - 1} f (R r) d r \\int_ {0} ^ {\\pi} \\sin^ {n - 2} \\varphi_ {1} d \\varphi_ {1} \\int_ {0} ^ {\\pi} \\sin^ {n - 3} \\varphi_ {2} d \\varphi_ {2} \\dots \\int_ {0} ^ {\\pi} \\sin \\varphi_ {n - 2} d \\varphi_ {n - 2} \\int_ {0} ^ {2 \\pi} d \\varphi_ {n - 1} \\\\ = 2 \\pi R ^ {n} \\frac {\\Gamma \\left(\\frac {n - 1}{2}\\right) \\Gamma \\left(\\frac {1}{2}\\right)}{\\Gamma \\left(\\frac {n}{2}\\right)} \\cdot \\frac {\\Gamma \\left(\\frac {n - 2}{2}\\right) \\Gamma \\left(\\frac {1}{2}\\right)}{\\Gamma \\left(\\frac {n - 1}{2}\\right)} \\dots \\frac {\\Gamma \\left(\\frac {2}{2}\\right) \\Gamma \\left(\\frac {1}{2}\\right)}{\\Gamma \\left(\\frac {3}{2}\\right)} \\int_ {0} ^ {1} r ^ {n - 1} f (R r) d r ^ {*}, \\\\ = R ^ {n} \\frac {2 \\pi \\cdot \\pi^ {\\frac {n - 2}{2}}}{\\Gamma \\left(\\frac {n}{2}\\right)} \\int_ {0} ^ {1} r ^ {n - 1} f (R r) d r = R ^ {n} \\frac {\\pi^ {\\frac {n}{2}}}{\\Gamma \\left(\\frac {n}{2}\\right)} \\int_ {0} ^ {1} \\left(r ^ {2}\\right) ^ {\\frac {n}{2}} ^ {- 1} f (R r) d \\left(r ^ {2}\\right) \\\\ = R ^ {n} \\frac {\\pi^ {\\frac {n}{2}}}{\\Gamma \\left(\\frac {n}{2}\\right)} \\int_ {0} ^ {1} u ^ {\\frac {n}{2}} f (R \\sqrt {u}) d u. \\\\ \\end{array}\n$$\n\n\\*) 参看 4210 题的计算过程.",
+    "reference": [
+      "4210"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "123",
+    "id": "4218"
+  },
+  {
+    "question": "【4194】 $\\int_0^a\\int_0^a\\int_0^a\\frac{f(x,y,z)\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z}{\\left[\\left[y - \\varphi(x)\\right]^2 + \\left[z - \\psi(x)\\right]^2\\right]^p}$ ，其中 $0 < m \\leqslant |f(x,y,z)| \\leqslant M$ ，而 $\\varphi(x)$ 和 $\\psi(x)$ 是闭区间 $[0,a]$ 上的连续函数。",
+    "answer": "当 $p < 1$ 时收敛；当 $p \\geqslant 1$ 时，若不存在 $x \\in [0, a]$ 使 $0 \\leqslant \\varphi(x) \\leqslant a, 0 \\leqslant \\psi(x) \\leqslant a$ ，则收敛；若存在 $x \\in [0, a]$ ，使 $0 < \\varphi(x) < a, 0 < \\psi(x) < a$ ，则发散.",
+    "solution": "解由于\n\n$$\n\\frac {m}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}} \\leqslant \\frac {\\left| f (x , y , z) \\right|}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}} \\leqslant \\frac {M}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}},\n$$\n\n并注意到广义重积分收敛必绝对收敛，即知积分与积分 $\\int_0^a\\int_0^a\\int_0^a\\frac{\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z}{\\left[\\left[y - \\varphi (x)\\right]^2 + \\left[z - \\psi (x)\\right]^2\\right]^p}$\n\n$$\n\\int_ {0} ^ {a} \\int_ {0} ^ {a} \\int_ {0} ^ {a} \\frac {f (x , y , z) d x d y d z}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {\\rho}}\n$$\n\n同时收敛或同时发散。由被积函数 $\\frac{1}{\\left\\{\\left[y - \\varphi(x)\\right]^2 + \\left[z - \\psi(x)\\right]^2\\right\\}^\\rho}$ 的非负性，我们有\n\n$$\n\\int_ {0} ^ {a} \\int_ {0} ^ {a} \\int_ {0} ^ {a} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}} = \\int_ {0} ^ {a} F (x) \\mathrm {d} x,\n$$\n\n其中 $F(x) = \\int_{0}^{a}\\int_{0}^{a}\\frac{\\mathrm{d}y\\mathrm{d}z}{\\left\\{\\left[y - \\varphi (x)\\right]^{2} + \\left[z - \\psi (x)\\right]^{2}\\right\\}^{p}}$ （ $0\\leqslant x\\leqslant a$ ）.\n\n作变量代换 $u = y - \\varphi (x),\\quad v = z - \\psi (x)\\quad (x$ 固定），\n\n则 $\\frac{D(y,z)}{D(u,v)} = \\frac{1}{\\frac{D(u,v)}{D(y,z)}} = 1.$\n\n从而，有\n\n$$\nF (x) = \\iint_ {\\substack {- \\varphi (x) \\leqslant u \\leqslant a - \\varphi (x) \\\\ \\psi (x) \\leqslant t \\leqslant a - \\psi (x)}} \\frac {\\mathrm {d} u \\mathrm {d} v}{\\left(u ^ {2} + v ^ {2}\\right) ^ {p}}. \\tag{1}\n$$\n\n先设 $p < 1$ 令 $c = \\max_{\\psi \\leq x \\leq a}(|\\varphi(x)| + |\\psi(x)|)$ ，则由（1）式知，\n\n$$\n0 <   F (x) \\leqslant \\iint_ {\\substack {- c \\leqslant u \\leqslant a - c \\\\ - c \\leqslant v \\leqslant a + c}} \\frac {\\mathrm {d} u \\mathrm {d} v}{(u ^ {2} + v ^ {2}) ^ {p}} <   \\iint_ {u ^ {2} \\cdot v ^ {2} \\leqslant 2 (a - c) ^ {2}} \\frac {\\mathrm {d} u \\mathrm {d} v}{(u ^ {2} + v ^ {2}) ^ {p}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\theta \\int_ {0} ^ {\\sqrt {2} (a + c)} \\frac {\\mathrm {d} r}{r ^ {2 p - 1}} = \\frac {\\pi}{1 - p} [ \\sqrt {2} (a + c) ] ^ {2 - 2 p},\n$$\n\n即 $F(x)$ 有界 (实际上，仿 4186 题的证明过程还可证明 $F(x)$ 在 $0 \\leqslant x \\leqslant a$ 上连续)，从而， $\\int_{0}^{a} F(x) \\mathrm{d}x$ 是常义积分，显然收敛。由此可知，此时积分\n\n$$\n\\int_ {0} ^ {a} \\int_ {0} ^ {a} \\int_ {0} ^ {a} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}} \\tag {2}\n$$\n\n收敛.\n\n次设 $p \\geqslant 1$ ，这时积分 (2) 可能收敛也可能发散，分两种情况讨论：\n\n（i）若不存在这样的 $x \\in [0, a]$ 使 $0 \\leqslant \\varphi(x) \\leqslant a, 0 \\leqslant \\psi(x) \\leqslant a$ 同时成立（例如， $\\varphi(x)$ 或 $\\psi(x)$ 的值完全位于 $[0, a]$ 之外；这时，对一切 $0 \\leqslant x \\leqslant a, 0 \\leqslant y \\leqslant a, 0 \\leqslant z \\leqslant a$ ，均有：连续函数 $\\{[y - \\varphi(x)]^2 + [z - \\psi(x)]^2\\}^p > 0$ 。从而，积分 (2) 收敛（这时是常义积分）。\n（ii）若存在这样的点 $x \\in [0, a]$ 使 $0 < \\varphi(x) < a, 0 < \\psi(x) < a$ 同时成立；由 $\\varphi(x)$ 与 $\\psi(x)$ 的连续性，必存在正数 $\\varepsilon$ 及闭区间 $I_0 \\subset [0, a]$ ，使当 $x \\in I_0$ 时，恒有 $\\varepsilon \\leqslant \\varphi(x) \\leqslant a - \\varepsilon, \\varepsilon \\leqslant \\psi(x) \\leqslant a - \\varepsilon$ ，从而由（1）式知：当 $x \\in I_0$ 时，有\n\n$$\nF (x) \\geqslant \\iint_ {\\substack {- e \\leq u \\leq e \\\\ e \\leq v \\leq e}} \\frac {\\mathrm {d} u \\mathrm {d} v}{(u ^ {2} + v ^ {2}) ^ {p}} \\geqslant \\iint_ {u ^ {2} + v ^ {2} \\leq e ^ {2}} \\frac {\\mathrm {d} u \\mathrm {d} v}{(u ^ {2} + v ^ {2}) ^ {p}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\theta \\int_ {0} ^ {\\epsilon} \\frac {\\mathrm {d} r}{r ^ {2 p - 1}} = 2 \\pi \\int_ {0} ^ {\\epsilon} \\frac {\\mathrm {d} r}{r ^ {2 p - 1}} = + \\infty \\quad (\\text {注 意} p \\geqslant 1),\n$$\n\n即当 $x \\in I_0$ 时恒有 $F(x) = +\\infty$ ，由此可知，积分 $\\int_{0}^{a} F(x) \\mathrm{d}x$ 发散。于是，积分 (2) 发散。\n\n综上所述，可知：积分\n\n$$\n\\int_ {0} ^ {a} \\int_ {0} ^ {a} \\int_ {0} ^ {a} \\frac {f (x , y , z) d x d y d z}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}}\n$$\n\n当 $p < 1$ 时收敛；当 $p \\geqslant 1$ 时，若不存在 $x \\in [0, a]$ 使 $0 \\leqslant \\varphi(x) \\leqslant a, 0 \\leqslant \\psi(x) \\leqslant a$ ，则收敛；若存在 $x \\in [0, a]$ ，使 $0 < \\varphi(x) < a, 0 < \\psi(x) < a$ ，则发散.",
+    "reference": [
+      "4186"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "118",
+    "id": "4194"
+  },
+  {
+    "question": "【4219】计算半径为 $R$ ，密度为 $\\rho_0$ 的均质球对自身的引力势，即求积分\n\n$$\n\\nu = \\frac {\\rho_ {0} ^ {2}}{2} \\iiint_ {x _ {1} ^ {2} + y _ {1} ^ {2} + z _ {1} ^ {2} \\leqslant R ^ {2}} \\frac {\\mathrm {d} x _ {1} \\mathrm {d} y _ {1} \\mathrm {d} z _ {1} \\mathrm {d} x _ {2} \\mathrm {d} y _ {2} \\mathrm {d} z _ {2}}{r _ {1 , 2}},\n$$\n\n式中 $r_{1,2} = \\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2}$",
+    "answer": "\\frac{16}{15} \\pi^{2} \\rho_{0}^{2} R^{5}",
+    "solution": "解 我们有\n\n$$\n\\nu = \\frac {\\rho_ {0} ^ {2}}{2} \\iiint_ {x _ {1} ^ {2} + y _ {1} ^ {2} + z _ {1} ^ {2} \\leqslant R ^ {2}} d x _ {1} d y _ {1} d z _ {1} \\iiint_ {x _ {2} ^ {2} + y _ {2} ^ {2} + z _ {2} ^ {2} \\leqslant R ^ {2}} \\frac {d x _ {2} d y _ {2} d z _ {2}}{r _ {1 , 2}}.\n$$\n\n由 4155 题的结果可知 $\\iint_{x_2^2 + y_2^2 + z_2^2 \\leqslant R^2} \\frac{\\mathrm{d}x_2 \\mathrm{d}y_2 \\mathrm{d}z_2}{r_{1,2}} = 2\\pi R^2 - \\frac{2}{3}\\pi r_1^2,$\n\n其中 $r_1 = \\sqrt{x_1^2 + y_1^2 + z_1^2}$ . 于是（利用球坐标），\n\n$$\n\\begin{array}{l} u = \\frac {\\rho_ {0} ^ {2}}{2} \\iiint_ {x _ {1} ^ {2} - y _ {1} ^ {2} + z _ {1} ^ {2} \\leqslant R ^ {2}} \\left(2 \\pi R ^ {2} - \\frac {2}{3} \\pi r _ {1} ^ {2}\\right) d x _ {1} d y _ {1} d z _ {1} = \\frac {\\rho_ {0}}{2} \\int_ {0} ^ {2 \\pi} d \\varphi \\int_ {\\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} \\cos \\psi d \\psi \\int_ {0} ^ {R} \\left(2 \\pi R ^ {2} - \\frac {2}{3} \\pi r ^ {2}\\right) r ^ {2} d r \\\\ = \\frac {1 6}{1 5} \\pi^ {2} \\rho_ {0} ^ {2} R ^ {5}. \\\\ \\end{array}\n$$",
+    "reference": [
+      "4155"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "123",
+    "id": "4219"
+  },
+  {
+    "question": "【4317】计算由曲线 $\\left(\\frac{x}{a}\\right)^{2n+1} + \\left(\\frac{y}{b}\\right)^{2n+1} = c\\left(\\frac{x}{a}\\right)^n\\left(\\frac{y}{b}\\right)^n (a > 0, b > 0, c > 0, n > 0)$ 所围的面积.\n\n提示 仿 4316 题.",
+    "answer": "\\frac {a b c ^ {2}}{2 (2 n + 1)}",
+    "solution": "解 作代换 $y = \\frac{b}{a} x t$，即得曲线的参数方程为\n\n$$\nx = \\frac {a c t ^ {n}}{1 + t ^ {2 n + 1}}, \\quad y = \\frac {b c t ^ {n + 1}}{1 + t ^ {2 n + 1}} \\quad (0 \\leqslant t <   + \\infty).\n$$\n\n易知 $x\\mathrm{d}y - y\\mathrm{d}x = \\frac{abc^2t^{2n}}{(1 + t^{2n - 1})^2}\\mathrm{d}t.$ 于是，面积为\n\n$$\nS = \\frac {1}{2} \\oint_ {c} x d y - y d x = \\frac {a b c ^ {2}}{2} \\int_ {0} ^ {+ \\infty} \\frac {t ^ {2 n}}{(1 + t ^ {2 n + 1}) ^ {2}} d t = - \\frac {a b c ^ {2}}{2 (2 n + 1)} \\cdot \\frac {1}{1 + t ^ {2 n - 1}} \\Bigg | _ {0} ^ {- \\infty} = \\frac {a b c ^ {2}}{2 (2 n + 1)}.\n$$",
+    "reference": [
+      "4316"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "129",
+    "id": "4317"
+  },
+  {
+    "question": "【4316】计算由曲线 $\\left(\\frac{x}{a}\\right)^n +\\left(\\frac{y}{b}\\right)^n = \\left(\\frac{x}{a}\\right)^{n - 1} + \\left(\\frac{y}{b}\\right)^{n - 1}(a > 0,b > 0,n > 1)$ 和坐标轴所围的面积.",
+    "answer": "\\frac {a b}{n} \\left[ 1 + \\frac {(1 - \\frac {1}{n}) \\pi}{\\sin \\frac {\\pi}{n}} \\right]",
+    "solution": "解题思路 令 $y = \\frac{b}{a} x t$ ，即得曲线的参数方程为\n\n$$\nx = \\frac {a (1 + t ^ {n - 1})}{1 + t ^ {n}}, \\quad y = \\frac {b t (1 + t ^ {n - 1})}{1 + t ^ {n}} (0 <   t <   + \\infty).\n$$\n\n易知在两坐标轴上，有 $x\\mathrm{d}y - y\\mathrm{d}x = 0$ ；及在曲线上，有 $x\\mathrm{d}y - y\\mathrm{d}x = ab\\frac{(1 + t^{n - 1})^2}{(1 + t^n)^2}\\mathrm{d}t (0 < t < + \\infty)$ .并利用 3853 题的结果，问题即可获解.\n\n解 作代换 $y = \\frac{b}{a} x t$ 即得曲线的参数方程为\n\n$$\nx = \\frac {a (1 + t ^ {n - 1})}{1 + t ^ {n}}, \\quad y = \\frac {b t (1 + t ^ {n - 1})}{1 + t ^ {n}} (0 <   t <   + \\infty).\n$$\n\n易知 $x\\mathrm{d}y - y\\mathrm{d}x = ab\\frac{(1 + t^{n - 1})^2}{(1 + t^n)^2}\\mathrm{d}t.$\n\n又在两坐标轴上，显然有 $x\\mathrm{d}y - y\\mathrm{d}x = 0.$ 于是，面积为\n\n$$\n\\begin{array}{l} S = \\frac {1}{2} \\oint_ {C} x d y - y d x = \\frac {a b}{2} \\int_ {0} ^ {- \\infty} \\frac {\\left(1 + t ^ {n - 1}\\right) ^ {2}}{\\left(1 + t ^ {n}\\right) ^ {2}} d t \\\\ = \\frac {a b}{2} \\left[ \\int_ {0} ^ {- \\infty} \\frac {t ^ {2 n - 2}}{(1 + t ^ {n}) ^ {2}} d t + 2 \\int_ {0} ^ {- \\infty} \\frac {t ^ {n - 1}}{(1 + t ^ {n}) ^ {2}} d t + \\int_ {0} ^ {- \\infty} \\frac {1}{(1 + t ^ {n}) ^ {2}} d t \\right] \\\\ = \\frac {a b}{2} \\left[ \\frac {1}{n} B \\left(2 - \\frac {1}{n}, \\frac {1}{n}\\right) + \\frac {2}{n} B (1, 1) + \\frac {1}{n} B \\left(\\frac {1}{n}, 2 - \\frac {1}{n}\\right) \\right] ^ {\\cdot}) \\\\ = \\frac {a b}{n} \\left[ 1 + B \\left(2 - \\frac {1}{n}, \\frac {1}{n}\\right) \\right] = \\frac {a b}{n} \\left[ 1 + \\left(1 - \\frac {1}{n}\\right) \\frac {\\Gamma \\left(1 - \\frac {1}{n}\\right) \\Gamma \\left(\\frac {1}{n}\\right)}{\\Gamma (1)} \\right] = \\frac {a b}{n} \\left[ 1 + \\frac {(1 - \\frac {1}{n}) \\pi}{\\sin \\frac {\\pi}{n}} \\right]. \\\\ \\end{array}\n$$\n\n\\*) 利用 3853 题的结果.",
+    "reference": [
+      "3853"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "129",
+    "id": "4316"
+  },
+  {
+    "question": "【4315】计算由曲线 $\\left(\\frac{x}{a}\\right)^n +\\left(\\frac{y}{b}\\right)^n = 1(a > 0,b > 0,n > 0)$ 和坐标轴所围的面积.",
+    "answer": "\\frac {a b}{2 n} \\frac {\\Gamma^ {2} \\left(\\frac {1}{n}\\right)}{\\Gamma \\left(\\frac {2}{n}\\right)}",
+    "solution": "解题思路 令 $x = a\\cos^{\\frac{2}{n}}\\varphi, y = b\\sin^{\\frac{2}{n}}\\varphi (0 \\leqslant \\varphi \\leqslant \\frac{\\pi}{2})$，即得\n\n$x\\mathrm{d}y - y\\mathrm{d}x = \\frac{2}{n} ab\\cos^{\\frac{2}{n} -1}\\varphi \\sin^{\\frac{2}{n} -1}\\varphi \\mathrm{d}\\varphi (0\\leqslant \\varphi \\leqslant \\frac{\\pi}{2})$（在曲线上）\n\n曲线与坐标轴交于点 $(a,0)$ 及点 $(0,b)$ . 注意在 $Oy$ 轴上从点 $(0,b)$ 到点 $(0,0)$ 的一段，以及在 $Ox$ 轴上从点 $(0,0)$ 到点 $(a,0)$ 的一段上，均有 $xdy - ydx = 0$ . 再注意利用 3856 题的结果，问题即可获解.\n\n解 作代换 $x = a\\cos^{\\frac{2}{n}}\\varphi, y = b\\sin^{\\frac{2}{n}}\\varphi (0 \\leqslant \\varphi \\leqslant \\frac{\\pi}{2})$，即得\n\n$$\nx \\mathrm {d} y - y \\mathrm {d} x = \\frac {2 a b}{n} \\cos^ {\\frac {2}{n} - 1} \\varphi \\sin^ {\\frac {2}{n} - 1} \\varphi \\mathrm {d} \\varphi .\n$$\n\n曲线与坐标轴交于点 $(a,0)$ 和点 $(0,b)$ . 在 $Oy$ 轴上，从点 $(0,b)$ 到点 $(0,0)$ 一段，以及在 $Ox$ 轴上从点 $(0,0)$ 到点 $(a,0)$ 一段上，显然有 $xdy - ydx = 0$ . 于是，面积为\n\n$$\nS = \\frac {1}{2} \\oint_ {C} x d y - y d x = \\frac {1}{2} \\int_ {0} ^ {\\frac {\\pi}{2}} \\frac {2 a b}{n} \\cos^ {\\frac {2}{n} - 1} \\varphi \\sin^ {\\frac {2}{n} - 1} \\varphi d \\varphi = \\frac {a b}{n} \\cdot \\frac {1}{2} B \\left(\\frac {1}{n}, \\frac {1}{n}\\right) ^ {* 1} = \\frac {a b}{2 n} \\frac {\\Gamma^ {2} \\left(\\frac {1}{n}\\right)}{\\Gamma \\left(\\frac {2}{n}\\right)}\n$$\n\n\\*) 利用 3856 题的结果.",
+    "reference": [
+      "3856"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "129",
+    "id": "4315"
+  },
+  {
+    "question": "【4325】求 $\\lim_{d(S)\\to 0}\\frac{1}{S}\\oint_{C}(\\boldsymbol {F}\\cdot \\boldsymbol {n})\\mathrm{d}s,$\n\n其中 $S$ 为包围点 $(x_0, y_0)$ 的围线 $C$ 所围的面积， $d(S)$ 为区域 $S$ 的直径， $\\pmb{n}$ 为围线 $C$ 的单位外法向量， $\\pmb{F} \\{X, Y\\}$ 为 $S + C$ 上的连续可微向量.",
+    "answer": "X_{r}^{\\prime}(x_{0}, y_{0}) + Y_{y}^{\\prime}(x_{0}, y_{0})",
+    "solution": "解 由 4323 题的推导过程中知，向量 $\\pmb{n}$ 在坐标轴上的投影为\n\n$$\nn _ {x} = \\cos (\\boldsymbol {n}, x) = \\frac {\\mathrm {d} y}{\\mathrm {d} s}, \\quad n _ {y} = \\cos (\\boldsymbol {n}, y) = - \\frac {\\mathrm {d} x}{\\mathrm {d} s}.\n$$\n\n于是， $(\\pmb {F}\\cdot \\pmb {n})\\mathrm{d}s = (Xn_{x} + Yn_{y})\\mathrm{d}s = X\\mathrm{d}y - Y\\mathrm{d}x.$\n\n因此，利用格林公式有\n\n$$\n\\oint_ {C} (\\boldsymbol {F} \\cdot \\boldsymbol {n}) \\mathrm {d} s = \\oint_ {C} X \\mathrm {d} y - Y \\mathrm {d} x = \\iint_ {S} \\left(\\frac {\\partial X}{\\partial x} + \\frac {\\partial Y}{\\partial y}\\right) \\mathrm {d} x \\mathrm {d} y = \\left(\\frac {\\partial X}{\\partial x} + \\frac {\\partial Y}{\\partial y}\\right) \\Bigg | _ {(\\xi , \\eta)} \\cdot S,\n$$\n\n其中点 $(\\xi, \\eta) \\in$ 区域 $S$ . 于是，\n\n$$\n\\lim  _ {d (S) \\rightarrow 0} \\frac {1}{S} \\oint_ {C} (\\boldsymbol {F} \\cdot \\boldsymbol {n}) d s = \\lim  _ {d (S) \\rightarrow 0} \\left(\\frac {\\partial X}{\\partial x} + \\frac {\\partial Y}{\\partial y}\\right) \\Bigg | _ {(\\xi , \\eta)} = X _ {r} ^ {\\prime} \\left(x _ {0}, y _ {0}\\right) + Y _ {y} ^ {\\prime} \\left(x _ {0}, y _ {0}\\right).\n$$",
+    "reference": [
+      "4323"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "129",
+    "id": "4325"
+  },
+  {
+    "question": "【4331】若 $\\Delta u = \\frac{\\partial^2u}{\\partial x^2} +\\frac{\\partial^2u}{\\partial y^2} = 0$，则称二阶可微函数 $u = u(x,y)$ 为调和函数，证明：当且仅当以下条件成立时，$u$ 才是调和函数：\n\n$$\n\\oint_ {c} \\frac {\\partial u}{\\partial n} d s = 0,\n$$\n\n式中 $C$ 为任意封闭围线，$\\frac{\\partial u}{\\partial n}$ 为沿此围线之外法线方向的导数",
+    "answer": "证明见解析",
+    "solution": "证 由于 $\\frac{\\partial u}{\\partial n} = \\frac{\\partial u}{\\partial x}\\cos (n, x) + \\frac{\\partial u}{\\partial y}\\sin (n, x),$\n\n而（参看 4323 题的推导）\n\n$$\n\\cos (\\boldsymbol {n}, x) = \\frac {\\mathrm {d} y}{\\mathrm {d} s}, \\quad \\sin (\\boldsymbol {n}, x) = - \\frac {\\mathrm {d} x}{\\mathrm {d} s},\n$$\n\n故利用格林公式（注意，题中应假定 $u(x,y)$ 具有连续的二阶偏导数），得\n\n$$\n\\oint_ {C} \\frac {\\partial u}{\\partial n} d s = \\oint_ {C} \\frac {\\partial u}{\\partial x} d y - \\frac {\\partial u}{\\partial y} d x = \\iint_ {S} \\left(\\frac {\\partial^ {2} u}{\\partial x ^ {2}} + \\frac {\\partial^ {2} u}{\\partial y ^ {2}}\\right) d x d y = \\iint_ {S} (\\Delta u) d x d y,\n$$\n\n其中 $S$ 表由封闭曲线 $C$ 围成的区域。由此式知：$\\oint_{C} \\frac{\\partial u}{\\partial n} \\mathrm{d}s = 0$ (对任何封闭围线 $C$ ) 当且仅当 $\\iint_{S} (\\Delta u) \\, \\mathrm{d}x \\, \\mathrm{d}y = 0$ (对任何区域 $S$ ). 但易知这又相当于 $\\Delta u \\equiv 0$ . 事实上，若 $\\Delta u \\equiv 0$ , 则对任何 $S$ , 有 $\\iint_{S} (\\Delta u) \\, \\mathrm{d}x \\, \\mathrm{d}y = 0$ ; 反之，若对任何 $S$ , 有 $\\iint_{S} (\\Delta u) \\, \\mathrm{d}x \\, \\mathrm{d}y = 0$ , 则必 $\\Delta u \\equiv 0$ . 因为，若不然，在某点 $(x_0, y_0)$ , $\\Delta u \\neq 0$ . 例如，设在此点，$\\Delta u > 0$ , 则由连续性可知，必存在以 $(x_0, y_0)$ 为中心，半径为 $r_0$ (充分小) 的圆域 $S_0$ , 使在其上每一点，都有 $\\Delta u > 0$ . 由此可知，$\\iint_{S} (\\Delta u) \\, \\mathrm{d}x \\, \\mathrm{d}y > 0$ . 矛盾，证毕.",
+    "reference": [
+      "4323"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "130",
+    "id": "4331"
+  },
+  {
+    "question": "【4322】若简单的围线 $C$ 包围坐标原点， $X = \\varphi(x, y), Y = \\psi(x, y)$ ，而曲线 $\\varphi(x, y) = 0$ 和 $\\psi(x, y) = 0$ 在围线 $C$ 以内有几个单交点，计算积分 $I$ （参阅 4321 题）.",
+    "answer": "$I = \\sum_{i=1}^{m}\\left(\\operatorname{sgn}\\frac{D(\\varphi,\\psi)}{D(x,y)}\\right)_{P_i}$",
+    "solution": "解设 $\\varphi (x,y) = 0,\\psi (x,y) = 0$ 在 $C$ 内的交点为 $P_{i}(x_{i},y_{i})(i = 1,2,\\dots ,m)$ .首先注意，本题应假定函数 $\\varphi (x,y)$ 与 $\\psi (x,y)$ 在 $C$ 围成的区域内具有连续的二阶偏导数，并且在各点 $P_{i}(i = 1,2,\\dots ,m)$ 处有 $\\frac{D(X,Y)}{D(x,y)} =$ $\\varphi_r^\\prime \\psi_y^\\prime -\\varphi_y^\\prime \\psi_x^\\prime \\neq 0.$ 容易算得\n\n$$\nX \\mathrm {d} Y - Y \\mathrm {d} X = \\left(\\varphi \\psi_ {x} ^ {\\prime} - \\varphi_ {x} ^ {\\prime} \\psi\\right) \\mathrm {d} x + \\left(\\varphi \\psi_ {y} ^ {\\prime} - \\varphi_ {y} ^ {\\prime} \\psi\\right) \\mathrm {d} y,\n$$\n\n从而，\n\n$$\nI = \\frac {1}{2 \\pi} \\oint_ {c} \\frac {X d Y - Y d X}{X ^ {2} + Y ^ {2}} = \\frac {1}{2 \\pi} \\oint_ {c} P (x, y) d x + Q (x, y) d y,\n$$\n\n其中\n\n$$\nP = \\frac {\\varphi \\psi_ {x} ^ {\\prime} - \\varphi_ {x} ^ {\\prime} \\psi}{\\varphi^ {2} + \\psi^ {2}}, \\quad Q = \\frac {\\varphi \\psi_ {y} ^ {\\prime} - \\varphi_ {y} ^ {\\prime} \\psi}{\\varphi^ {2} + \\psi^ {2}}.\n$$\n\n又可算得\n\n$$\n\\begin{array}{l} \\frac {\\partial Q}{\\partial x} = \\frac {\\partial P}{\\partial y} \\\\ = \\frac {1}{\\left(\\varphi^ {2} + \\psi^ {2}\\right) ^ {2}} \\left[ \\left(\\varphi \\psi_ {x y} ^ {\\prime \\prime} - \\varphi_ {x y} ^ {\\prime \\prime} \\psi\\right) \\left(\\varphi^ {2} + \\psi^ {2}\\right) - \\left(\\varphi_ {x} ^ {\\prime} \\psi_ {y} ^ {\\prime} + \\varphi_ {y} ^ {\\prime} \\psi_ {x} ^ {\\prime}\\right) \\varphi^ {2} + \\left(\\varphi_ {y} ^ {\\prime} \\psi_ {x} ^ {\\prime} + \\varphi_ {x} ^ {\\prime} \\psi_ {y} ^ {\\prime}\\right) \\psi^ {2} + 2 \\left(\\varphi_ {x} ^ {\\prime} \\varphi_ {x} ^ {\\prime} - \\psi_ {x} ^ {\\prime} \\psi_ {y} ^ {\\prime}\\right) \\varphi \\psi \\right] \\\\ \\end{array}\n$$\n\n$$\n((x, y) \\neq (x _ {i}, y _ {i}) (i = 1, 2, \\dots , m)).\n$$\n\n围绕点 $P_{i}(x_{i},y_{i})$ 作围线 $C_i: [\\varphi (x,y)]^2 + [\\psi (x,y)]^2 = r^2$ （即 $X^{2} + Y^{2} = r^{2}$ ），取 $r > 0$ 充分小，使诸 $C_i$ 互不相交且都位于 $C$ 内（这是办得到的，因为在各点 $P_{i}, \\frac{D(X,Y)}{D(x,y)} \\neq 0$ 。从而，由连续性知，在 $P_{i}$ 的某邻域内 $\\frac{D(X,Y)}{D(x,y)} \\neq 0$ 且保持定号。于是，根据隐函数存在定理知，变换 $X = \\varphi (x,y), Y = \\psi (x,y)$ 在点 $(x,y) = (x_{i},y_{i})$ 邻近及点 $(X,Y) = (0,0)$ 邻近是双方单值双方连续的），并使 $\\frac{D(X,Y)}{D(x,y)}$ 在 $P_{i}$ 的邻近 $X^{2} + Y^{2} \\leqslant r^{2}$ （记为 $S_{i}$ ）上保持定号，将格林公式应用于诸围线 $C, C_1, \\dots, C_m$ 之间的区域，可得\n\n$$\n\\oint_ {C} P (x, y) d x + Q (x, y) d y = \\sum_ {i = 1} ^ {m} \\oint_ {C _ {i}} P (x, y) d x + Q (x, y) d y,\n$$\n\n故\n\n$$\nI = \\frac {1}{2 \\pi} \\sum_ {i = 1} ^ {m} \\oint_ {c _ {i}} \\frac {X \\mathrm {d} Y - Y \\mathrm {d} X}{X ^ {2} + Y ^ {2}}. \\tag {1}\n$$\n\n但 $\\oint_{c_i}\\frac{X\\mathrm{d}Y - Y\\mathrm{d}X}{X^2 + Y^2} = \\frac{1}{r^2}\\oint_{c}X\\mathrm{d}Y - Y\\mathrm{d}X = \\frac{1}{r^2}\\oint_{c_i}(\\varphi \\psi_x' - \\varphi_x'\\psi)\\mathrm{d}x + (\\varphi \\psi_y' - \\varphi_y'\\psi)\\mathrm{d}y$\n\n$$\n\\begin{array}{l} = \\frac {1}{r ^ {2}} \\iint_ {S _ {t}} 2 \\left(\\varphi_ {x} ^ {\\prime} \\psi_ {y} ^ {\\prime} - \\varphi_ {y} ^ {\\prime} \\psi_ {x} ^ {\\prime}\\right) d x d y = \\frac {2}{r ^ {2}} \\iint_ {S _ {t}} \\frac {D (X , Y)}{D (x , y)} d x d y = \\frac {2}{r ^ {2}} \\left(\\operatorname {s g n} \\frac {D (X , Y)}{D (x , y)}\\right) _ {P _ {i}} \\iint_ {S _ {i}} \\frac {D (X , Y)}{D (x , y)} d x d y \\\\ = \\frac {2}{r ^ {2}} \\left(\\operatorname {s g n} \\frac {D (X , Y)}{D (x , y)}\\right) _ {P _ {i}} \\iint_ {X ^ {2} + Y ^ {2} \\leqslant r ^ {2}} \\mathrm {d} X \\mathrm {d} Y = \\frac {2}{r ^ {2}} \\left(\\operatorname {s g n} \\frac {D (X , Y)}{D (x , y)}\\right) _ {P _ {i}} \\cdot \\pi r ^ {2} = 2 \\pi \\left(\\operatorname {s g n} \\frac {D (\\varphi , \\psi)}{D (x , y)}\\right) _ {P _ {i}}, \\\\ \\end{array}\n$$\n\n代入 (1) 式，即得 $I = \\sum_{i=1}^{m}\\left(\\operatorname{sgn}\\frac{D(\\varphi,\\psi)}{D(x,y)}\\right)_{P_i},$\n\n或写为\n\n其中 $\\sum$ 的是对曲线 $\\varphi(x, y) = 0$ 与 $\\psi(x, y) = 0$ 在 $C$ 内的各交点相加.\n\n注 显然，4321 题是 4322 题的特例。这时，曲线 $ax + by = 0$ 与 $cx + dy = 0$ 在 $C$ 内只有一个交点，即原点 $(0,0)$ , 而 $\\frac{D(\\varphi, \\psi)}{D(x, y)} = ad - bc$ .",
+    "reference": [
+      "4321"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "129",
+    "id": "4322"
+  },
+  {
+    "question": "【4330】采用极坐标系 $\\rho$ 和 $\\varphi$ ，计算双层的对数势\n\n$$\nK _ {1} = \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {\\cos (r , n)}{r} \\mathrm {d} \\psi \\quad \\text {和} \\quad K _ {2} = \\int_ {0} ^ {2 \\pi} \\sin m \\psi \\frac {\\cos (r , n)}{r} \\mathrm {d} \\psi ,\n$$\n\n式中 $r$ 为点 $A(\\rho, \\varphi)$ 和动点 $M(1, \\psi)$ 之间的距离， $(r, n)$ 为方向 $AM = r$ 与引自点 $O(0, 0)$ 的半径 $OM = n$ 之间的夹角， $m$ 为正整数.",
+    "answer": "$$\nK _ {1} = \\pi \\rho^ {m} \\cos m \\varphi , \\quad K _ {2} = \\pi \\rho^ {m} \\sin m \\varphi , \\quad \\rho <   1,\n$$\n\n$$\nK _ {1} = K _ {2} = 0, \\quad \\rho = 1,\n$$\n\n$$\nK _ {1} = - \\frac {\\pi}{\\rho^ {m}} \\cos m \\varphi , \\quad K _ {2} = - \\frac {\\pi}{\\rho^ {m}} \\sin m \\varphi , \\quad \\rho > 1.\n$$",
+    "solution": "解 由题意知：\n\n$$\n\\frac {\\cos (\\boldsymbol {r} , \\boldsymbol {n})}{r} = \\frac {(\\cos \\psi - \\rho \\cos \\varphi) \\cos \\psi + (\\sin \\psi - \\rho \\sin \\varphi) \\sin \\psi}{(\\cos \\psi - \\rho \\cos \\varphi) ^ {2} + (\\sin \\psi - \\rho \\sin \\varphi) ^ {2}} = \\frac {1 - \\rho \\cos (\\psi - \\varphi)}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)}.\n$$\n\n从而，当 $\\rho = 1$ 时， $\\frac{\\cos(r, n)}{r} = \\frac{1}{2}$ 。又因 $m$ 为正整数，故此时有\n\n$$\nK _ {1} = \\frac {1}{2} \\int_ {0} ^ {2 \\pi} \\cos m \\psi d \\psi = 0, \\quad K _ {2} = \\frac {1}{2} \\int_ {0} ^ {2 \\pi} \\sin m \\psi d \\psi = 0.\n$$\n\n当 $\\rho < 1$ 时，因为级数（利用 2968 题的结果）\n\n$$\n\\frac {1 - \\rho \\cos (\\psi - \\varphi)}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)} = 1 + \\sum_ {n = 1} ^ {- \\infty} \\rho^ {n} \\cos n (\\psi - \\varphi)\n$$\n\n在 $[0,2\\pi ]$ 上一致收敛，乘 $\\cos m(\\psi -\\varphi)$ 和 $\\sin m(\\psi -\\varphi)$ 以后在 $[0,2\\pi ]$ 上也一致收敛，故可逐项积分。于是，\n\n$$\n\\begin{array}{l} K _ {1} = \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {1 - \\rho \\cos (\\psi - \\varphi)}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)} d \\psi \\\\\n= \\int_ {0} ^ {2 \\pi} \\left[ \\cos m (\\psi - \\varphi) \\cos m \\varphi - \\sin m (\\psi - \\varphi) \\sin m \\varphi \\right] \\left[ 1 + \\sum_ {n = 1} ^ {+ \\infty} \\rho^ {n} \\cos n (\\psi - \\varphi) \\right] d \\psi \\\\\n= \\cos m \\varphi \\int_ {0} ^ {2 \\pi} \\cos m (\\psi - \\varphi) \\rho^ {m} \\cos m (\\psi - \\varphi) d \\psi \\\\\n= \\rho^ {m} \\cos m \\varphi \\int_ {0} ^ {2 \\pi} \\cos^ {2} m (\\psi - \\varphi) d \\psi = \\pi \\rho^ {m} \\cos m \\varphi . \\\\\n\\end{array}\n$$\n\n同理，容易求得\n\n$$\nK _ {2} = \\int_ {0} ^ {2 \\pi} \\sin m \\psi \\frac {1 - \\rho \\cos (\\psi - \\varphi)}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)} d \\psi = \\pi \\rho^ {m} \\sin m \\varphi .\n$$\n\n当 $\\rho > 1$ 时，我们有\n\n$$\n\\begin{array}{l} K _ {1} = \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {1 - \\rho \\cos (\\psi - \\varphi)}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)} d \\psi = \\frac {1}{2} \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {2 - 2 \\rho \\cos (\\psi - \\varphi)}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)} d \\psi \\\\\n= \\frac {1}{2} \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {\\left[ 1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi) \\right] + (1 - \\rho^ {2})}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)} d \\psi = \\frac {1}{2} \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {1 - \\rho^ {2}}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)} d \\psi \\\\\n= - \\frac {1}{2} \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {1 - r ^ {2}}{1 + r ^ {2} - 2 r \\cos (\\psi - \\varphi)} d \\psi = - \\frac {1}{2} \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {(1 - r ^ {2}) + [ 1 + r ^ {2} - 2 r \\cos (\\psi - \\varphi) ]}{1 + r ^ {2} - 2 r \\cos (\\psi - \\varphi)} d \\psi \\\\\n= - \\int_ {0} ^ {2 \\pi} \\cos m \\psi \\frac {1 - r \\cos (\\psi - \\varphi) ]}{1 + r ^ {2} - 2 r \\cos (\\psi - \\varphi)} d \\psi = - \\pi r ^ {m} \\cos m \\varphi = - \\frac {\\pi}{\\rho^ {m}} \\cos m \\varphi , \\\\\n\\end{array}\n$$\n\n其中 $r = \\rho^{-1} < 1$\n\n同理，可求得\n\n$$\nK _ {2} = \\int_ {0} ^ {2 \\pi} \\sin m \\psi \\frac {1 - \\rho \\cos (\\psi - \\varphi)}{1 + \\rho^ {2} - 2 \\rho \\cos (\\psi - \\varphi)} d \\psi = - \\frac {\\pi}{\\rho^ {m}} \\sin m \\varphi .\n$$",
+    "reference": [
+      "2968"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "130",
+    "id": "4330"
+  },
+  {
+    "question": "【4336】证明对于调和函数 $u(M) = u(x,y)$ 的中值定理：\n\n$$\nu (M) = \\frac {1}{2 \\pi \\rho} \\oint_ {C _ {\\rho}} u (\\xi , \\eta) d s,$$\n\n式中 $C_{\\rho}$ 是以点 $M$ 为中心 $\\rho$ 为半径的圆周",
+    "answer": "证毕",
+    "solution": "证利用 4335 题的结果（取 $C$ 为 $C_{\\rho}$ ），得\n\n$$\nu (M) = \\frac {1}{2 \\pi} \\oint_ {C _ {\\rho}} \\left(u \\frac {\\partial \\ln r}{\\partial n} - \\ln r \\frac {\\partial u}{\\partial n}\\right) d s;\n$$\n\n但在 $C_{\\rho}$ 上，有 $r = \\rho$\n\n$$\n\\left. \\frac {\\partial \\ln r}{\\partial n} \\right| _ {r = \\rho} = \\left. \\frac {\\partial \\ln r}{\\partial r} \\right| _ {r = \\rho} = \\left. \\frac {1}{r} \\right| _ {r = \\rho} = \\frac {1}{\\rho},\n$$\n\n由此，再注意到 $\\oint_{C_p}\\frac{\\partial u}{\\partial n}\\mathrm{d}s = 0$（这是利用 4331 题的结果），得\n\n$$\nu (M) = \\frac {1}{2 \\pi} \\oint_ {C _ {\\rho}} \\left(\\frac {u}{\\rho} - \\ln \\rho \\frac {\\partial u}{\\partial n}\\right) d s = \\frac {1}{2 \\pi \\rho} \\oint_ {C _ {\\rho}} u d s - \\frac {\\ln \\rho}{2 \\pi} \\oint_ {C _ {\\rho}} \\frac {\\partial u}{\\partial n} d s = \\frac {1}{2 \\pi \\rho} \\oint_ {C _ {\\rho}} u (\\xi , \\eta) d s.\n$$\n\n证毕.\n\n$\\star$ 原题中漏掉了 $\\rho$ ，即应将 $\\frac{1}{2\\pi}$ 改为 $\\frac{1}{2\\pi\\rho}$",
+    "reference": [
+      "4335",
+      "4331"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "130",
+    "id": "4336"
+  },
+  {
+    "question": "【4356】求均质曲面 $z = \\sqrt{a^2 - x^2 - y^2} (x\\geqslant 0;y\\geqslant 0;x + y\\leqslant a)$ 的质心坐标.",
+    "answer": "\\left(\\frac{a}{2\\sqrt{2}},\\frac{a}{2\\sqrt{2}},\\frac{a}{\\pi} (\\sqrt{2} +1)\\right)",
+    "solution": "解因为 $\\frac{\\partial z}{\\partial x} = \\frac{-x}{\\sqrt{a^2 - x^2 - y^2}}, \\frac{\\partial z}{\\partial y} = \\frac{-y}{\\sqrt{a^2 - x^2 - y^2}},$\\n\\n所以， $\\mathrm{dS} = \\sqrt{1 + \\left(\\frac{\\partial z}{\\partial x}\\right)^2 + \\left(\\frac{\\partial z}{\\partial y}\\right)^2}\\mathrm{d}x\\mathrm{d}y = \\frac{a}{\\sqrt{a^2 - x^2 - y^2}}\\mathrm{d}x\\mathrm{d}y.$\\n\\n由对称性知，质心的横坐标与纵坐标相等，即\\n\\n$$\\n x _ {0} = y _ {0} = \\frac {\\iint_ {S} x d S}{\\iint_ {S} d S} = \\frac {\\int_ {0} ^ {a} \\int_ {0} ^ {a - y} \\frac {a x}{\\sqrt {a ^ {2} - x ^ {2} - y ^ {2}}} d x d y}{\\int_ {0} ^ {a} \\int_ {0} ^ {a - x} \\frac {a}{\\sqrt {a ^ {2} - x ^ {2} - y ^ {2}}} d x d y}.\\n$$\\n\\n由于， $\\int_0^a\\int_0^{a - y}\\frac{ax}{\\sqrt{a^2 - x^2 - y^2}}\\mathrm{d}x\\mathrm{d}y = a\\int_0^a (-\\sqrt{a^2 - x^2 - y^2})\\Bigg|_{x = 0}^{x = a - y}\\mathrm{d}y$\\n\\n$$\\n= a \\left[ \\int_ {0} ^ {a} \\sqrt {a ^ {2} - y ^ {2}} d y - \\int_ {0} ^ {a} \\sqrt {2 a y - 2 y ^ {2}} d y \\right] = a \\left(\\frac {\\pi a ^ {2}}{4} - \\sqrt {2} \\cdot \\frac {\\pi \\left(\\frac {a}{2}\\right) ^ {2}}{2}\\right) ^ {*}) = \\frac {\\pi a ^ {3}}{4} \\left(1 - \\frac {1}{\\sqrt {2}}\\right),\\n$$\\n\\n$$\\n\\begin{array}{l} \\int_ {0} ^ {a} \\int_ {0} ^ {a} x \\frac {a}{\\sqrt {a ^ {2} - x ^ {2} - y ^ {2}}} d x d y = a \\int_ {0} ^ {a} \\arcsin \\sqrt {\\frac {a - x}{a + x}} d x = - 4 a ^ {2} \\int_ {1} ^ {0} \\frac {u}{(1 + u ^ {2})} \\arcsin u d u \\\\ = 2 a ^ {2} \\left(\\frac {\\arcsin u}{1 + u ^ {2}} \\Big | _ {1} ^ {0} - \\int_ {1} ^ {0} \\frac {\\mathrm {d} u}{(1 + u ^ {2}) \\sqrt {1 - u ^ {2}}}\\right) = 2 a ^ {2} \\left[ - \\frac {\\pi}{4} + \\frac {1}{\\sqrt {2}} \\arctan \\frac {u \\sqrt {2}}{\\sqrt {1 - u ^ {2}}} \\Big | _ {0} ^ {1} \\right] ^ { * *}) = \\pi a ^ {2} \\left(\\frac {1}{\\sqrt {2}} - \\frac {1}{2}\\right), \\\\ \\end{array}\\n$$\\n\\n故有 $x_0 = y_0 = \\frac{\\frac{\\pi a^3}{4}\\left(1 - \\frac{1}{\\sqrt{2}}\\right)}{\\pi a^2\\left(\\frac{1}{\\sqrt{2}} - \\frac{1}{2}\\right)} = \\frac{a}{2\\sqrt{2}}.$\\n\\n又由于 $\\iint_{S} z \\, \\mathrm{d}S = \\int_{0}^{a} \\int_{0}^{a - x} \\sqrt{a^2 - x^2 - y^2} \\frac{a}{\\sqrt{a^2 - x^2 - y^2}} \\, \\mathrm{d}x \\, \\mathrm{d}y = a \\int_{0}^{a} (a - x) \\, \\mathrm{d}x = \\frac{a^3}{2},$\\n\\n故有 $z_{0} = \\frac{\\iint_{S} z \\mathrm{~d} S}{\\iint_{S} \\mathrm{~d} S} = \\frac{\\frac{a^{3}}{2}}{\\pi a^{2}\\left(\\frac{1}{\\sqrt{2}} - \\frac{1}{2}\\right)} = \\frac{a}{\\pi} (\\sqrt{2} + 1),$\\n\\n即质心为 $\\left(\\frac{a}{2\\sqrt{2}},\\frac{a}{2\\sqrt{2}},\\frac{a}{\\pi} (\\sqrt{2} +1)\\right).$\\n\\n*）由定积分的几何意义知：\\n\\n$$\\n\\int_ {0} ^ {a} \\sqrt {y (a - y)} d y = \\int_ {0} ^ {a} \\sqrt {\\left(\\frac {a}{2}\\right) ^ {2} - \\left(y - \\frac {a}{2}\\right) ^ {2}} d y = \\frac {\\pi a ^ {2}}{8}.\\n$$\\n\\n$\\star \\star$）利用 1957 题的结果.",
+    "reference": [
+      "1957"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "132",
+    "id": "4356"
+  },
+  {
+    "question": "【4365】 $\\iint_{S} \\frac{\\mathrm{d}y \\, \\mathrm{d}z}{x} + \\frac{\\mathrm{d}z \\, \\mathrm{d}x}{y} + \\frac{\\mathrm{d}x \\, \\mathrm{d}y}{z}$ , 式中 $S$ 为椭球面 $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} + \\frac{z^2}{c^2} = 1$ 的外侧.\n\n提示 根据轮换对称知，只要计算 $\\iint_{S} \\frac{\\mathrm{d}x \\, \\mathrm{d}y}{z}$ , 与 4362 题类似，注意曲面的侧，并利用广义极坐标 $x = \\arccos \\varphi, y = b r \\sin \\varphi$ .",
+    "answer": "$\\frac{4\\pi}{abc} (b^2 c^2 + a^2 c^2 + a^2 b^2)$",
+    "solution": "解 根据轮换对称知，只要计算一个积分。例如，计算 $\\iint_{S} \\frac{\\mathrm{d}x \\, \\mathrm{d}y}{z}$ . 利用广义极坐标，即得\n\n$$\n\\begin{array}{l} \\iint_ {S} \\frac {\\mathrm {d} x \\mathrm {d} y}{z} = \\iint_ {\\frac {x ^ {2}}{a ^ {2}} + \\frac {y ^ {2}}{b ^ {2}} \\leqslant 1} \\frac {1}{c \\sqrt {1 - \\frac {x ^ {2}}{a ^ {2}} - \\frac {y ^ {2}}{b ^ {2}}}} \\mathrm {d} x \\mathrm {d} y - \\iint_ {\\frac {x ^ {2}}{a ^ {2}} + \\frac {y ^ {2}}{b ^ {2}} \\leqslant 1} \\frac {- 1}{c \\sqrt {1 - \\frac {x ^ {2}}{a ^ {2}} - \\frac {y ^ {2}}{b ^ {2}}}} \\mathrm {d} x \\mathrm {d} y \\\\ = \\frac {2}{c} \\iint_ {\\frac {x ^ {2}}{a ^ {2}} + \\frac {y ^ {2}}{b ^ {2}} \\leqslant 1} \\frac {1}{\\sqrt {1 - \\frac {x ^ {2}}{a ^ {2}} - \\frac {y ^ {2}}{b ^ {2}}}} d x d y = \\frac {2 a b}{c} \\int_ {0} ^ {2 \\pi} d \\varphi \\int_ {0} ^ {1} \\frac {r}{\\sqrt {1 - r ^ {2}}} d r = \\frac {4 \\pi a b}{c} [ - \\sqrt {1 - r ^ {2}} ] \\Big | _ {0} ^ {1} = 4 \\pi \\frac {a b}{c}. \\\\ \\end{array}\n$$\n\n于是，我们有 $\\iint_{S} \\frac{\\mathrm{d}y \\, \\mathrm{d}z}{x} + \\frac{\\mathrm{d}z \\, \\mathrm{d}x}{y} + \\frac{\\mathrm{d}x \\, \\mathrm{d}y}{z} = 4\\pi \\left( \\frac{bc}{a} + \\frac{ac}{b} + \\frac{ab}{c} \\right) = \\frac{4\\pi}{abc} (b^2 c^2 + a^2 c^2 + a^2 b^2).$",
+    "reference": [
+      "4362"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "132",
+    "id": "4365"
+  },
+  {
+    "question": "(2) $\\iiint_{V} \\left[\\left(\\frac{\\partial u}{\\partial x}\\right)^{2} + \\left(\\frac{\\partial u}{\\partial y}\\right)^{2} + \\left(\\frac{\\partial u}{\\partial z}\\right)^{2}\\right] \\mathrm{d}x \\mathrm{~d}y \\mathrm{~d}z = \\iint_{S} u \\frac{\\partial u}{\\partial n} \\mathrm{d}S,$\n\n式中 $\\pmb{n}$ 为曲面 S 的外法向量.\n\n用公式 (2) 证明：区域 $V$ 内的调和函数由它在边界 $S$ 上的值唯一地确定.",
+    "answer": "在区域 $V$ 内的调和函数由它在边界 $S$ 上的值唯一地确定",
+    "solution": "证（1）由于 $\\Delta u = 0$ ，故利用 4393 题 (1) 的结果，即得\n\n$$\n\\iint_ {S} \\frac {\\partial u}{\\partial n} d S = \\iiint_ {V} 0 d x d y d z = 0.\n$$\n\n（2）利用 4393 题（2）的结果，即得\n\n$$\n\\begin{array}{l} \\iint_ {S} u \\frac {\\partial u}{\\partial n} d S = \\iiint_ {V} u \\cdot 0 d x d y d z + \\iiint_ {V} \\left[ \\left(\\frac {\\partial u}{\\partial x}\\right) ^ {2} + \\left(\\frac {\\partial u}{\\partial y}\\right) ^ {2} + \\left(\\frac {\\partial u}{\\partial z}\\right) ^ {2} \\right] d x d y d z \\\\ = \\iiint_ {V} \\left[ \\left(\\frac {\\partial u}{\\partial x}\\right) ^ {2} + \\left(\\frac {\\partial u}{\\partial y}\\right) ^ {2} + \\left(\\frac {\\partial u}{\\partial z}\\right) ^ {2} \\right] d x d y d z. \\\\ \\end{array}\n$$\n\n与 4333 题一样，只要证明：若在边界 S 上调和函数 $u = 0$ ，则它在区域 V 上也恒有 $u = 0$ .事实上，利用本题 (2)，得\n\n$$\n\\iiint_ {V} \\left[ \\left(\\frac {\\partial u}{\\partial x}\\right) ^ {2} + \\left(\\frac {\\partial u}{\\partial y}\\right) ^ {2} + \\left(\\frac {\\partial u}{\\partial z}\\right) ^ {2} \\right] d x d y d z = 0,\n$$\n\n因此， $\\frac{\\partial u}{\\partial x} = \\frac{\\partial u}{\\partial y} = \\frac{\\partial u}{\\partial z} = 0,$\n\n即在区域 $V$ 上 $u = \\text{常数}$ . 但在 $S$ 上 $u = 0$ , 故在区域 $V$ 上 $u = 0$ . 这就是证明：在区域 $V$ 内的调和函数由它在边界 $S$ 上的值唯一地确定.",
+    "reference": [
+      "4393",
+      "4333"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "134",
+    "id": "2_2"
+  },
+  {
+    "question": "【4375】有函数 $W(x,y,z) = k i \\iint_{S} \\frac{\\cos(r, n)}{r^2} \\mathrm{d} S (k = \\text{常数})$ .\n\n其中曲面 $S$ 的边界为围线 $C, n$ 为曲面 $S$ 的法向量， $r$ 为连接空间的点 $M(x, y, z)$ 与围线 $C$ 上的动点 $A(\\xi, \\eta, \\zeta)$ 所成之径向量，证明：此函数为通过围线 $C$ 的电流 $i$ 所产生磁场 $H$ 的势（参阅 4340 题）。",
+    "answer": "函数 $W(x,y,z)$ 是磁场 $\\pmb{H}$ 的势",
+    "solution": "证 利用 4340 题指出的定律，并注意到\n\n$$\n\\frac {r}{r ^ {3}} = \\frac {\\partial}{\\partial x} \\left(\\frac {1}{r}\\right) i + \\frac {\\partial}{\\partial y} \\left(\\frac {1}{r}\\right) j + \\frac {\\partial}{\\partial z} \\left(\\frac {1}{r}\\right) k,\n$$\n\n其中 $r = (\\xi - x)i + (\\eta - y)j + (\\xi - z)k$ ，即得\n\n$$\n\\begin{array}{l} \\boldsymbol {H} = k i \\oint_ {C} \\frac {\\boldsymbol {r} \\cdot \\mathrm {d} \\boldsymbol {s}}{r ^ {3}} \\\\ = k i \\left[ \\oint_ {c} \\frac {\\partial}{\\partial y} \\left(\\frac {1}{r}\\right) d \\zeta - \\frac {\\partial}{\\partial z} \\left(\\frac {1}{r}\\right) d \\eta \\right] i + \\left[ \\oint_ {c} \\frac {\\partial}{\\partial z} \\left(\\frac {1}{r}\\right) d \\xi - \\frac {\\partial}{\\partial x} \\left(\\frac {1}{r}\\right) d \\zeta \\right] j + \\left[ \\oint_ {c} \\frac {\\partial}{\\partial x} \\left(\\frac {1}{r}\\right) d \\eta - \\frac {\\partial}{\\partial y} \\left(\\frac {1}{r}\\right) d \\xi \\right] k. \\\\ \\end{array}\n$$\n\n利用斯托克斯公式，并注意到\n\n$$\n\\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial x} = - \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial \\xi}, \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial y} = - \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial \\eta}, \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial z} = - \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial \\zeta}\n$$\n\n及 $\\Delta \\left(\\frac{1}{r}\\right) = 0$ ，从而，\n\n$$\n\\frac {\\partial^ {2}}{\\partial \\eta^ {\\partial y}} \\left(\\frac {1}{r}\\right) + \\frac {\\partial^ {2}}{\\partial \\zeta \\partial z} \\left(\\frac {1}{r}\\right) = - \\frac {\\partial^ {2}}{\\partial y ^ {2}} \\left(\\frac {1}{r}\\right) - \\frac {\\partial^ {2}}{\\partial z ^ {2}} \\left(\\frac {1}{r}\\right) = \\frac {\\partial^ {2}}{\\partial x ^ {2}} \\left(\\frac {1}{r}\\right).\n$$\n\n即得\n\n$$\n\\begin{array}{l} H _ {r} = k i \\oint_ {C} \\frac {\\partial}{\\partial y} \\left(\\frac {1}{r}\\right) d \\zeta - \\frac {\\partial}{\\partial z} \\left(\\frac {1}{r}\\right) d \\eta = k i \\iint_ {S} \\left[ \\left(\\frac {\\partial^ {2} \\left(\\frac {1}{r}\\right)}{\\partial \\eta \\partial y} + \\frac {\\partial^ {2} \\left(\\frac {1}{r}\\right)}{\\partial \\zeta \\partial z}\\right) i - \\frac {\\partial^ {2} \\left(\\frac {1}{r}\\right)}{\\partial \\xi \\partial y} j - \\frac {\\partial^ {2} \\left(\\frac {1}{r}\\right)}{\\partial \\xi \\partial z} k \\right] \\cdot n d S \\\\ = k i \\frac {\\partial}{\\partial x} \\iint_ {S} \\left[ \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial x} i + \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial y} j + \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial z} k \\right] \\cdot n d S = k i \\frac {\\partial}{\\partial x} \\iint_ {S} \\frac {r \\cdot n}{r ^ {2}} d S = k i \\frac {\\partial}{\\partial x} \\iint_ {S} \\frac {\\cos (r , n)}{r ^ {2}} d S. \\\\ \\end{array}\n$$\n\n同理， $H_{y} = k i \\frac{\\partial}{\\partial y} \\iint \\limits_{S} \\frac{\\cos(r, n)}{r^{2}} \\mathrm{d} S,$ $H_{z} = k i \\frac{\\partial}{\\partial z} \\iint \\limits_{S} \\frac{\\cos(r, n)}{r^{2}} \\mathrm{d} S.$\n\n于是，最后得 $H = \\frac{\\partial W}{\\partial x} i + \\frac{\\partial W}{\\partial y} j + \\frac{\\partial W}{\\partial z} k,$\n\n即函数 $W(x,y,z)$ 是磁场 $\\pmb{H}$ 的势",
+    "reference": [
+      "4340"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "133",
+    "id": "4375"
+  },
+  {
+    "question": "【4384】求以曲面 $z = \\pm c$ 及 $x = a\\cos u\\cos v + b\\sin u\\sin v, y = a\\cos u\\sin v - b\\sin u\\cos v, z = c\\sin u$ 为界的物体的体积.",
+    "answer": "\\frac {4 \\pi}{3} \\left(a ^ {2} + \\frac {b ^ {2}}{2}\\right) | c |",
+    "solution": "解 解法 1：\n\n我们有\n\n$$\nx ^ {2} + y ^ {2} = a ^ {2} \\cos^ {2} u + b ^ {2} \\sin^ {2} u, \\tag {1}\n$$\n\n以 $z = c\\sin u$ 代入得\n\n$$\nx ^ {2} + y ^ {2} + \\frac {a ^ {2} - b ^ {2}}{c ^ {2}} z ^ {2} = a ^ {2}, \\tag {2}\n$$\n\n故所界物体由平面 $z = c, z = -c$ 及曲面 (2) 围成。利用 4382 题的结果，即知所求的体积为\n\n$$\nV = \\frac {1}{3} \\iint_ {S _ {1} \\cdot S _ {2} \\cdot S _ {3}} (x \\cos \\alpha + y \\cos \\beta + z \\cos \\gamma) d S. \\tag {3}\n$$\n\n其中 $S_{1}, S_{2}$ 分别是平面 $z = c, z = -c$ 上的部分（此时 $u = \\frac{\\pi}{2}, u = -\\frac{\\pi}{2}$，从而， $x^{2} + y^{2} = b^{2}$，故 $S_{1}, S_{2}$ 为圆盘 $x^{2} + y^{2} \\leqslant b^{2}$， $S_{3}$ 表曲面 (2) 的部分， $x \\cos \\alpha, y \\cos \\beta, z \\cos \\gamma$ 表外法线的方向余弦。显然，在 $S_{1}$ 上， $\\cos \\alpha = \\cos \\beta = 0$， $\\cos \\gamma = \\frac{c}{|c|}$。于是，\n\n$$\n\\iint_ {S _ {1}} (x \\cos \\alpha + y \\cos \\beta + z \\cos \\gamma) d S = \\iint_ {S _ {1}} \\frac {c ^ {2}}{| c |} d S = | c | \\pi b ^ {2}.\n$$\n\n同理可得 $\\iint_{S_{\\alpha}} (x \\cos \\alpha + y \\cos \\beta + z \\cos \\gamma) \\mathrm{d} S = |c| \\pi b^{2}$ ,\n\n此外，有\n\n$$\n\\begin{array}{l} \\iint_ {S _ {x}} (x \\cos \\alpha + y \\cos \\beta + z \\cos \\gamma) d S = \\iint_ {S _ {y}} x d y d z + y d z d x + z d x d y \\\\ = \\pm \\int_ {0} ^ {2 \\pi} d v \\int_ {\\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} \\left[ \\left(a \\cos u \\cos v + b \\sin u \\sin v\\right) \\left(y _ {u} ^ {\\prime} z _ {v} ^ {\\prime} - y _ {v} ^ {\\prime} z _ {u} ^ {\\prime}\\right) + \\left(a \\cos u \\sin v - b \\sin u \\cos v\\right) \\left(z _ {u} ^ {\\prime} x _ {v} ^ {\\prime} - z _ {v} ^ {\\prime} x _ {u} ^ {\\prime}\\right) \\right. \\\\ \\left. + c \\sin u \\left(x _ {n} ^ {\\prime} y _ {v} ^ {\\prime} - x _ {v} ^ {\\prime} y _ {u} ^ {\\prime}\\right) \\right] d u \\\\ = \\pm \\int_ {0} ^ {2 \\pi} d v \\int_ {\\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} c a ^ {2} \\cos u d u = \\pm 4 \\pi c a ^ {2}, \\tag {4} \\\\ \\end{array}\n$$\n\n其中的正负号应这样选取，使对应于 $S_{3}$ 的外侧。下面确定此正负号。由（2）， $S_{3}$ 的方程可写为 $F(x,y,z) = a^{2}$，其中 $F(x,y,z) = x^{2} + y^{2} + \\frac{a^{2} - b^{2}}{c^{2}} z^{2}$ 是二次齐次函数。于是，在 $S_{3}$ 上，有\n\n$$\n\\cos \\alpha = \\frac {F _ {r} ^ {\\prime}}{\\pm \\sqrt {F _ {r} ^ {\\prime 2} + F _ {y} ^ {\\prime 2} + F _ {z} ^ {\\prime 2}}}, \\quad \\cos \\beta = \\frac {F _ {y} ^ {\\prime}}{\\pm \\sqrt {F _ {r} ^ {\\prime 2} + F _ {y} ^ {\\prime 2} + F _ {z} ^ {\\prime 2}}}, \\quad \\cos \\gamma = \\frac {F _ {z} ^ {\\prime}}{\\pm \\sqrt {F _ {r} ^ {\\prime 2} + F _ {y} ^ {\\prime 2} + F _ {z} ^ {\\prime 2}}}.\n$$\n\n其中正号对应于 $S_{3}$ 的一侧，负号对应于 $S_{3}$ 的另一侧。于是，根据齐次函数的欧拉定理，在 $S_{3}$（外侧）上有\n\n$$\nx \\cos \\alpha + y \\cos \\beta + z \\cos \\gamma = \\frac {x F _ {x} ^ {\\prime} + y F _ {y} ^ {\\prime} + z F _ {z} ^ {\\prime}}{\\pm \\sqrt {F _ {x} ^ {\\prime 2} + F _ {y} ^ {\\prime 2} + F _ {z} ^ {\\prime 2}}} = \\frac {2 F}{\\pm \\sqrt {F _ {r} ^ {\\prime 2} + F _ {y} ^ {\\prime 2} + F _ {z} ^ {\\prime 2}}} = \\frac {2 a ^ {2}}{\\pm \\sqrt {F _ {x} ^ {\\prime 2} + F _ {y} ^ {\\prime 2} + F _ {z} ^ {\\prime 2}}}, \\tag {5}\n$$\n\n但在 $S_{3}$ 与 $Oxy$ 平面的交线（即 $x^{2} + y^{2} = a^{2}, z = 0$）的各点上，对 $S_{3}$ 的外侧，显然有（注意到曲面（2）关于 $Oxy$ 坐标平面对称）\n\n$$\nx \\cos \\alpha + y \\cos \\beta + z \\cos \\gamma = r \\cdot n > 0,\n$$\n\n（这是因为此时径向量 $r = x_i + y_j + z_k$ 与单位外法向量 $\\pmb{n}$ 的方向一致），由此可知，在 (5) 式中应取正号。于是，\n\n$$\n\\iint_ {S _ {3}} (x \\cos \\alpha + y \\cos \\beta + z \\cos \\gamma) d S = \\iint_ {S} \\frac {2 a ^ {2}}{\\sqrt {F _ {1} ^ {\\prime 2} + F _ {y} ^ {\\prime 2} + F _ {z} ^ {\\prime 2}}} d S > 0.\n$$\n\n从而，由（4）式知 $\\iint_{S_3} (x\\cos \\alpha + y\\cos \\beta + z\\cos \\gamma) \\, \\mathrm{d}S = 4\\pi |c|a^2.$\n\n综上所述，最后得（注意（3）式）\n\n$$\nV = \\frac {1}{3} (4 \\pi | c | a ^ {2} + | c | \\pi b ^ {2} + | c | \\pi b ^ {2}) = \\frac {4 \\pi}{3} \\left(a ^ {2} + \\frac {b ^ {2}}{2}\\right) | c |.\n$$\n\n解法 2：\n\n不用曲面积分求体积的公式 (3)，而直接计算体积较为简单。由 (1) 式知，平面 $z =$ 常数（即 $u =$ 常数）与曲面 (2) 的截面 $S(z)$ 是圆，故所求的体积为\n\n$$\n\\begin{array}{l} V = \\int_ {- r} ^ {r} d z \\iint_ {S (z)} d x d y = \\int_ {- r} ^ {r} S (z) d z = \\int_ {\\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} \\pi \\left(a ^ {2} \\cos^ {2} u + b ^ {2} \\sin^ {2} u\\right) | c | d (\\sin u) \\\\ = | c | \\pi \\int_ {- \\frac {\\pi}{2}} ^ {\\frac {\\pi}{2}} \\left[ a ^ {2} + \\left(b ^ {2} - a ^ {2}\\right) \\sin^ {2} u \\right] d (\\sin u) = \\pi | c | \\left[ 2 a ^ {2} + \\frac {2}{3} \\left(b ^ {2} - a ^ {2}\\right) \\right] = \\frac {4 \\pi}{3} \\left(a ^ {2} + \\frac {b ^ {2}}{2}\\right) | c |. \\\\ \\end{array}\n$$",
+    "reference": [
+      "4382"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "134",
+    "id": "4384"
+  },
+  {
+    "question": "【4396】证明：若函数 $u = u(x,y,z)$ 是以光滑曲面 $S$ 为界的有界闭区域 $V$ 内的调和函数，则\n\n$$\nu (x, y, z) = \\frac {1}{4 \\pi} \\iint_ {S} \\left[ u \\frac {\\cos (r , n)}{r ^ {2}} + \\frac {1}{r} \\frac {\\partial u}{\\partial n} \\right] d S.\n$$\n\n式中 $r$ 是从区域 $V$ 的内点 $(x, y, z)$ 引至曲面上的点 $(\\xi, \\eta, \\zeta)$ 的径向量，\n\n$$\nr = \\sqrt {(\\xi - x) ^ {2} + (\\eta - y) ^ {2} + (\\zeta - z) ^ {2}},\n$$\n\n$\\pmb{n}$ 为曲面 $s$ 上在点 $(\\xi ,\\eta ,\\zeta)$ 的外法向量.",
+    "answer": "$u(x,y,z) = \\frac{1}{4\\pi}\\iint_{S}\\left[u\\frac{\\cos(r,n)}{r^2} +\\frac{1}{r}\\frac{\\partial u}{\\partial n}\\right]\\mathrm{d}S.$",
+    "solution": "证 在 4394 题中令 $v = \\frac{1}{r}$ ，则当 $(\\xi, \\eta, \\zeta) \\neq (x, y, z)$ 时，有 $\\Delta v = 0$ 。现以点 $P(x, y, z)$ 为中心， $\\rho$ 为半径作一球面 $S_{p}$ 含于曲面 $S$ 内，再将 4394 题应用到由曲面 $S + S_{p}$ 所包围的区域 $V$ 内，即得\n\n$$\n\\iint_ {S \\cdot S _ {p}} \\left(\\frac {1}{r} \\frac {\\partial u}{\\partial n} - u \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial n}\\right) d S = 0,\n$$\n\n或 $\\iint_{S_{\\rho}}\\left(\\frac{1}{r}\\frac{\\partial u}{\\partial n} -u\\frac{\\partial\\left(\\frac{1}{r}\\right)}{\\partial n}\\right)\\mathrm{d}S = -\\iint_{S}\\left(\\frac{1}{r}\\frac{\\partial u}{\\partial n} -u\\frac{\\partial\\left(\\frac{1}{r}\\right)}{\\partial n}\\right)\\mathrm{d}S.$\n\n显然， $S$ 上的法线是向外的，而 $S_{p}$ 上的法线是指向球心的，即指向半径减少的一方。因此，\n\n$$\n\\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial n} = - \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial r} \\Bigg | _ {r - p} = \\frac {1}{\\rho^ {2}}.\n$$\n\n于是，我们有 $\\iint_{S_{\\rho}}\\left(\\frac{1}{\\rho}\\frac{\\partial u}{\\partial n} -\\frac{u}{\\rho^2}\\right)\\mathrm{d}S = -\\iint_{S}\\left(\\frac{1}{r}\\frac{\\partial u}{\\partial n} -u\\frac{\\partial\\left(\\frac{1}{r}\\right)}{\\partial n}\\right)\\mathrm{d}S.$\n\n但 $\\iint_{S_{\\rho}} \\frac{1}{\\rho} \\frac {\\partial u}{\\partial n} \\mathrm{d}S = \\frac{1}{\\rho} \\iint_{S_{\\rho}} \\frac {\\partial u}{\\partial n} \\mathrm{d}S = 0$ ，又利用中值定理，得\n\n$$\n\\iint_ {S _ {\\rho}} \\frac {u}{\\rho^ {2}} d S = \\frac {1}{\\rho^ {2}} u \\left(x ^ {\\prime}, y ^ {\\prime}, z ^ {\\prime}\\right) 4 \\pi \\rho^ {2} = 4 \\pi u \\left(x ^ {\\prime}, y ^ {\\prime}, z ^ {\\prime}\\right),\n$$\n\n其中 $u(x', y', z')$ 为函数 $u$ 在球面 $S_{\\rho}$ 上某点之值。从而，\n\n$$\nu \\left(x ^ {\\prime}, y ^ {\\prime}, z ^ {\\prime}\\right) = \\frac {1}{4 \\pi} \\iint_ {S} \\left(\\frac {1}{r} \\frac {\\partial u}{\\partial n} - u \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial n}\\right) d S.\n$$\n\n上式右端与 $\\rho$ 无关。而 $\\lim_{\\rho \\to -0} u(x', y', z') = u(x, y, z)$ . 因而，令 $\\rho \\to +0$ 即得\n\n$$\nu (x, y, z) = \\frac {1}{4 \\pi} \\iint_ {S} \\left(\\frac {1}{r} \\frac {\\partial u}{\\partial n} - u \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial n}\\right) d S.\n$$\n\n又由于\n\n$$\n\\begin{array}{l} \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial n} = \\frac {\\partial \\left(\\frac {1}{r}\\right)}{\\partial r} \\frac {\\partial r}{\\partial n} = - \\frac {1}{r ^ {2}} \\left(\\frac {\\partial r}{\\partial \\xi} \\cos \\alpha + \\frac {\\partial r}{\\partial \\eta} \\cos \\beta + \\frac {\\partial r}{\\partial \\zeta} \\cos \\gamma\\right) \\\\ = - \\frac {1}{r ^ {2}} \\left(\\frac {\\xi - x}{r} \\cos \\alpha + \\frac {\\eta - y}{r} \\cos \\beta + \\frac {\\zeta - z}{r} \\cos \\gamma\\right) = - \\frac {\\cos (r , n)}{r ^ {2}}, \\\\ \\end{array}\n$$\n\n故最后得 $u(x,y,z) = \\frac{1}{4\\pi}\\iint_{S}\\left[u\\frac{\\cos(r,n)}{r^2} +\\frac{1}{r}\\frac{\\partial u}{\\partial n}\\right]\\mathrm{d}S.$",
+    "reference": [
+      "4394"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "134",
+    "id": "4396"
+  },
+  {
+    "question": "【4431】设流体充满空间并以恒定的角速度 $\\pmb{\\varpi}$ 依逆时针方向绕 $Oz$ 轴旋转。求速度向量 $\\pmb{\\nu}$ 和加速度向量 $\\pmb{w}$ 在已知时刻在空间点 $M(x, y, z)$ 处的散度.",
+    "answer": "\\operatorname{div}\\boldsymbol{\\nu}=0, \\operatorname{div}\\boldsymbol{w}=-2w^2",
+    "solution": "解 $\\nu = \\nu_{0} + w \\times r$ . 微分之，即得\n$$\n\\begin{array}{l} \\boldsymbol {w} = \\boldsymbol {w} _ {0} + \\dot {\\boldsymbol {w}} \\times \\boldsymbol {r} + \\boldsymbol {w} \\times \\dot {\\boldsymbol {r}} = \\boldsymbol {w} _ {0} + \\dot {\\boldsymbol {w}} \\times \\boldsymbol {r} + \\boldsymbol {w} \\times \\boldsymbol {v} = \\boldsymbol {w} _ {0} + \\dot {\\boldsymbol {w}} \\times \\boldsymbol {r} + \\boldsymbol {w} \\times (\\boldsymbol {v} _ {0} + \\boldsymbol {w} \\times \\boldsymbol {r}) \\\\ = w _ {0} + w \\times r + w \\times v _ {0} + (w \\cdot r) w - (w \\cdot w) r ^ {*}). \\\\ \\end{array}\n$$\n\n为了计算 $\\mathrm{div}\\pmb{\\nu}$ 和 $\\mathrm{div}\\pmb{w}$ ，先计算 $\\mathrm{div}(a\\times r)$ ，此处 $a$ 为常向量。由于\n$$\n(a \\times r) _ {x} = a _ {y} z - a _ {z} y, \\quad (a \\times r) _ {y} = a _ {z} x - a _ {x} z, \\quad (a \\times r) _ {z} = a _ {x} y - a _ {y} x,\n$$\n故得 $\\operatorname{div}(a \\times r) = \\frac{\\partial}{\\partial x} (a_y z - a_z y) + \\frac{\\partial}{\\partial y} (a_x x - a_x z) + \\frac{\\partial}{\\partial z} (a_x y - a_y x) = 0.$\n于是，即得\n$$\n\\operatorname {d i v} \\boldsymbol {v} = \\operatorname {d i v} \\boldsymbol {v} _ {0} + \\operatorname {d i v} (\\boldsymbol {w} \\times \\boldsymbol {r}) = 0.\n$$\n$$\n\\operatorname {d i v} w = \\operatorname {d i v} w _ {0} + \\operatorname {d i v} (w \\times r) + \\operatorname {d i v} (w \\times v _ {0}) + \\operatorname {d i v} [ (w \\cdot r) w ] - \\operatorname {d i v} [ (w \\cdot w) r ],\n$$\n而 $\\operatorname{div}[(\\boldsymbol{w} \\cdot \\boldsymbol{r})\\boldsymbol{w}] = \\boldsymbol{w} \\cdot r\\operatorname{div}\\boldsymbol{w} + \\boldsymbol{w} \\cdot \\operatorname{grad}(\\boldsymbol{w} \\cdot \\boldsymbol{r})^{**} = \\boldsymbol{w} \\cdot \\boldsymbol{w}^{***} = \\boldsymbol{w}^2$\n及 $\\operatorname{div}[(\\boldsymbol{w} \\cdot \\boldsymbol{w})\\boldsymbol{r}] = \\boldsymbol{w} \\cdot \\boldsymbol{w}\\operatorname{div}\\boldsymbol{r} + \\boldsymbol{r} \\cdot \\operatorname{grad}(\\boldsymbol{w} \\cdot \\boldsymbol{w}) = 3\\boldsymbol{w}^2,$\n从而，最后得 $\\mathrm{div}w = w^{2} - 3w^{2} = -2w^{2}$\n*）利用向量代数中的公式（二重外积展开式）\n$$\n\\boldsymbol {a} \\times (\\boldsymbol {b} \\times \\boldsymbol {c}) = (\\boldsymbol {a} \\cdot \\boldsymbol {c}) \\boldsymbol {b} - (\\boldsymbol {a} \\cdot \\boldsymbol {b}) \\boldsymbol {c}.\n$$\n$\\star \\star$）利用 4424 题 (3) 的结果\n\\*\\*\\*）利用 4411 题的结果",
+    "reference": [
+      "4424",
+      "4411"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "135",
+    "id": "4431"
+  },
+  {
+    "question": "【4434】设 $x = f(u, v, w), y = g(u, v, w), z = h(u, v, w)$\n用正交曲线坐标 $u, v, w$ 表示 $\\operatorname{div} a(x, y, z)$ . 作为特殊的情形，求用柱坐标和球坐标表示 $\\operatorname{div} a$ 的表示式.\n提示 研究向量 $\\pmb{a}$ 通过以曲面 $u =$ 常数， $v =$ 常数， $\\omega =$ 常数为界的小立体（接近于长方体） $V$ 的表面 $S$ 的通量.",
+    "answer": "一般情形：$\\operatorname {d i v} \\boldsymbol {a} = \\frac {1}{L M N} \\left[ \\frac {\\partial}{\\partial u} \\left(M N a _ {u}\\right) + \\frac {\\partial}{\\partial v} \\left(N L a _ {v}\\right) + \\frac {\\partial}{\\partial w} \\left(L M a _ {w}\\right)\\right]$;\n柱坐标：$\\operatorname{div} a = \\frac{1}{r} \\left[ \\frac{\\partial}{\\partial r} (ra_r) + \\frac{\\partial a_\\varphi}{\\partial \\varphi} + r \\frac{\\partial a_z}{\\partial z} \\right]$;\n球坐标：$\\operatorname {d i v} a = \\frac {1}{r ^ {2} \\sin \\theta} \\left[ \\sin \\theta \\frac {\\partial}{\\partial r} \\left(a _ {r} r ^ {2}\\right) + r \\frac {\\partial}{\\partial \\theta} \\left(a _ {\\theta} \\sin \\theta\\right) + r \\frac {\\partial a _ {\\varphi}}{\\partial \\varphi} \\right]$",
+    "solution": "解 考虑向量 $\\pmb{a}$ 通过由曲面 $u =$ 常数， $v =$ 常数， $\\omega =$ 常数所界的小立体（接近于长方体） $V$ 的表面 $S$ 的通量，我们有 $\\pmb{a} = a_{n}e_{1} + a_{3}e_{2} + a_{4}e_{3}$ ，在 $\\pmb{u}$ 曲线上，只有 $\\pmb{u}$ 变化（ $v$ 和 $w$ 都是常数），故\n$$\n\\mathrm {d} \\boldsymbol {r} = \\frac {\\partial x}{\\partial u} \\mathrm {d} u \\boldsymbol {i} + \\frac {\\partial y}{\\partial u} \\mathrm {d} u \\boldsymbol {j} + \\frac {\\partial z}{\\partial u} \\mathrm {d} u \\boldsymbol {k},\n$$\n从而， $\\mathrm{ds}_1 = |\\mathrm{d}\\boldsymbol {r}| = L\\mathrm{d}\\boldsymbol{u}$ ，其中\n$$\nL = \\sqrt {\\left(\\frac {\\partial x}{\\partial u}\\right) ^ {2} + \\left(\\frac {\\partial y}{\\partial u}\\right) ^ {2} + \\left(\\frac {\\partial z}{\\partial u}\\right) ^ {2}} = \\sqrt {\\left(\\frac {\\partial f}{\\partial u}\\right) ^ {2} + \\left(\\frac {\\partial g}{\\partial u}\\right) ^ {2} + \\left(\\frac {\\partial h}{\\partial u}\\right) ^ {2}},\n$$\n\nds 为 u 曲线上的弧元素。同理可得 $\\mathrm{ds}_2 = M\\mathrm{dv},\\mathrm{ds}_3 = N\\mathrm{dw},$\n其中 $\\mathrm{ds}_2, \\mathrm{ds}_3$ 分别为 $v, w$ 曲线上的弧元素，而\n$$\nM = \\sqrt {\\left(\\frac {\\partial f}{\\partial v}\\right) ^ {2} + \\left(\\frac {\\partial g}{\\partial v}\\right) ^ {2} + \\left(\\frac {\\partial h}{\\partial v}\\right) ^ {2}}. \\quad N = \\sqrt {\\left(\\frac {\\partial f}{\\partial w}\\right) ^ {2} + \\left(\\frac {\\partial g}{\\partial w}\\right) ^ {2} + \\left(\\frac {\\partial h}{\\partial w}\\right) ^ {2}}.\n$$\n\n由于坐标曲线互相垂直， $\\Delta s_1, \\Delta s_2, \\Delta s_3$ 都很小，故 $V$ 接近于长方体。因此，其体积为\n$$\nV \\approx \\Delta s _ {1} \\Delta s _ {2} \\Delta s _ {3} \\approx d s _ {1} d s _ {2} d s _ {3} = L M N d u d v d w.\n$$\n\n现计算 $\\pmb{a}$ 通过 $V$ 的表面 $S$ 向外的通量 $\\iint_{S} a_{n} \\mathrm{d}S, S$ 共包括六块小曲面，记垂直于 $\\pmb{e}_{1}$ 方向的两块为 $S_{1}$ 与 $S_{2}$ ，垂直于 $\\pmb{e}_{2}$ 方向的两块为 $S_{3}$ 与 $S_{4}$ ，垂直于 $\\pmb{e}_{3}$ 方向的两块为 $S_{5}$ 与 $S_{6}$ 。显然，由于曲面很小，有\n$$\n\\begin{array}{l} \\iint_ {S _ {2}} a _ {n} \\mathrm {d} S + \\iint_ {S _ {1}} a _ {n} \\mathrm {d} S \\approx a _ {u} \\Delta S _ {2} \\Delta S _ {3} \\left| _ {(u - \\Delta u, v, w)} - a _ {u} \\Delta S _ {2} \\Delta S _ {3} \\right| _ {(u, v, w)} \\\\ \\approx a _ {u} M N \\mathrm {d} v \\mathrm {d} w \\left| _ {(u - 3 u, 1, w)} - a _ {u} M N \\mathrm {d} v \\mathrm {d} w \\right| _ {(u, v, u)} \\approx \\frac {\\partial (a _ {u} M N \\mathrm {d} v \\mathrm {d} w)}{\\partial u} \\mathrm {d} u = \\frac {\\partial (M N a _ {u})}{\\partial u} \\mathrm {d} u \\mathrm {d} v \\mathrm {d} w. \\\\ \\end{array}\n$$\n\n同理可得\n$$\n\\iint_ {S _ {1}} a _ {n} \\mathrm {d} S + \\iint_ {S _ {3}} a _ {n} \\mathrm {d} S \\approx \\frac {\\partial (N L a _ {v})}{\\partial v} \\mathrm {d} u \\mathrm {d} v \\mathrm {d} w. \\quad \\iint_ {S _ {6}} a _ {n} \\mathrm {d} S + \\iint_ {S _ {5}} a _ {n} \\mathrm {d} S \\approx \\frac {\\partial (L M a _ {w})}{\\partial w} \\mathrm {d} u \\mathrm {d} v \\mathrm {d} w.\n$$\n\n相加即得 $\\iint_{S} a_{n} \\mathrm{d} S \\approx \\left[ \\frac{\\partial (M N a_{n})}{\\partial u} + \\frac{\\partial (N L a_{n})}{\\partial v} + \\frac{\\partial (L M a_{w})}{\\partial w} \\right] \\mathrm{d} u \\mathrm{~d} v \\mathrm{~d} w.$\n于是， $\\frac{\\iint_{S}a_{n}\\mathrm{d}S}{V}\\approx \\frac{1}{LMN}\\left[\\frac{\\partial}{\\partial u} (MN a_{n}) + \\frac{\\partial}{\\partial v} (NL a_{v}) + \\frac{\\partial}{\\partial w} (LMa_{w})\\right].$\n显然，当小立体 $V$ 愈缩向点 $M(V)$ 愈小）时，上述各近似等式都愈精确。于是，令 $V$ 缩向 $M$ （即 $S$ 的直径 $d(S)$ 趋于零）取极限，利用 4422 题的结果，得\n$$\n\\operatorname {d i v} \\boldsymbol {a} = \\lim  _ {d (S) \\rightarrow 0} \\frac {\\iint_ {a _ {n}} d S}{V} = \\frac {1}{L M N} \\left[ \\frac {\\partial}{\\partial u} \\left(M N a _ {u}\\right) + \\frac {\\partial}{\\partial v} \\left(N L a _ {v}\\right) + \\frac {\\partial}{\\partial w} \\left(L M a _ {w}\\right)\\right].\n$$\n\n特别是在柱坐标情形下，有 $x = r\\cos \\varphi, y = r\\sin \\varphi, z = z (u = r, v = \\varphi, w = z)$\n从而，\n$$\n\\begin{array}{l} L = \\sqrt {\\left(\\frac {\\partial x}{\\partial r}\\right) ^ {2} + \\left(\\frac {\\partial y}{\\partial r}\\right) ^ {2} + \\left(\\frac {\\partial z}{\\partial r}\\right) ^ {2}} = 1, \\quad M = \\sqrt {\\left(\\frac {\\partial x}{\\partial \\varphi}\\right) ^ {2} + \\left(\\frac {\\partial y}{\\partial \\varphi}\\right) ^ {2} + \\left(\\frac {\\partial z}{\\partial \\varphi}\\right) ^ {2}} = r, \\\\ N = \\sqrt {\\left(\\frac {\\partial x}{\\partial z}\\right) ^ {2} + \\left(\\frac {\\partial y}{\\partial z}\\right) ^ {2} + \\left(\\frac {\\partial z}{\\partial z}\\right) ^ {2}} = 1. \\\\ \\end{array}\n$$\n\n于是， $\\operatorname{div} a = \\frac{1}{r} \\left[ \\frac{\\partial}{\\partial r} (ra_r) + \\frac{\\partial a_\\varphi}{\\partial \\varphi} + r \\frac{\\partial a_z}{\\partial z} \\right].$\n在球坐标情形下，有\n$$\nx = r \\sin \\theta \\cos \\varphi , \\quad y = r \\sin \\theta \\sin \\varphi , \\quad z = r \\cos \\theta \\quad (u = r, v = \\theta , w = \\varphi).\n$$\n\n从而， $L = \\sqrt{\\left(\\frac{\\partial x}{\\partial r}\\right)^2 + \\left(\\frac{\\partial y}{\\partial r}\\right)^2 + \\left(\\frac{\\partial z}{\\partial r}\\right)^2} = 1,$ $M = \\sqrt{\\left(\\frac{\\partial x}{\\partial\\theta}\\right)^{2} + \\left(\\frac{\\partial y}{\\partial\\theta}\\right)^{2} + \\left(\\frac{\\partial z}{\\partial\\theta}\\right)^{2}} = r,$\n$$\nN = \\sqrt {\\left(\\frac {\\partial x}{\\partial \\varphi}\\right) ^ {2} + \\left(\\frac {\\partial y}{\\partial \\varphi}\\right) ^ {2} + \\left(\\frac {\\partial z}{\\partial \\varphi}\\right) ^ {2}} = r \\sin \\theta .\n$$\n\n于是，\n$$\n\\operatorname {d i v} a = \\frac {1}{r ^ {2} \\sin \\theta} \\left[ \\frac {\\partial}{\\partial r} \\left(a _ {r} r ^ {2} \\sin \\theta\\right) + \\frac {\\partial}{\\partial \\theta} \\left(a _ {\\theta} r \\sin \\theta\\right) + \\frac {\\partial}{\\partial \\varphi} \\left(a _ {\\varphi} r\\right) \\right] = \\frac {1}{r ^ {2} \\sin \\theta} \\left[ \\sin \\theta \\frac {\\partial}{\\partial r} \\left(a _ {r} r ^ {2}\\right) + r \\frac {\\partial}{\\partial \\theta} \\left(a _ {\\theta} \\sin \\theta\\right) + r \\frac {\\partial a _ {\\varphi}}{\\partial \\varphi} \\right].\n$$",
+    "reference": [
+      "4422"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "mix",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "135",
+    "id": "4434"
+  },
+  {
+    "question": "19.35 Rework Problem 19.34 when the acceleration $a = t^2 -\\frac{13}{3}\\mathrm{ft / s}^2$",
+    "answer": "Hence, the particle changes direction at $t = -4$, $t = 1$, and $t = 3$. It moves left for $t < -4$, where it reaches a minimum; it moves right from $t = -4$ to $t = 1$, where it reaches a maximum; it moves left from $t = 1$ to $t = 3$, where it reaches a minimum; then it moves right for $t > 3$",
+    "solution": "$v = \\int (t^2 -\\frac{13}{3})dt = \\frac{1}{3} t^3 -\\frac{13}{3} t + C.$ Since $v = 4$ when $t = 0,\\quad C = 4$ . Thus, $v = \\frac{1}{3} t^{3} - \\frac{13}{3} t + 4$ Then $s = \\int vdt = \\frac{1}{3}\\cdot \\frac{1}{4} t^4 -\\frac{13}{3}\\cdot \\frac{1}{2} t^2 +4t + C_1 = \\frac{1}{12} t^4 -\\frac{13}{6} t^2 +4t + C_1$ Since $s = 0$ when $t = 0,\\quad C_1 = 0$ . Thus, $s = \\frac{1}{12} t^4 -\\frac{13}{6} t^2 +4t.$ To find critical numbers for $s$ , we set $v = 0$ obtaining $t^3 -13t + 12 = 0$ Clearly, $t = 1$ is a root. Dividing $t^3 -13t + 12$ by $t - 1$ , we obtain $t^2 +t - 12 = (t + 4)(t - 3)$ . Thus, $t = 3$ and $t = -4$ also are critical numbers. When $t = 1$ $D_{t}^{2}s = a = -\\frac{10}{3} < 0$ . Hence, $s$ has a relative maximum at $t = 1$ Similarly, $a = \\frac{14}{3} >0$ when $t = 3$ , and, therefore, $s$ has a relative minimum at $t = 3$ .. $a = \\frac{35}{3} >0$ when $t = -4$ , and, therefore, $s$ has a relative minimum at $t = -4$ . Hence, the particle changes direction at $t = -4$ $t = 1$ , and $t = 3$ . It moves left for $t <   - 4$ , where it reaches a minimum; it moves right from $t = -4$ to $t = 1$ , where it reaches a maximum; it moves left from $t = 1$ to $t = 3$ , where it reaches a minimum; then it moves right for $t > 3$",
+    "reference": [
+      "19.34"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": true,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "001",
+    "id": "19_35"
+  },
+  {
+    "question": "20.70 Use the trapezoidal rule with $n = 10$ to approximate $\\int_0^1 x^2 dx$ .",
+    "answer": "0.335",
+    "solution": "$$\n\\begin{array}{l} \\int_ {0} ^ {1} x ^ {2} d x \\approx \\frac {1}{2 0} \\left(0 ^ {2} + 1 ^ {2} + 2 \\sum_ {i = 1} ^ {9} \\frac {i ^ {2}}{1 0 0}\\right) = \\frac {1}{2 0} \\left(1 + \\frac {1}{5 0} \\sum_ {i = 1} ^ {9} i ^ {2}\\right) \\\\ = \\frac {1}{2 0} \\left(1 + \\frac {1}{5 0} \\cdot \\frac {9 \\cdot 1 0 \\cdot 1 9}{6}\\right) \\quad [ b y P r o b l e m 2 0. 6 6 ] \\\\ = \\frac {1}{2 0} \\left(\\frac {2 0 1}{3 0}\\right) = 0. 3 3 5 \\\\ \\end{array}\n$$\n\nwhich is close to the exact value $\\frac{1}{3}$ .",
+    "reference": [
+      "20.66"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "003",
+    "id": "20_70"
+  },
+  {
+    "question": "34.42 Rework Problem 34.33 in polar coordinates $(r,\\theta)$ , where $r = \\sqrt{x^2 + y^2}$ , $\\tan \\theta = y / x$ .",
+    "answer": "\\sqrt{2}(e^{\\pi}-1)",
+    "solution": "\\begin{array}{l} \\text {O n t h e g i v e n c u r v e ,} \\sqrt {x ^ {2} + y ^ {2}} = \\sqrt {e ^ {2 t} (\\cos^ {2} t + \\sin^ {2} t)} = e ^ {t} \\quad \\text {a n d} \\quad y / x = \\tan t. \\text {T h u s , r e p l a c i n g t b y} \\theta , \\text {w e} \\\\ \\text {h a v e a s t h e e q u a t i o n o f t h e c u r v e i n p o l a r c o o r d i n a t e s :} r = e ^ {\\theta} \\quad \\text {o r} \\quad \\theta = \\ln r \\quad (\\text {a l o g a r i t h m i c s p i r a l}). \\text {U s i n g t h e} \\\\ \\text {a r c - l e n g t h f o r m u l a} s = \\int_ {a} ^ {b} \\sqrt {(d r / d \\theta) ^ {2} + r ^ {2}} d \\theta , \\quad \\text {w e r e r e i v e}. s = \\int_ {0} ^ {\\pi} \\sqrt {e ^ {2 \\theta} + e ^ {2 \\theta}} d \\theta = \\int_ {0} ^ {\\pi} \\sqrt {2} e ^ {\\theta} d \\theta = \\sqrt {2} (e ^ {\\pi} - 1). \\end{array}",
+    "reference": [
+      "34.33"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "014",
+    "id": "34_40"
+  },
+  {
+    "question": "【2285】 $I_{n} = \\int_{0}^{1}\\frac{x^{n}\\mathrm{d}x}{\\sqrt{1 - x^{2}}}$",
+    "answer": "I_{n} = \\int_{0}^{\\frac{\\pi}{2}} \\sin^{n} t \\mathrm{d}t",
+    "solution": "设 $x = \\sin t$ ，代人得\n\n$$\nI _ {n} = \\int_ {0} ^ {\\frac {\\pi}{2}} \\sin^ {n} t d t.\n$$\n\n因此，与 2281 题的结果相同",
+    "reference": [
+      "2281"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": true,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "051",
+    "id": "2285"
+  },
+  {
+    "question": "【2519】直径 $20\\mathrm{cm}$ ，长 $80\\mathrm{cm}$ 的圆柱形汽缸充满压强为 $100\\mathrm{N/cm^2}$ 的蒸汽。假定蒸气的温度保持不变，要使其体积减小一半，需要作多少功？",
+    "answer": "8000\\pi \\ln 2 \\approx 17420 J",
+    "solution": "解 由玻意耳一马略特定律有 $p v = C$ ，其中 $\\pmb{p}$ 表示气体的压强， $\\pmb{\\nu}$ 表示体积， $C$ 为常量。由条件知，常量\n$$\nC = 1 0 \\cdot \\pi \\cdot 1 0 0 \\cdot 8 0 = 8 0 0 0 \\pi (N \\cdot m).\n$$\n设初始时气体体积为 $v_{0}$ ，将区间 $\\left[\\frac{v_0}{2}, v_0\\right]$ 分成 $n$ 个小区间，分点依次为\n$$\n\\frac {v _ {0}}{2}, \\frac {v _ {0}}{2} q, \\frac {v _ {0}}{2} q ^ {2}, \\dots , \\frac {v _ {0}}{2} q ^ {i}, \\dots , \\frac {v _ {0}}{2} q ^ {n} = v _ {0},\n$$\n其中 $q = \\sqrt[3]{\\frac{v_0}{\\frac{v_0}{2}}} = \\sqrt[3]{2}$ 由于气体体积从 $\\frac{v_0}{2} q^{i+1}$ 减小至 $\\frac{v_0}{2} q^i$ 需要花费功的近似值为\n$$\nC \\left(\\frac {v _ {0}}{2} q ^ {i}\\right) ^ {- 1} \\left(\\frac {v _ {0}}{2} q ^ {i + 1} - \\frac {v _ {0}}{2} q ^ {i}\\right),\n$$\n于是，所要求的功为\n$$\nW = \\lim _ {n \\rightarrow \\infty} \\sum_ {i = 0 } ^ { n } C \\left(\\frac {v _ {0}}{2} q ^ {i}\\right) ^ {- 1} \\left(\\frac {v _ {0}}{2} q ^ {i + 1} - \\frac {v _ {0}}{2} q ^ {i}\\right) = \\lim _ {n \\rightarrow \\infty} C n (\\sqrt [ n ]{2} - 1) = C \\ln 2 ^ {*})\n$$\n\\*) 利用 541 题的结果.",
+    "reference": [
+      "541"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "060",
+    "id": "2519"
+  },
+  {
+    "question": "【2958】 $f(x) = |\\cos x|$",
+    "answer": "$\\frac {2}{\\pi} + \\frac {4}{\\pi} \\sum_ {n = 1} ^ {\\infty} (- 1) ^ {n + 1} \\frac {\\cos 2 n x}{4 n ^ {2} - 1} \\quad (- \\infty < x < + \\infty)$",
+    "solution": "解 由于\n$$\nf (x) = | \\cos x | = \\left| \\sin \\left(x + \\frac {\\pi}{2}\\right) \\right|,\n$$\n故有 $|\\cos x| = \\frac{2}{\\pi} - \\frac{4}{\\pi} \\sum_{n=1}^{\\infty} \\frac{\\cos 2n\\left(x + \\frac {\\pi}{2}\\right)^{n}}{4n^{2} - 1} = \\frac{2}{\\pi} - \\frac{4}{\\pi} \\sum_{n=1}^{\\infty} \\frac{(-1)^{n}\\cos 2nx}{4n^{2} - 1}$\n$$\n= \\frac {2}{\\pi} + \\frac {4}{\\pi} \\sum_ {n = 1} ^ {\\infty} (- 1) ^ {n + 1} \\frac {\\cos 2 n x}{4 n ^ {2} - 1} \\quad (- \\infty < x < + \\infty).\n$$\n*）利用2957题的结果.",
+    "reference": [
+      "2957"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "sum",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "084",
+    "id": "2958"
+  },
+  {
+    "question": "【3058】 $\\prod_{n = 0}^{\\infty}(1 + x^{2^n}) = \\frac{1}{1 - x}$ （ $|x| <   1)$",
+    "answer": "$\\frac{1}{1-x}$",
+    "solution": "由于 $(1 - x)P_{n} = (1 - x)(1 + x)\\dots (1 + x^{2^{n}}) = 1 - x^{2^{n + 1}}$ ，从而（注意 $|x| < 1$ ），\n\n$$\nP _ {n} = \\frac {1 - x ^ {2 ^ {n + 1}}}{1 - x} \\rightarrow \\frac {1}{1 - x} \\quad (\\text {当} n \\rightarrow \\infty \\text {时}),\n$$\n\n故 $\\prod_{n=0}^{\\infty}(1+x^{2^n})=\\frac{1}{1-x}$ . 利用此题的结果，易得\n\n$$\n\\prod_ {n = 0} ^ {\\infty} \\left[ 1 + \\left(\\frac {1}{2}\\right) ^ {2 ^ {n}} \\right] = \\frac {1}{1 - \\frac {1}{2}} = 2,\n$$\n\n此即 3054 题的结果。",
+    "reference": [
+      "3054"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "sum",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "088",
+    "id": "3058"
+  },
+  {
+    "question": "【4194】 $\\int_0^a\\int_0^a\\int_0^a\\frac{f(x,y,z)\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z}{\\left[\\left[y - \\varphi(x)\\right]^2 + \\left[z - \\psi(x)\\right]^2\\right]^p}$ ，其中 $0 < m \\leqslant |f(x,y,z)| \\leqslant M$ ，而 $\\varphi(x)$ 和 $\\psi(x)$ 是闭区间 $[0,a]$ 上的连续函数。",
+    "answer": "当 $p < 1$ 时收敛；当 $p \\geqslant 1$ 时，若不存在 $x \\in [0, a]$ 使 $0 \\leqslant \\varphi(x) \\leqslant a, 0 \\leqslant \\psi(x) \\leqslant a$ ，则收敛；若存在 $x \\in [0, a]$ ，使 $0 < \\varphi(x) < a, 0 < \\psi(x) < a$ ，则发散。",
+    "solution": "解由于\n$$\n\\frac {m}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}} \\leqslant \\frac {\\left| f (x , y , z) \\right|}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}} \\leqslant \\frac {M}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}},\n$$\n并注意到广义重积分收敛必绝对收敛，即知积分与积分 $\\int_0^a\\int_0^a\\int_0^a\\frac{\\mathrm{d}x\\mathrm{d}y\\mathrm{d}z}{\\left[\\left[y - \\varphi (x)\\right]^2 + \\left[z - \\psi (x)\\right]^2\\right]^p}$\n$$\n\\int_ {0} ^ {a} \\int_ {0} ^ {a} \\int_ {0} ^ {a} \\frac {f (x , y , z) d x d y d z}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {\\rho}}\n$$\n同时收敛或同时发散。由被积函数 $\\frac{1}{\\left\\{\\left[y - \\varphi(x)\\right]^2 + \\left[z - \\psi(x)\\right]^2\\right\\}^\\rho}$ 的非负性，我们有\n$$\n\\int_ {0} ^ {a} \\int_ {0} ^ {a} \\int_ {0} ^ {a} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}} = \\int_ {0} ^ {a} F (x) \\mathrm {d} x,\n$$\n其中 $F(x) = \\int_{0}^{a}\\int_{0}^{a}\\frac{\\mathrm{d}y\\mathrm{d}z}{\\left\\{\\left[y - \\varphi (x)\\right]^{2} + \\left[z - \\psi (x)\\right]^{2}\\right\\}^{p}}$ （ $0\\leqslant x\\leqslant a$ ）.\n作变量代换 $u = y - \\varphi (x),\\quad v = z - \\psi (x)\\quad (x$ 固定），则 $\\frac{D(y,z)}{D(u,v)} = \\frac{1}{\\frac{D(u,v)}{D(y,z)}} = 1.$\n从而，有\n$$\nF (x) = \\iint_ {\\substack {- \\varphi (x) \\leqslant u \\leqslant a - \\varphi (x) \\\\ \\psi (x) \\leqslant t \\leqslant a - \\psi (x)}} \\frac {\\mathrm {d} u \\mathrm {d} v}{\\left(u ^ {2} + v ^ {2}\\right) ^ {p}}. \\tag{1}\n$$\n先设 $p < 1$ 令 $c = \\max_{\\psi \\leq x \\leq a}(|\\varphi(x)| + |\\psi(x)|)$ ，则由（1）式知，\n$$\n0 <   F (x) \\leqslant \\iint_ {\\substack {- c \\leqslant u \\leqslant a - c \\\\ - c \\leqslant v \\leqslant a + c}} \\frac {\\mathrm {d} u \\mathrm {d} v}{(u ^ {2} + v ^ {2}) ^ {p}} <   \\iint_ {u ^ {2} \\cdot v ^ {2} \\leqslant 2 (a - c) ^ {2}} \\frac {\\mathrm {d} u \\mathrm {d} v}{(u ^ {2} + v ^ {2}) ^ {p}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\theta \\int_ {0} ^ {\\sqrt {2} (a + c)} \\frac {\\mathrm {d} r}{r ^ {2 p - 1}} = \\frac {\\pi}{1 - p} [ \\sqrt {2} (a + c) ] ^ {2 - 2 p},\n$$\n即 $F(x)$ 有界 (实际上，仿 4186 题的证明过程还可证明 $F(x)$ 在 $0 \\leqslant x \\leqslant a$ 上连续)，从而， $\\int_{0}^{a} F(x) \\mathrm{d}x$ 是常义积分，显然收敛。由此可知，此时积分\n$$\n\\int_ {0} ^ {a} \\int_ {0} ^ {a} \\int_ {0} ^ {a} \\frac {\\mathrm {d} x \\mathrm {d} y \\mathrm {d} z}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}} \\tag {2}\n$$\n收敛.\n次设 $p \\geqslant 1$ ，这时积分 (2) 可能收敛也可能发散，分两种情况讨论：\n（i）若不存在这样的 $x \\in [0, a]$ 使 $0 \\leqslant \\varphi(x) \\leqslant a, 0 \\leqslant \\psi(x) \\leqslant a$ 同时成立（例如， $\\varphi(x)$ 或 $\\psi(x)$ 的值完全位于 $[0, a]$ 之外；这时，对一切 $0 \\leqslant x \\leqslant a, 0 \\leqslant y \\leqslant a, 0 \\leqslant z \\leqslant a$ ，均有：连续函数 $\\{[y - \\varphi(x)]^2 + [z - \\psi(x)]^2\\}^p > 0$ 。从而，积分 (2) 收敛（这时是常义积分）。  \n（ii）若存在这样的点 $x \\in [0, a]$ 使 $0 < \\varphi(x) < a, 0 < \\psi(x) < a$ 同时成立；由 $\\varphi(x)$ 与 $\\psi(x)$ 的连续性，必存在正数 $\\varepsilon$ 及闭区间 $I_0 \\subset [0, a]$ ，使当 $x \\in I_0$ 时，恒有 $\\varepsilon \\leqslant \\varphi(x) \\leqslant a - \\varepsilon, \\varepsilon \\leqslant \\psi(x) \\leqslant a - \\varepsilon$ ，从而由（1）式知：当 $x \\in I_0$ 时，有\n$$\nF (x) \\geqslant \\iint_ {\\substack {- e \\leq u \\leq e \\\\ e \\leq v \\leq e}} \\frac {\\mathrm {d} u \\mathrm {d} v}{(u ^ {2} + v ^ {2}) ^ {p}} \\geqslant \\iint_ {u ^ {2} + v ^ {2} \\leq e ^ {2}} \\frac {\\mathrm {d} u \\mathrm {d} v}{(u ^ {2} + v ^ {2}) ^ {p}} = \\int_ {0} ^ {2 \\pi} \\mathrm {d} \\theta \\int_ {0} ^ {\\epsilon} \\frac {\\mathrm {d} r}{r ^ {2 p - 1}} = 2 \\pi \\int_ {0} ^ {\\epsilon} \\frac {\\mathrm {d} r}{r ^ {2 p - 1}} = + \\infty \\quad (\\text {注 意} p \\geqslant 1),\n$$\n即当 $x \\in I_0$ 时恒有 $F(x) = +\\infty$ ，由此可知，积分 $\\int_{0}^{a} F(x) \\mathrm{d}x$ 发散。于是，积分 (2) 发散。\n综上所述，可知：积分\n$$\n\\int_ {0} ^ {a} \\int_ {0} ^ {a} \\int_ {0} ^ {a} \\frac {f (x , y , z) d x d y d z}{\\left\\{\\left[ y - \\varphi (x) \\right] ^ {2} + \\left[ z - \\psi (x) \\right] ^ {2} \\right\\} ^ {p}}\n$$\n当 $p < 1$ 时收敛；当 $p \\geqslant 1$ 时，若不存在 $x \\in [0, a]$ 使 $0 \\leqslant \\varphi(x) \\leqslant a, 0 \\leqslant \\psi(x) \\leqslant a$ ，则收敛；若存在 $x \\in [0, a]$ ，使 $0 < \\varphi(x) < a, 0 < \\psi(x) < a$ ，则发散.",
+    "reference": [
+      "4186"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": true,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": true,
+      "have_indefinite": false,
+      "is_multi": true,
+      "is_divergent": false
+    },
+    "source": "117",
+    "id": "4194"
+  },
+  {
+    "question": "【4335】 利用格林第二公式证明：若 $u = u(x,y)$ 是有界闭区域 S 内的调和函数，则\n\n$$\nu (x, y) = \\frac {1}{2 \\pi} \\oint_ {c} \\left(u \\frac {\\partial \\ln r}{\\partial n} - \\ln r \\frac {\\partial u}{\\partial n}\\right) d s.\n$$\n\n式中 $C$ 为区域 $S$ 的边界， $\\pmb{n}$ 为围线 $C$ 的外法向量， $(x, y)$ 为区域 $S$ 的内点， $r = \\sqrt{(\\xi - x)^2 + (\\eta + y)^2}$ 为点 $(x, y)$ 与围线 $C$ 上的动点 $(\\xi, \\eta)$ 之间的距离。\n\n提示 从区域 $S$ 中除去点 $(x, y)$ 与该点的无穷小的圆形邻域，并对区域 $S$ 的剩余部分（图 8.67 中的区域 $S'$ ）应用格林第二公式。",
+    "answer": "$u (x, y) = \\frac {1}{2 \\pi} \\oint_ {c} \\left(u \\frac {\\partial \\ln r}{\\partial n} - \\ln r \\frac {\\partial u}{\\partial n}\\right) d s.$",
+    "solution": "证先证 $v = \\ln r$ 为 $(\\xi ,\\eta)((\\xi ,\\eta)\\neq (x,y))$ 的调和函数.事实上，我们有\n\n$$\n\\frac {\\partial v}{\\partial \\xi} = \\frac {\\xi - r}{(\\xi - x) ^ {2} + (\\eta - y) ^ {2}}, \\quad \\frac {\\partial^ {2} v}{\\partial \\xi ^ {2}} = \\frac {(\\eta - y) ^ {2} - (\\xi - x) ^ {2}}{[ (\\xi - x) ^ {2} + (\\eta - y) ^ {2} ] ^ {2}},\n$$\n\n$$\n\\frac {\\partial v}{\\partial \\eta} = \\frac {\\eta - y}{(\\xi - x) ^ {2} + (\\eta - y) ^ {2}}, \\quad \\frac {\\partial^ {2} v}{\\partial \\eta ^ {2}} = \\frac {(\\xi - x) ^ {2} - (\\eta - y) ^ {2}}{[ (\\xi - x) ^ {2} + (\\eta - y) ^ {2} ] ^ {2}},\n$$\n\n因此 $\\frac{\\partial^2 v}{\\partial \\xi^2} + \\frac{\\partial^2 v}{\\partial \\eta^2} = 0$ 即 $\\Delta v = 0$ .\n\n今以点 $(x, y)$ （当 $(\\xi, \\eta) \\neq (x, y)$ 时）为中心， $\\rho$ 为半径画一圆 $C_0$ ，使此圆包含在围线 $C$ 内， $C_0$ 及 $C$ 的正向如图 8.67 所示。曲线 $C$ 的法线向外， $C_0$ 的法线指向点 $(x, y)$ 。因此，在 $C_0$ 上，我们有\n\n$$\n\\left. \\frac {\\partial \\ln r}{\\partial n} \\right| _ {r = \\rho} = - \\left. \\frac {\\partial \\ln r}{\\partial r} \\right| _ {r = \\rho} = - \\left. \\frac {1}{r} \\right| _ {r = \\rho} = - \\frac {1}{\\rho}.\n$$\n\n现将格林第二公式应用到由 $C_0$ 及 $C$ 所围的区域 $S^{\\prime}$ 上去，即得\n\n$$\n\\iint_ {s ^ {\\prime}} \\left| \\begin{array}{c c} \\Delta u & \\Delta \\ln r \\\\ u & \\ln r \\end{array} \\right| d \\xi d \\eta = \\oint_ {C _ {0} + C} \\left| \\begin{array}{c c} \\frac {\\partial u}{\\partial n} & \\frac {\\partial \\ln r}{\\partial n} \\\\ u & \\ln r \\end{array} \\right| d s,\n$$\n\n由于 $\\Delta \\ln r = 0, \\Delta u = 0$ ，故得 $\\oint_{C_0 + C} \\left| \\begin{array}{cc} \\frac{\\partial u}{\\partial n} & \\frac{\\partial \\ln r}{\\partial n} \\\\ u & \\ln r \\end{array} \\right| \\mathrm{d}s = 0.$\n\n将行列式展开，并利用曲线积分的性质，即得\n\n$$\n\\oint_ {C} \\left(\\ln r \\frac {\\partial u}{\\partial n} - u \\frac {\\partial \\ln r}{\\partial n}\\right) d s = - \\oint_ {c _ {0}} \\left(\\ln r \\frac {\\partial u}{\\partial n} - u \\frac {\\partial \\ln r}{\\partial n}\\right) d s.\n$$\n\n但由于\n\n$$\n\\begin{array}{l} \\oint_ {c _ {0}} \\left(\\ln r \\frac {\\partial u}{\\partial n} - u \\frac {\\partial \\ln r}{\\partial n}\\right) d s = \\oint_ {c _ {0}} \\ln \\rho \\frac {\\partial u}{\\partial n} d s - \\oint_ {c _ {0}} u \\left(- \\frac {1}{\\rho}\\right) d s = 0 \\cdot \\ln \\rho^ {*}) + \\frac {1}{\\rho} \\oint_ {c _ {0}} u d s \\\\ = \\frac {1}{\\rho} u \\left(\\xi^ {\\prime}, \\eta^ {\\prime}\\right) \\oint_ {c _ {0}} d s ^ {* *} = 2 \\pi u \\left(\\xi^ {\\prime}, \\eta^ {\\prime}\\right), \\\\ \\end{array}\n$$\n\n其中 $u(\\xi', \\eta')$ 为 $u$ 在圆 $C_0$ 上某点的值，故得\n\n$$\nu \\left(\\xi^ {\\prime}, \\eta^ {\\prime}\\right) = \\frac {1}{2 \\pi} \\oint_ {c} \\left(u \\frac {\\partial \\ln r}{\\partial n} - \\ln r \\frac {\\partial u}{\\partial n}\\right) d s.\n$$\n\n两端令 $\\rho \\rightarrow +0$ 取极限，并注意到函数 $u$ 在点 $(x,y)$ 的连续性，即得\n\n$$\nu (x, y) = \\frac {1}{2 \\pi} \\oint_ {c} \\left(u \\frac {\\partial \\ln r}{\\partial n} - \\ln r \\frac {\\partial u}{\\partial n}\\right) d s.\n$$\n\n\\*) 利用 4331 题的结果.\n\n$\\star \\star$ ）利用第一型曲线积分的中值定理，其证明方法与普通定积分的中值定理类似.",
+    "reference": [
+      "4331"
+    ],
+    "tag": {
+      "tools_solvable": [],
+      "symbolic": false,
+      "problem_type": "int",
+      "pure_int": false,
+      "have_definite": false,
+      "have_indefinite": false,
+      "is_multi": false,
+      "is_divergent": false
+    },
+    "source": "130",
+    "id": "4335"
   }
 ]
