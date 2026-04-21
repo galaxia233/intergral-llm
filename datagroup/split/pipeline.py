@@ -54,6 +54,24 @@ def sanitize_filename(name: str) -> str:
     return name
 
 
+MIN_LINES = 5  # 提取的题目最少行数，低于此值的丢弃
+
+
+def _filter_short_sections(sections: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    """过滤掉有效行数低于 MIN_LINES 的章节"""
+    filtered = []
+    skipped = 0
+    for heading, content in sections:
+        lines = [l for l in content.split('\n') if l.strip()]
+        if len(lines) < MIN_LINES:
+            skipped += 1
+            continue
+        filtered.append((heading, content))
+    if skipped:
+        print(f"  过滤掉 {skipped} 个过短章节（< {MIN_LINES} 行）")
+    return filtered
+
+
 def stage1_split(input_file: str, output_dir: str = None) -> Path:
     """按一级标题切分 md 文件或目录，文件名编码书名"""
     input_path = Path(input_file)
@@ -73,6 +91,7 @@ def stage1_split(input_file: str, output_dir: str = None) -> Path:
             return None
 
         total_sections = 0
+        total_skipped = 0
         for md_file in sorted(md_files):
             book_name = sanitize_filename(md_file.stem)
 
@@ -83,6 +102,8 @@ def stage1_split(input_file: str, output_dir: str = None) -> Path:
             if not sections:
                 heading = content.split('\n')[0].strip() if content.split('\n') else md_file.stem
                 sections = [(heading, content)]
+
+            sections = _filter_short_sections(sections)
 
             for heading, section_content in sections:
                 total_sections += 1
@@ -108,6 +129,8 @@ def stage1_split(input_file: str, output_dir: str = None) -> Path:
     if not sections:
         print("未找到任何一级标题，无法切分")
         return None
+
+    sections = _filter_short_sections(sections)
 
     for i, (heading, section_content) in enumerate(sections, 1):
         safe_heading = sanitize_filename(heading)
@@ -159,6 +182,9 @@ def extract_problem_id(first_line: str) -> str:
     return ""
 
 
+MIN_LINES = 5  # 提取的题目最少行数，低于此值的丢弃
+
+
 def process_file(file_path: Path, output_dir: Path) -> int:
     """处理单个文件：调用 LLM 提取题目，每个题目保存为 {批号}_{题号}.md"""
 
@@ -182,6 +208,7 @@ def process_file(file_path: Path, output_dir: Path) -> int:
         # 按分割线提取每道题
         blocks = re.split(r'^---$', result, flags=re.MULTILINE)
         count = 0
+        skipped = 0
         for block in blocks:
             block = block.strip()
             if not block or block.upper() == 'NONE':
@@ -189,6 +216,11 @@ def process_file(file_path: Path, output_dir: Path) -> int:
 
             lines = [l for l in block.split('\n') if l.strip()]
             if not lines:
+                continue
+
+            # 低于最小行数阈值则丢弃
+            if len(lines) < MIN_LINES:
+                skipped += 1
                 continue
 
             # 从第一行提取题号（匹配常见题号格式）
@@ -221,7 +253,7 @@ def process_file(file_path: Path, output_dir: Path) -> int:
 
         with file_lock:
             problem_counter["count"] += count
-        print(f"  [{file_path.name}] 提取 {count} 道题目")
+        print(f"  [{file_path.name}] 提取 {count} 道题目，丢弃 {skipped} 道过短题目")
         return count
 
     except Exception as e:
